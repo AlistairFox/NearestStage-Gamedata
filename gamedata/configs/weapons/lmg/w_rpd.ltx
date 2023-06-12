@@ -1,0 +1,261 @@
+[wpn_rpd]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+$spawn                                                = "weapons\rpd"                ; option for Level Editor
+$npc                    = on                                ; option for Level Editor
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_AK74
+min_radius = 0 ;              = 30
+max_radius = 500 ; = 250 ;              = 100
+description             = st_wpn_rpd_descr
+
+ef_main_weapon_type     = 2
+ef_weapon_type          = 10
+
+default_to_ruck         = false
+sprint_allowed          = true ;false
+
+;-------------------------------------------------------
+cost                    = 300000
+weapon_class            = assault_rifle        ; Type of the weapon
+inv_weight              = 7.4
+
+upgrades                = up_gr_firstab_ak74_rusty, up_gr_seconab_ak74_rusty, up_gr_thirdab_ak74_rusty, up_gr_fourtab_ak74_rusty, up_gr_fifthab_ak74_rusty, up_gr_fifthcd_ak74_rusty
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_ak74
+
+;--TTX----------------------------------------------------------------------------
+hit_power				= 1.785
+hit_impulse				= 15
+hit_type						= fire_wound	; [] type of the wound
+fire_distance					= 1000
+bullet_speed					= 700			; starting bullet speed
+rpm								= 650			; max round per minute
+rpm_empty_click					= 120
+
+use_aim_bullet          = false ;true                ;Поддерживается ли первая суппер пуля
+time_to_aim             = 1.0
+
+hud                     = wpn_rpd_hud
+
+misfire_probability        	= 0.005
+misfire_start_condition		= 0.875
+misfire_end_condition		= 0.075
+misfire_start_prob = 0.002 ;	     	= 0.0048
+misfire_end_prob = 0.04 ;	     	= 0.036
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.00075
+
+ammo_elapsed            = 100
+ammo_mag_size           = 100
+
+ammo_class              = ammo_7.62x39_fmj, ammo_7.62x39_ap
+grenade_class           = ammo_m209
+fire_modes              = -1
+launch_speed            = 0
+hand_dependence         = 1
+single_handed           = 0
+
+;-дисперсия-----------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base    = 0.48     ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.91f
+crosshair_inertion		= 9.2
+
+;отдача
+cam_return = 0 ;				= 1
+cam_relax_speed				= 10	;скорость возврата в исходное положение
+cam_relax_speed_ai			= 360
+cam_dispersion	         	= 0.9
+cam_dispersion_inc         	= 0.725
+cam_dispersion_frac			= 1.0	;ствол будет подыматьс¤ на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle				= 50.0	;максимальный угол отдачи
+cam_max_angle_horz			= 50.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz			= 1.1	;(degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed		= 10	; scope & ironsight
+zoom_cam_relax_speed_ai		= 360
+zoom_cam_dispersion         = 0.75
+zoom_cam_dispersion_inc     = 0.725
+zoom_cam_dispersion_frac	= 0.75
+zoom_cam_max_angle			= 50.0
+zoom_cam_max_angle_horz		= 50.0
+zoom_cam_step_angle_horz	= 1.5
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 		= 2.5
+PDM_disp_accel_factor 		= 2.5
+PDM_disp_crouch = 1.0 ;  			= 1.165
+PDM_disp_crouch_no_acc = 1.0 ; 		= 1.325
+
+fire_dispersion_condition_factor = 0.015 ; 0.001 ; = 0.01 ; 15        ;увеличение дисперсии в процентах при максимальном износе
+
+;---DOF------------------------------------------------------------------------
+zoom_dof                = 0.5, 1.0, 180
+reload_dof              = 0.0, 0.5, 5, 1.7
+;-------------------------------------------------------------------------------
+holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier     = 1.0                       ; во сколько раз увеличивается eye_fov
+
+min_radius = 0 ;              = 30
+max_radius = 500 ; = 250 ;              = 100
+
+hit_probability_gd_novice = 1.00 ;  = 0.80
+hit_probability_gd_stalker = 1.00 ; = 0.80
+hit_probability_gd_veteran = 1.00 ; = 0.80
+hit_probability_gd_master = 1.00 ;  = 0.80
+
+;-------------------------------------------------------------------------------
+slot                    = 2                ; // secondary
+animation_slot          = 2                ; type of the animation that will be used
+
+inv_name                = st_wpn_rpd
+inv_name_short          = st_wpn_rpd
+
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 40
+inv_grid_y         = 10
+
+upgr_icon_x			= 1724 ; 8
+upgr_icon_y			= 802 ; 593
+upgr_icon_width		= 167 ; 294
+upgr_icon_height   	= 159 ; 83
+
+kill_msg_x              = 80
+kill_msg_y              = 59
+kill_msg_width          = 87
+kill_msg_height         = 24
+
+;-------------------------------------------------------------------------------
+position					= -0.027, -0.097, 0.042
+orientation				= 0, -2, 0
+
+fire_point					= 0, 0.158, 0.845
+fire_point2				= 0, 0.097, 0.722
+
+flame_particles				= weapons\generic_weapon05
+smoke_particles				= weapons\generic_shoot_00
+grenade_flame_particles			= weapons\generic_weapon01
+
+shell_point				= -0.02,0.167,0.082
+shell_dir					= 0, 0, 0.4
+shell_particles	 			= weapons\762x39
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position          = -0.26,-0.11,0.25                                ; position (offset) and orientation of the weapon when it is strapped
+strap_orientation       = -15,-9,110                                        ; (3rd person view in degrees)
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+startup_ammo            = 90
+visual                  = dynamics\weapons\wpn_rpd\wpn_rpd.ogf
+
+light_disabled                                = false
+light_color             = 0.6,0.5,0.3
+light_range             = 5
+light_var_color         = 0.05
+light_var_range         = 0.5
+light_time              = 0.2
+
+ph_mass                 = 4
+;cost                   = 2100
+
+;addons
+scope_status            = 0
+silencer_status         = 0
+grenade_launcher_status = 0
+
+zoom_enabled            = true ; false            ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time        = 0.25 ;0.5
+scope_zoom_factor       = 85
+
+;звуки
+snd_draw                = weapons\rpd\rpd_deploy
+snd_holster             = weapons\rpd\rpd_holster
+snd_shoot               = weapons\rpd\rpd_1
+
+snd_shoot1              = weapons\rpd\rpd_2
+snd_shoot2              = weapons\rpd\rpd_3
+snd_shoot3              = weapons\rpd\rpd_4
+snd_shoot4              = weapons\rpd\rpd_5
+snd_shoot5              = weapons\rpd\rpd_6
+snd_empty               = weapons\rpd\rpd_trigger
+snd_reload              = weapons\rpd\rpd_reload1
+snd_shoot_grenade       = weapons\gen_grenshoot
+snd_reload_grenade      = weapons\gen_grenload, 1.0, 0.8
+snd_switch              = weapons\groza_switch, 1.0, 0.5
+snd_silncer_shot        = weapons\generic\rifle_silencer_shot
+
+
+;silencer_flame_particles  = weapons\generic_weapon01
+silencer_smoke_particles   = weapons\effects\kyky_smoke
+
+silencer_light_color    = 0.6,0.5,0.3
+silencer_light_range    = 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time     = 0.2
+
+
+[wpn_rpd_hud]:hud_base
+zoom_hide_crosshair        = true
+attach_place_idx        = 0
+item_visual                = dynamics\weapons\wpn_rpd\wpn_rpd_hud
+
+hands_position				= -0.044,-0.192,0.1355
+hands_orientation				= 0.55,2.4,0.15
+
+hands_position_16x9			= -0.044,-0.192,0.1355
+hands_orientation_16x9			= 0.55,2.4,0.15
+
+item_position				= 0,0,0
+item_orientation				= 0,0,0
+
+aim_hud_offset_pos 			= -0.1099,0.0621,-0.137
+aim_hud_offset_rot 				= 0.03925,0.0092,-0.006
+
+aim_hud_offset_pos_16x9 			= -0.1099,0.0621,-0.137
+aim_hud_offset_rot_16x9 			= 0.03925,0.0092,-0.006
+
+shell_point				= 0.028,0.078,0.113
+shell_dir              				= 0, 1, 0
+shell_bone              				= wpn_body
+
+fire_point					= -0.011,0.074029,0.848113
+fire_bone              				= wpn_body
+fire_point2            				= 0,-0.011,0.6
+fire_bone2             				= wpn_body
+
+anm_show				= lancew_rpd_draw
+anm_hide                				= lancew_rpd_holster
+anm_idle                				= lancew_rpd_idle
+anm_idle_sprint         			= lancew_rpd_sprint
+anm_idle_moving        			= lancew_rpd_moving
+anm_shots               				= lancew_rpd_shoot, shoot
+anm_reload              				= lancew_rpd_reload, reload
+anm_idle_aim           				= lancew_rpd_idle_aim
+anm_bore               				= lancew_rpd_no_reload
+
+gl_hud_offset_pos       	= 0,0,0
+gl_hud_offset_rot       	= 0,0,0
+
+gl_hud_offset_pos_16x9    	= 0,0,0
+gl_hud_offset_rot_16x9    	= 0,0,0
+
+lean_hud_offset_pos        = 0,0,0
+lean_hud_offset_rot        = 0,0,0
+
+hud_collision_enabled			= true
+hud_collision_offset_pos		= 0,-0.5,0
+hud_collision_offset_pos_16x9		= 0,-0.5,0
+hud_collision_offset_rot		= -0.8,0,0
+hud_collision_offset_rot_16x9		= -0.8,0,0
+
+safemode_rot_enabled = true
+safemode_offset_pos = 0.2,0,0
+safemode_offset_pos_16x9 = 0.2,0,0
+safemode_offset_rot =  0.1,-0.5,0
+safemode_offset_rot_16x9 =  0.1,-0.5,0

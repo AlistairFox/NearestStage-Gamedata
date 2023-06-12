@@ -1,0 +1,554 @@
+[wpn_sa58]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+$spawn						= "weapons\sa58"                ; option for Level Editor
+$npc                    = on                                ; option for Level Editor
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_AK74 
+description             = st_wpn_sa58_descr
+
+ef_main_weapon_type     = 2
+ef_weapon_type          = 6
+
+default_to_ruck         = false
+sprint_allowed       	= true
+
+;-------------------------------------------------------------------------------
+cost                    = 140000
+weapon_class            = assault_rifle        ; Type of the weapon
+inv_weight              = 4.5
+
+upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_sig550
+
+;-------TTX-----------------------------------------------------------------------
+hit_power				= 1.785
+hit_impulse				= 15
+hit_type				= fire_wound
+fire_distance           = 600
+bullet_speed            = 837         ;начальная скорость пули
+rpm                     = 700
+rpm_empty_click         = 200
+
+use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
+time_to_aim             = 3.0
+
+parent_section  				= wpn_sa58
+
+hud                     = wpn_sa58_hud
+
+misfire_probability			= 0.005
+misfire_start_condition			= 0.6
+misfire_end_condition			= 0.1
+misfire_start_prob	 		= 0.006	
+misfire_end_prob	 		= 0.072	
+condition_shot_dec			= 0.000125
+condition_queue_shot_dec		= 0.0002
+
+ammo_elapsed            = 20
+ammo_mag_size           = 20
+
+ammo_class              = ammo_7.62x51_fmj, ammo_7.62x51_ap ;ammo_5.56x45_ss190, ammo_5.56x45_ap
+grenade_class           = ammo_m209
+fire_modes              = 1, -1
+launch_speed            = 0
+hand_dependence         = 1
+single_handed           = 0
+
+;-дисперсия-----------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base    = 0.125        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.5f
+crosshair_inertion		= 7.25
+
+;отдача
+cam_return				= 0
+cam_relax_speed         = 5		; скорость возврата в исходное положение
+cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
+cam_dispersion          = 1.5       ; увеличения угла (в градусах) при первом выстреле
+cam_dispersion_inc      = 0.45       ; увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
+cam_max_angle           = 50.0       ; максимальный угол отдачи
+cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 0.5
+PDM_disp_vel_factor 		= 2.0
+PDM_disp_accel_factor 		= 2.0
+PDM_disp_crouch	 			= 1.0
+PDM_disp_crouch_no_acc 		= 1.0
+
+zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 1.2
+zoom_cam_dispersion_inc      = 0.4
+zoom_cam_dispersion_frac     = 0.7
+zoom_cam_max_angle           = 50.0
+zoom_cam_max_angle_horz      = 50.0
+zoom_cam_step_angle_horz     = 1.3
+
+fire_dispersion_condition_factor = 7        ;увеличение дисперсии в процентах при максимальном износе
+;---DOF-------------------------------------------------------------------------
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 2
+
+;-------------------------------------------------------------------------------
+holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier     = 1.0              ; во сколько раз увеличивается eye_fov
+
+min_radius              = 30
+max_radius              = 100
+
+hit_probability_gd_novice  = 0.80
+hit_probability_gd_stalker = 0.80
+hit_probability_gd_veteran = 0.80
+hit_probability_gd_master  = 0.80
+;------------------------------------------------------------------------------
+slot                    = 2                ; // secondary
+animation_slot          = 2                ; type of the animation that will be used
+
+inv_name                = st_wpn_sa58
+inv_name_short          = st_wpn_sa58
+
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 40
+inv_grid_y         = 25
+
+upgr_icon_x			= 598
+upgr_icon_y			= 476
+upgr_icon_width		= 296
+upgr_icon_height   	= 81
+
+kill_msg_x              = 80
+kill_msg_y              = 59
+kill_msg_width          = 87
+kill_msg_height         = 24
+
+;-------------------------------------------------------------------------------
+;---normal                  = 0, 1, 0
+;---direction               = 0, 0, 1
+
+position                = -0.026, -0.175, 0.0
+orientation             = 0, 0, 0
+
+fire_point              = 0.000000,0.137000,0.649000
+fire_point2             = 0.0, 0.097, 0.722
+
+flame_particles				= amik\weapons\nato_shoot_00
+smoke_particles				= amik\weapons\nato_smoke_00
+grenade_flame_particles			= weapons\generic_weapon01
+
+shell_point             = -0.020000,0.167000,0.082000
+shell_dir               = 0.0, 0.0, 0.4
+;shell_particles	 			= ghost_particles\weapons\shells\shells_762_51_sa58
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position						= -0.26,-0.11,0.25		; position (offset) and orientation of the weapon when it is strapped
+strap_orientation					= -15,-9,110			; (3rd person view in degrees)
+strap_bone0							= bip01_spine2
+strap_bone1							= bip01_spine1
+
+startup_ammo            = 90
+visual                  = dynamics\weapons\wpn_sig550\wpn_fal_aus_world.ogf
+
+light_disabled		= false
+light_color             = 0.6,0.5,0.3
+light_range             = 5
+light_var_color         = 0.05
+light_var_range         = 0.5
+light_time              = 0.2
+
+ph_mass                 = 4
+
+;addons
+scope_status            = 0                  ; 0 - no addon
+;scopes 					= acog
+silencer_status         = 0                   ; 1 - permanent
+grenade_launcher_status = 0                   ; 2 - attachable
+
+zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time        = 0.24
+scope_zoom_factor       = 63.3                                                ; fov for zoom mode
+;scope_lense_fov_factor  = 0.2
+
+scope_name              = acog       ; section name for the attachable scope
+scope_x              	= 47                 ; offset in inventory icon
+scope_y                 = 0
+silencer_name           = sil_nato
+silencer_x              = 243
+silencer_y              = 16
+grenade_launcher_name   = wpn_addon_grenade_launcher_m203
+grenade_launcher_x      = 109
+grenade_launcher_y      = 30
+;scopes_sect				   = scope_susat_sig, scope_susat_x1.6_sig, scope_susat_custom_sig, scope_susat_dusk_sig, scope_susat_night_sig
+
+;звуки
+snd_draw                = eft_wp\shared\draw_rifle
+snd_holster             = eft_wp\shared\hide_rifle
+snd_shoot				= eft_wp\sa58\sa58_shoot, 2.5
+
+snd_empty               = eft_wp\shared\empty_click_rifle, 0.5
+snd_reload              = eft_wp\sa58\sa58_reload
+snd_reload_empty        = eft_wp\sa58\sa58_reload_empty
+snd_shoot_grenade       = weapons\gen_grenshoot
+snd_reload_grenade      = weapons\sig550_grenload
+snd_switch              = weapons\groza_switch, 1.0, 0.5
+snd_bore				= weapons\draw_silent
+snd_bore1				= weapons\mp5_bore
+
+;настройки для глушителя
+silencer_hit_power      = 0.82, 0.82, 0.82, 0.82
+silencer_hit_impulse    = 100
+silencer_fire_distance  = 600
+silencer_bullet_speed   = 720
+
+;silencer_flame_particles  = weapons\generic_weapon01
+silencer_smoke_particles		= weapons\generic_shoot_00
+
+snd_silncer_shot        = eft_wp\sa58\sa58_shoot_sil, 2.0
+
+silencer_light_color    = 0.6,0.5,0.3
+silencer_light_range    = 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time     = 0.2
+
+
+[wpn_sa58_hud]:hud_base
+zoom_hide_crosshair	= true ;false
+attach_place_idx	= 0
+item_visual             	= dynamics\weapons\wpn_sig550\wpn_fal_aus_hud
+shoot_effect = sa58
+
+hands_position				= -0.004000,0.010500,0.120000
+hands_orientation			= 0.700000,0.060000,-4.499999
+hands_position_16x9			= -0.004000,0.010500,0.120000
+hands_orientation_16x9		= 0.700000,0.060000,-4.499999
+item_position 				= -0.001257,-0.006943,0.001043
+item_orientation 			= 88.154449,-60.970139,-86.585159
+
+shell_point		= 0.0,0.0,0.0
+shell_dir       = 0.0, 0.0, 0.0
+shell_bone		= shell
+
+fire_point		= 0.006500,-0.127000,-0.009500
+fire_bone      	= muzzle
+fire_point2		= 0.0,0.0,0.0 ;0.0,-0.028,0.678
+fire_bone2		= muzzle ;wpn_body
+
+anm_show					= fal_ins_draw
+anm_hide                	= fal_ins_hide
+anm_idle                	= fal_ins_idle, idle
+anm_idle_sprint         	= fal_ins_idle_sprint
+anm_idle_moving         	= fal_ins_idle_moving
+anm_idle_moving_crouch     	= fal_ins_idle_crouch
+anm_shots               	= fal_ins_shoot, shoot
+anm_shots_aim              	= fal_ins_shoot_aim, shoot
+anm_reload              	= fal_ins_reload, reload
+anm_reload_empty        	= fal_ins_reload_empty, reload_empty
+anm_idle_moving_crouch  	= fal_ins_idle_crouch
+anm_idle_aim            	= fal_ins_idle_aim
+anm_bore                	= fal_ins_bore
+
+aim_hud_offset_pos				= -0.072500,0.021000,-0.041000
+aim_hud_offset_rot				= 0.020000,0.022000,0.027500
+aim_hud_offset_pos_16x9			= -0.072500,0.021000,0.01500
+aim_hud_offset_rot_16x9			= 0.020000,0.022000,0.027500
+
+gl_hud_offset_pos	= 0,0,0
+gl_hud_offset_rot	= 0,0,0
+
+gl_hud_offset_pos_16x9	= 0,0,0
+gl_hud_offset_rot_16x9	= 0,0,0
+
+lean_hud_offset_pos	= 0,0,0
+lean_hud_offset_rot	= 0,0,0
+
+hud_collision_enabled			= true
+hud_collision_offset_pos		= 0,-0.5,0
+hud_collision_offset_pos_16x9		= 0,-0.5,0
+hud_collision_offset_rot		= -0.8,0,0
+hud_collision_offset_rot_16x9		= -0.8,0,0
+
+safemode_rot_enabled = true
+safemode_offset_pos = 0.2,0,0
+safemode_offset_pos_16x9 = 0.2,0,0
+safemode_offset_rot =  0.1,-0.5,0
+safemode_offset_rot_16x9 =  0.1,-0.5,0
+
+;- Параметры инерции оружия (ShWM 3.0) ------------------------------------------------
+
+pitch_offset_right			= 0.0f ;0.017f
+pitch_offset_up				= 0.0f ;0.012f
+pitch_offset_forward			= 0.0f ;0.01f
+pitch_offset_up_low_limit		= -PI
+
+inertion_origin_offset			= 0.05f
+inertion_origin_aim_offset		= 0.0f
+
+inertion_tendto_speed			= 5.0f
+inertion_tendto_aim_speed		= 0.1f
+inertion_tendto_ret_speed		= 8.0f
+inertion_tendto_ret_aim_speed	= 16.0f
+
+inertion_min_angle			= 0.0f
+inertion_min_angle_aim			= 0.0f
+inertion_offset_LRUD			= 0.01f, 0.01f, 0.015f, 0.005f ;0.04f, 0.04f, 0.04f, 0.02f
+inertion_offset_LRUD_aim		= 0,0,0,0;0.001f, 0.001f, 0.0025f, 0.0005f ;0.015f, 0.015f, 0.01f, 0.005f
+
+strafe_hud_offset_pos_16x9		= 0.0075,0.00,0.00
+strafe_hud_offset_rot_16x9		= 0.00,-2.0,7.5
+
+strafe_aim_hud_offset_pos_16x9		= 0.0005,0.00,0.00
+strafe_aim_hud_offset_rot_16x9		= 0.00,-0.1,0.1
+
+strafe_aim_enabled			= true
+strafe_enabled				= true
+use_new_strafe_params			= true
+
+strafe_cam_limit_factor			= 0.1f
+strafe_cam_limit_aim_factor		= 0.1f
+strafe_cam_min_angle			= 0.01f
+strafe_cam_aim_min_angle		= 1.0f
+strafe_transition_time			= 0.5f
+strafe_aim_transition_time		= 0.3f
+
+shooting_min_LRUD_power			= 0.0f
+shooting_max_LRUD			= 0.002,0.002,0.002, 0.002
+shooting_max_LRUD_aim			= 0.0005,0.0005,0.0005,0.0005
+shooting_backward_offset		= 0.0,0.0
+shooting_ret_speed			= 1.0f
+shooting_ret_aim_speed			= 3.0f
+
+;-------------------------------------------------------------------------------
+
+
+[scope_susat_sig]
+scope_name 					= wpn_addon_scope_susat
+scope_x                 = 78
+scope_y                 = 0
+
+[scope_susat_x1.6_sig]
+scope_name 					= wpn_addon_scope_susat_x1.6
+scope_x                 = 78
+scope_y                 = 0
+
+[scope_susat_custom_sig]
+scope_name 					= wpn_addon_scope_susat_custom
+scope_x                 = 78
+scope_y                 = 0
+
+[scope_susat_dusk_sig]
+scope_name 					= wpn_addon_scope_susat_dusk
+scope_x                 = 78
+scope_y                 = 0
+
+[scope_susat_night_sig]
+scope_name 					= wpn_addon_scope_susat_night
+scope_x                 = 78
+scope_y                 = 0
+
+;-----------------------------------------------------------------------------
+; Уникальные
+;-----------------------------------------------------------------------------
+; Длинный ствол, надульник с возможностью поверх наебенить глушитель, оптические прицелы и магазин на 10 патронов (потому что потому).
+[wpn_sa58_luckygun]:wpn_sa58
+$spawn                  = "weapons\wpn_sig550_luckygun"
+visual                  = dynamics\weapons\wpn_sig550\wpn_sa58_no_scope_world.ogf
+
+inv_grid_width     = 6
+inv_grid_height    = 2
+inv_grid_x         = 40
+inv_grid_y         = 29
+
+cost                    = 140000
+
+ammo_elapsed            = 10
+ammo_mag_size           = 10
+fire_modes              = -1, 1
+shoot_effect			= sa58_marksman
+
+hit_power				= 1.9
+hit_impulse				= 15
+bullet_speed            = 925
+
+fire_dispersion_base    = 0.110        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+control_inertion_factor = 1.2f
+crosshair_inertion		= 0.25
+
+cam_dispersion          = 1.25       ; увеличения угла (в градусах) при первом выстреле
+cam_dispersion_inc      = 0.375       ; увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
+cam_max_angle           = 40.0       ; максимальный угол отдачи
+cam_max_angle_horz      = 40.0       ; (degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 0.9
+zoom_cam_dispersion_inc      = 0.345
+zoom_cam_dispersion_frac     = 0.7
+zoom_cam_max_angle           = 40.0
+zoom_cam_max_angle_horz      = 40.0
+
+scope_status            = 2
+silencer_status			= 2
+
+cost 					= 140000
+
+hud = wpn_sa58_luckygun_hud
+
+parent_section  		= wpn_sig550_luckygun
+scopes 					= acog
+
+[wpn_sa58_luckygun_hud]:wpn_sa58_hud
+item_visual             	= dynamics\weapons\wpn_sig550\wpn_sa58_no_scope ;wpn_sa58_hud
+shoot_effect = sa58_marksman
+
+shell_point		= 0.0,0.0,0.0
+shell_dir       = 0.0, 0.0, 0.0
+shell_bone		= shell
+
+fire_point		= 0.006500,-0.127000,-0.009500
+fire_bone      	= muzzle
+fire_point2		= 0.0,0.0,0.0 ;0.0,-0.028,0.678
+fire_bone2		= muzzle ;wpn_body
+
+anm_show					= sa_ins_draw
+anm_hide                	= sa_ins_hide
+anm_idle                	= sa_ins_idle, idle
+anm_idle_sprint         	= sa_ins_idle_sprint
+anm_idle_moving         	= sa_ins_idle_moving
+anm_idle_moving_crouch     	= sa_ins_idle_crouch
+anm_shots               	= sa_ins_shoot, shoot
+anm_shots_aim              	= sa_ins_shoot_aim, shoot
+anm_reload              	= sa_ins_reload, reload
+anm_reload_empty        	= sa_ins_reload_empty, reload_empty
+anm_idle_moving_crouch  	= sa_ins_idle_crouch
+anm_idle_aim            	= sa_ins_idle_aim
+anm_bore                	= sa_ins_bore
+
+hands_position				= -0.004000,0.010500,0.120000
+hands_orientation			= 0.700000,0.060000,-4.499999
+hands_position_16x9			= -0.004000,0.010500,0.220000
+hands_orientation_16x9		= 0.700000,0.060000,-4.499999
+item_position 				= -0.001257,-0.006943,0.001043
+item_orientation 			= 88.154449,-60.970139,-86.585159
+
+aim_hud_offset_pos					= -0.071500,0.020000,-0.041000
+aim_hud_offset_rot					= 0.020000,0.019500,0.027500
+aim_hud_offset_pos_16x9				= -0.078800,0.02100,0.01500
+aim_hud_offset_rot_16x9				= 0.02000,0.034000,0.027500
+
+; Штуромовой вариант (CQB так скозатб) с коротким стволом, компенсатором, вертикальной рукоятью,
+; расширенным магазином и возможностью наебенить коллиматоры/голографы.
+[wpn_sa58_nimble]:wpn_sa58
+$spawn                  = "weapons\wpn_sig550_nimble"
+visual                  = dynamics\weapons\wpn_sig550\wpn_sa58_with_grip_world.ogf
+
+inv_grid_width     = 5
+inv_grid_height    = 2
+inv_grid_x         = 40
+inv_grid_y         = 27
+
+cost 					= 140000
+
+hud = wpn_sa58_nimble_hud
+
+ammo_elapsed            = 30
+ammo_mag_size           = 30
+
+scope_status            = 2
+parent_section  		= wpn_sig550_nimble
+scopes 					= eot
+
+fire_dispersion_base    = 0.145        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+
+cam_dispersion          = 0.8       ; увеличения угла (в градусах) при первом выстреле
+cam_dispersion_inc      = 0.375       ; увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
+cam_max_angle           = 40.0       ; максимальный угол отдачи
+cam_max_angle_horz      = 40.0       ; (degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
+
+zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 0.65
+zoom_cam_dispersion_inc      = 0.345
+zoom_cam_dispersion_frac     = 0.7
+zoom_cam_max_angle           = 40.0
+zoom_cam_max_angle_horz      = 40.0
+
+snd_reload              = eft_wp\sa58\sa58_reload_speed
+snd_reload_empty        = eft_wp\sa58\sa58_reload_empty_speed
+
+[wpn_sa58_nimble_hud]:wpn_sa58_luckygun_hud
+item_visual             	= dynamics\weapons\wpn_sig550\wpn_sa58_with_grip_hud ;wpn_sa58_hud
+
+hands_position				= -0.004000,0.010500,0.120000
+hands_orientation			= 0.700000,0.060000,-4.499999
+hands_position_16x9			= -0.004000,0.010500,0.120000
+hands_orientation_16x9		= 0.700000,0.060000,-4.499999
+item_position 				= -0.001257,-0.006943,0.001043
+item_orientation 			= 88.154449,-60.970139,-86.585159
+;item_position				= -0.001257,-0.006943,0.001043
+;item_orientation			= -4.094551,-0.965267,28.068581
+
+shoot_effect = sa58_cqb
+
+shell_point		= 0.0,0.0,0.0
+shell_dir       = 0.0, 0.0, 0.0
+shell_bone		= shell
+
+fire_point		= 0.0,0.0,0.0
+fire_bone      	= muzzle
+fire_point2		= 0.0,0.0,0.0
+fire_bone2		= wpn_body
+
+anm_show					= sa_ins_draw_grip
+anm_hide                	= sa_ins_hide_grip
+anm_idle                	= sa_ins_idle_grip, idle
+anm_idle_sprint         	= sa_ins_idle_sprint_grip
+anm_idle_moving         	= sa_ins_idle_moving_grip
+anm_idle_moving_crouch     	= sa_ins_idle_crouch_grip
+anm_shots               	= sa_ins_shoot_grip, shoot
+anm_shots_aim              	= sa_ins_shoot_aim_grip, shoot
+anm_reload              	= sa_ins_reload_speed_grip, reload_speed
+anm_reload_empty        	= sa_ins_reload_empty_speed_grip, reload_empty_speed
+anm_idle_moving_crouch  	= sa_ins_idle_crouch_grip
+anm_idle_aim            	= sa_ins_idle_aim_grip
+anm_bore                	= sa_ins_bore_grip
+
+aim_hud_offset_pos					= -0.073500,0.020500,-0.041000
+aim_hud_offset_rot					= 0.017500,0.025750,0.027500
+aim_hud_offset_pos_16x9				= -0.073500,0.020500,0.01500
+aim_hud_offset_rot_16x9				= 0.017500,0.025750,0.027500
+
+;aim_hud_offset_pos					= -0.073250,-0.011750,-0.191999
+;aim_hud_offset_rot					= 0.020000,0.022000,0.027500
+;aim_hud_offset_pos_16x9				= -0.073250,-0.011750,-0.191999
+;aim_hud_offset_rot_16x9				= 0.020000,0.022000,0.027500
+
+;aim_hud_offset_pos					= -0.071500,0.020000,-0.041000
+;aim_hud_offset_rot					= 0.020000,0.019500,0.027500
+;aim_hud_offset_pos_16x9				= -0.071500,0.020000,-0.021000
+;aim_hud_offset_rot_16x9				= 0.020000,0.019500,0.027500
+
+[wpn_sa58_nimble_eot]:wpn_sa58_nimble
+$spawn                  = "weapons\wpn_sig550_nimble"
+visual                        = dynamics\weapons\wpn_sig550\wpn_sa58_with_grip_eotech_world.ogf
+
+[wpn_sa58_nimble_eot_hud]:wpn_sa58_nimble_hud
+$spawn                  = "weapons\wpn_sig550_nimble"
+item_visual             	= dynamics\weapons\wpn_sig550\wpn_sa58_with_grip_eotech_hud.ogf
+
+[wpn_sa58_luckygun_acog]:wpn_sa58_luckygun
+$spawn                  = "weapons\wpn_sig550_luckygun"
+
+[wpn_sa58_luckygun_acog_hud]:wpn_sa58_luckygun_hud
+$spawn                  = "weapons\wpn_sig550_luckygun"

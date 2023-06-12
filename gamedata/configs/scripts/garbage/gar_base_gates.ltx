@@ -1,0 +1,14 @@
+[logic]
+active = ph_button@closed
+
+[ph_button@closed]
+anim_blend = false
+anim	   = door_roll_2
+tooltip    = tip_door_open
+on_press   = ph_button@open
+
+[ph_button@open]
+anim_blend = false
+anim	   = door_roll_1
+tooltip    = tip_door_close
+on_press   = ph_button@closed
