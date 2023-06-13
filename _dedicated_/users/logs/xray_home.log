@@ -1,0 +1,198 @@
+'NearestStage' build 8893, Jun 13 2023
+
+NearestStage Discord: https://discord.gg/YGUxMg3f
+NearestStage VK: https://vk.com/neareststage 
+-----loading d:\neareststage-gamedata\gamedata\configs\system.ltx
+-----loading d:\neareststage-gamedata\gamedata\configs\system.ltx
+Initializing Engine...
+Starting INPUT device...
+command line -fucknikitakalinovsky1232152123wdf32 -i -fsltx ..\fsgame_dedicated.ltx -start server(nearest_test/fmp/timelimit=60) client(localhost)
+Loading DLL: xrRender_R1.dll
+Loading DLL: xrGame.dll
+! Unable to find Software\GSC Game World\STALKER-COP\ in registry
+! Player name registry key (InstallUserName) not found !
+* [win32]: free[4290548460 K], reserved[4286404 K], committed[132368 K]
+* [ D3D ]: textures[0 K]
+* [x-ray]: crt heap[35623 K], process heap[35623 K], game lua[0 K], render[0 K]
+* [x-ray]: economy: strings[13145 K], smem[0 K]
+SOUND: OpenAL: enumerate devices...
+SOUND: OpenAL: EnumerationExtension Present
+dir[0]=D:\NearestStage-Gamedata\_dedicated_\
+dir[1]=D:\NearestStage-Gamedata\bin\
+dir[2]=D:\NearestStage-Gamedata\_dedicated_\
+dir[3]=C:\WINDOWS\system32\
+CleanDeviceSpecifierList
+CleanDeviceSpecifierList Generic Software
+devices Generic Software
+SOUND: OpenAL: system  default SndDevice name is Generic Software
+SOUND: OpenAL: All available devices:
+1. Generic Software, Spec Version 1.1 (default) eax[2] efx[no] xram[no]
+Executing config-script "d:\neareststage-gamedata\gamedata\configs\default_controls.ltx"...
+[d:\neareststage-gamedata\gamedata\configs\default_controls.ltx] successfully loaded.
+Executing config-script "user.ltx"...
+Executing config-script "d:\neareststage-gamedata\gamedata\configs\rspec_default.ltx"...
+~ Invalid syntax in call to 'r2_aa_break'
+~ Valid arguments: vector3 in range [0.000000e+00,0.000000e+00,0.000000e+00]-[1.000000e+00,1.000000e+00,1.000000e+00]
+~ Invalid syntax in call to 'r2_aa_weight'
+~ Valid arguments: vector3 in range [0.000000e+00,0.000000e+00,0.000000e+00]-[1.000000e+00,1.000000e+00,1.000000e+00]
+~ Invalid syntax in call to 'r2_ssa_lod_b'
+~ Valid arguments: float value in range [32.000,40.000]
+! Unknown command:  r2_sun_far
+[d:\neareststage-gamedata\gamedata\configs\rspec_default.ltx] successfully loaded.
+Executing config-script "d:\neareststage-gamedata\gamedata\configs\default_controls.ltx"...
+[d:\neareststage-gamedata\gamedata\configs\default_controls.ltx] successfully loaded.
+~ Invalid syntax in call to 'r2_aa_break'
+~ Valid arguments: vector3 in range [0.000000e+00,0.000000e+00,0.000000e+00]-[1.000000e+00,1.000000e+00,1.000000e+00]
+~ Invalid syntax in call to 'r2_aa_weight'
+~ Valid arguments: vector3 in range [0.000000e+00,0.000000e+00,0.000000e+00]-[1.000000e+00,1.000000e+00,1.000000e+00]
+~ Invalid syntax in call to 'r2_gloss_min'
+~ Valid arguments: float value in range [0.001,1.000]
+~ Invalid syntax in call to 'r2_ssa_lod_b'
+~ Valid arguments: float value in range [32.000,40.000]
+~ Invalid syntax in call to 'ssfx_shadow_cascades'
+~ Valid arguments: vector3 in range [1.000000e+00,1.000000e+00,1.000000e+00]-[3.000000e+02,3.000000e+02,3.000000e+02]
+~ Invalid syntax in call to 'sv_adm_menu_ban_time'
+~ Valid arguments: ui_mp_am_10_minutes/ui_mp_am_30_minutes/ui_mp_am_1_hour/ui_mp_am_6_hours/ui_mp_am_1_day/ui_mp_am_1_week/ui_mp_am_1_month/ui_mp_am_3_monthes/ui_mp_am_forever
+[d:\neareststage-gamedata\_dedicated_\users\user.ltx] successfully loaded.
+SOUND: Selected device is Generic Software
+* sound: EAX 2.0 extension: present
+* sound: EAX 2.0 deferred: present
+* sound : cache: 65537 kb, 4856 lines, 13820 bpl
+Starting RENDER device...
+* GPU [vendor:14F680]-[device:0]: Default X-Ray Dedicated Adapter
+* GPU driver: 0.0.0.5
+* CREATE: DeviceREF: 0
+* Vertex Processor: SOFTWARE
+*     Texture memory: 2048 M
+*          DDI-level: 7.0
+* GPU shading: vs(3/0.3/3), ps(3/0.3/3)
+* GPU vertex cache: unrecognized, 16
+* NVidia MGPU: Logical(1), Physical(1)
+* Starting rendering as 2-GPU.
+* DVB created: 1536K
+* DIB created: 512K
+* distortion: unavailable, dev(3),need(14)
+* color_mapping: unavailable, dev(3),need(14)
+* Managed textures enabled
+* SSample: 640x480
+* SSample: enabled
+- r__tf_aniso 8
+- r1_tf_mipbias 0.
+Starting engine...
+! Unable to find Software\GSC Game World\STALKER-COP\ in registry
+! Player name registry key (InstallUserName) not found !
+! Unable to find Software\GSC Game World\STALKER-COP\ in registry
+..\_dedicated_\xrengine.exe  -fucknikitakalinovsky1232152123wdf32 -i -fsltx ..\fsgame_dedicated.ltx -start server(nearest_test/fmp/timelimit=60) client(localhost)
+* phase time: 0 ms
+* phase cmem: 148704 K
+Loading objects...
+! Missing ogg-comment, file:  d:\neareststage-gamedata\gamedata\sounds\weapons\lr300\lr300_shoot.ogg
+! Invalid ogg-comment version, file:  d:\neareststage-gamedata\gamedata\sounds\weapons\lr300\lr300_shot_sil.ogg
+! Missing ogg-comment, file:  d:\neareststage-gamedata\gamedata\sounds\weapons\mp5\mp5_shoot.ogg
+! Missing ogg-comment, file:  d:\neareststage-gamedata\gamedata\sounds\weapons\pm\pm_shoot.ogg
+! Missing ogg-comment, file:  d:\neareststage-gamedata\gamedata\sounds\weapons\pm\pm_shot_sil.ogg
+! Missing ogg-comment, file:  d:\neareststage-gamedata\gamedata\sounds\weapons\pkm\pkm_shoot.ogg
+Loading models...
+CResourceManager::DeferredUpload -> START, size = 377
+TextureLoading -> thread 3 started!
+TextureLoading -> thread 3 finished!
+TextureLoading -> thread 2 started!
+TextureLoading -> thread 2 finished!
+TextureLoading -> thread 1 started!
+TextureLoading -> thread 1 finished!
+TextureLoading -> thread 4 started!
+TextureLoading -> thread 4 finished!
+texture loading time: 1
+* [prefetch] time:    4500 ms
+* [prefetch] memory:  52851Kb
+! Unable to find Software\GSC Game World\STALKER-COP\ in registry
+! Player name registry key (InstallUserName) not found !
+Loading DLL: xrGameSpy.dll
+Loading DLL: xrGameSpy.dll
+! Warning: level [nearest_test][1.0] has not header ltx
+* phase time: 26033 ms
+* phase cmem: 209471 K
+* phase time: 2 ms
+* phase cmem: 209471 K
+* Creating new game...
+* Loading spawn registry...
+ALIFE SPAWN VERSION == (11), SAVED VERSION (11)
+* 20 spawn points are successfully loaded
+LEVEL AI MAP 11 == 11
+CROSS TABLE[11] == VERSION[11]
+CROSS_TABLE VERSION(1347792) == (1347776)
+CROSS_TABLE VERSION(1347776) == (1347792)
+* New game is successfully created!
+* phase time: 185 ms
+* phase cmem: 232311 K
+* Loading ban list...
+- [SteamNetServer] created on port 5446
+* Initializing IP filter.
+- [SteamNetServer] Thread for steam network server is started
+Loading DLL: xrGameSpy.dll
+* phase time: 383 ms
+* phase cmem: 233732 K
+[SteamNetClient] Connecting to server at [::1]:5446
+- [SteamNetClient] connect created
+- [SteamNetClient] Thread for steam network client is started
+[SteamNetServer] Client connecting 0.0.0.0
+[SteamNetClient] Connected to server
+- [SteamNetServer] server client connected
+New SV client 0x7c63e413
+* client : connection accepted - <All Ok>
+* phase time: 2748 ms
+* phase cmem: 234445 K
+* phase time: 26 ms
+* phase cmem: 234445 K
+* phase time: 160 ms
+* phase cmem: 241143 K
+* phase time: 4 ms
+* phase cmem: 243304 K
+ WARNING: Occlusion map 'd:\neareststage-gamedata\gamedata\levels\nearest_test\level.hom' not found.
+* phase time: 5 ms
+* phase cmem: 243304 K
+* calculating checksum of level.geom
+* phase time: 63 ms
+* phase cmem: 243304 K
+* connection sync: 0 ms
+* phase time: 1573 ms
+* phase cmem: 244928 K
+*  [33] respawned as spectator
+* phase time: 8 ms
+* phase cmem: 244928 K
+* [win32]: free[4290282548 K], reserved[4298932 K], committed[385752 K]
+* [ D3D ]: textures[0 K]
+* [x-ray]: crt heap[244928 K], process heap[244928 K], game lua[0 K], render[0 K]
+* [x-ray]: economy: strings[14969 K], smem[16744 K]
+single_actor_spawn
+[lua] bind single actor
+@ quit
+- Disconnect
+CLevel::remove_objects - Start
+g_actor set to NULL
+g_single_actor set to NULL
+CLevel::remove_objects - End
+- [SteamNetClient] destroy connection
+* Deinitializing IP filter.
+- Destroying level
+game graph destroyed
+* [ D3D ]: textures[0 K]
+DestroySingleton::RefCounter: 0
+DestroySingleton::RefCounter: 0
+Input:  1
+Config-file [d:\neareststage-gamedata\_dedicated_\users\user.ltx] saved successfully
+Destroying Direct3D...
+* RM_Dump: textures  : 0
+* RM_Dump: rtargets  : 0
+* RM_Dump: vs        : 0
+* RM_Dump: ps        : 0
+* RM_Dump: dcl       : 0
+* RM_Dump: states    : 0
+* RM_Dump: tex_list  : 0
+* RM_Dump: matrices  : 0
+* RM_Dump: lst_constants: 0
+* RM_Dump: v_passes  : 0
+* RM_Dump: v_elements: 0
+* RM_Dump: v_shaders : 0
+refCount:pBaseZB 0
+DeviceREF: 0

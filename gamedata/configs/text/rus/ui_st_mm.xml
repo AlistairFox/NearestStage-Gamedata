@@ -975,4 +975,8 @@
 		<string id="ui_st_mp_port">
 		<text>Порт сервера</text>
 	</string>
+		<string id="ui_mm_ssr">
+		<text>Экранные отражения</text>
+	</string>
+		
 </string_table>
