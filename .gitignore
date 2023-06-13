@@ -98,6 +98,8 @@ StyleCopReport.xml
 *.scc
 *.log
 *.mdmp
+*.dds
+*.thm
 
 # Chutzpah Test files
 _Chutzpah*
