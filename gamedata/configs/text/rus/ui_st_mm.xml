@@ -978,5 +978,8 @@
 		<string id="ui_mm_ssr">
 		<text>Экранные отражения</text>
 	</string>
+		<string id="ui_mm_actor_shad">
+		<text>Тень от игрока</text>
+	</string>
 		
 </string_table>
