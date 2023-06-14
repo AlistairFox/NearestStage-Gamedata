@@ -100,6 +100,16 @@ StyleCopReport.xml
 *.mdmp
 *.dds
 *.thm
+*.geom
+*.cform
+*.geomx
+*.psd
+*.seq
+*.pdn
+*.ini
+*.ogm
+*.db
+*.seq_
 
 # Chutzpah Test files
 _Chutzpah*
