@@ -361,4 +361,7 @@ _appdata_/
 _dedicated_/
 _appdata_/tmp.ltx
 _appdata_/tmp.ltx
+_appdata_/shaders_cache
+_appdata_/user.ltx
+_dedicated_/users/profiles/server_pidors
 gamedata/levels/nearestmap/213213level.env_mod
