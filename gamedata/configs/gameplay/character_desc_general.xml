@@ -3321,7 +3321,7 @@
 	<money min="1500" max="2500" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_merc\stalker_merc_2</visual>
+    <visual>actors\stalker_merc\stalker_mercenary3</visual>
     <supplies>
       [spawn] \n
       
@@ -3387,7 +3387,7 @@
 	<money min="2500" max="5000" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_merc\stalker_merc_2</visual>
+    <visual>actors\stalker_merc\stalker_mercenary3</visual>
     <supplies>
       [spawn] \n
       
@@ -3558,7 +3558,7 @@
 	<money min="2500" max="5000" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_merc\stalker_merc_4</visual>
+    <visual>actors\stalker_merc\stalker_mercexo_4</visual>
     <supplies>
       [spawn] \n
       
@@ -3594,7 +3594,7 @@
 	<money min="5000" max="10000" infinitive="0"/>
     <reputation>0</reputation>
 
-    <visual>actors\stalker_merc\stalker_merc_4</visual>
+    <visual>actors\stalker_merc\stalker_mercexo_4</visual>
     <supplies>
       [spawn] \n
       
