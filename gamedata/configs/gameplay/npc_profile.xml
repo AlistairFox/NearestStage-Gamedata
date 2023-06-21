@@ -24,11 +24,8 @@
 		<class>mp_default_stalker</class>
 	</character>
 	
-
-	<!--nearestmap-->
-
-
-
+	
+	
 	<!-- escape -->
 	<character id="esc_trader_baikal">
 		<class>esc_trader_baikal</class>
@@ -189,6 +186,31 @@
 			<character id="mech_bandit">
 		<class>mech_bandit</class>
 		</character>
+		
+		<character id="trader_freedom">
+		<class>trader_freedom</class>
+		</character>
+		
+		<character id="trader2_freedom">
+		<class>trader2_freedom</class>
+		</character>
+		
+		<character id="mech_freedom">
+		<class>mech_freedom</class>
+		</character>
+		
+		<character id="trader_merc">
+		<class>trader_merc</class>
+		</character>
+		
+		<character id="trader2_merc">
+		<class>trader2_merc</class>
+		</character>
+		
+		<character id="mech_merc">
+		<class>mech_merc</class>
+		</character>
+		
 	<!-- sim profiles -->
 	<!-- sim duty -->
 	<character id="sim_default_duty_0">
