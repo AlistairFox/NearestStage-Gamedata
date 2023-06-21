@@ -211,6 +211,30 @@
 		<class>mech_merc</class>
 		</character>
 		
+		<character id="sim_default_ecologist_1">
+		<class>sim_default_ecologist_1</class>
+		</character>
+		
+		<character id="sim_default_ecologist_2">
+		<class>sim_default_ecologist_2</class>
+		</character>
+		
+		<character id="sim_default_ecologist_3">
+		<class>sim_default_ecologist_3</class>
+		</character>
+		
+		<character id="sim_default_ecologist_4">
+		<class>sim_default_ecologist_4</class>
+		</character>
+		
+		<character id="sim_default_ecologist_5">
+		<class>sim_default_ecologist_5</class>
+		</character>
+		
+		<character id="sim_default_ecologist_6">
+		<class>sim_default_ecologist_6</class>
+		</character>
+		
 	<!-- sim profiles -->
 	<!-- sim duty -->
 	<character id="sim_default_duty_0">
