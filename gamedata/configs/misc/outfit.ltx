@@ -3624,3 +3624,297 @@ telepatic_immunity			= 0
 chemical_burn_immunity			= -0.015
 explosion_immunity			= -0.015
 fire_wound_immunity			= -0.005
+
+
+
+
+[ecolog_scientific_outfit]:scientific_outfit
+$spawn                                   = "outfit\ecolog_scientific_outfit"
+visual                                   = dynamics\outfit\killer_scientific_outfit
+actor_visual                             = actors\stalker_ecologist\stalker_ecolog_3_3.ogf
+npc_visual                               = actors\stalker_ecologist\stalker_ecolog_3_3.ogf
+player_hud_section                       = actor_hud_merc_seva
+
+inv_name                                 = ecolog_scientific_outfit_name
+inv_name_short                           = ecolog_scientific_outfit_name
+description                              = ecolog_scientific_outfit_description
+
+inv_weight                               = 13.5
+
+inv_grid_width     = 2
+inv_grid_height    = 3
+inv_grid_x         = 44
+inv_grid_y         = 18
+
+upgr_icon_x                              = 2500
+upgr_icon_y                              = 350
+upgr_icon_width                          = 300
+upgr_icon_height                         = 200
+
+cost                                     = 115500
+full_scale_icon                          = 12,11	                                       ;иконка сталкера в костюме в полный рост
+
+immunities_sect                          = sect_ecolog_scientific_outfit_immunities
+
+; MEDIUM RESISTANCE
+burn_protection                          = 0.1033
+shock_protection                         = 0.4133
+radiation_protection                     = 0.0155
+chemical_burn_protection                 = 0.1033
+telepatic_protection                     = 0.0588
+strike_protection                        = 0.1925
+explosion_protection                     = 0.1925
+wound_protection                         = 0.1925
+
+hit_fraction_actor                       = 0.65
+bones_koeff_protection                   = actor_armor_sci
+
+has_glass			= true
+artefact_count                           = 3
+
+nightvision_sect                         = effector_nightvision_2
+
+control_inertion_factor                  = 1.5
+power_loss                               = 0.8
+character_portrait						 = ui_inGame2_mercenary3
+
+[sect_ecolog_scientific_outfit_immunities]
+burn_immunity                            = 0.01	                                       ;коэффициенты иммунитета самого костюма
+strike_immunity                          = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.03
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = 0.04
+fire_wound_immunity                      = 0.02
+
+[sect_ecolog_scientific_outfit_immunities_add]
+burn_immunity                            = -0.01	                                       ;коэффициенты иммунитета самого костюма
+strike_immunity                          = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = -0.01
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = -0.01
+fire_wound_immunity                      = -0.0025
+
+
+
+
+[ecolog_scientific_heavy_outfit]:scientific_outfit
+$spawn                                   = "outfit\ecolog_scientific_heavy_outfit"
+visual                                   = dynamics\outfit\killer_scientific_outfit
+actor_visual                             = actors\stalker_ecologist\stalker_ecolog_3_2.ogf
+npc_visual                               = actors\stalker_ecologist\stalker_ecolog_3_2.ogf
+player_hud_section                       = actor_hud_merc_seva
+
+inv_name                                 = ecolog_scientific_heavy_outfit_name
+inv_name_short                           = ecolog_scientific_heavy_outfit_name
+description                              = ecolog_scientific_heavy_outfit_description
+
+inv_weight                               = 17.5
+
+inv_grid_width     = 2
+inv_grid_height    = 3
+inv_grid_x         = 44
+inv_grid_y         = 18
+
+upgr_icon_x                              = 2500
+upgr_icon_y                              = 350
+upgr_icon_width                          = 300
+upgr_icon_height                         = 200
+
+cost                                     = 300000
+full_scale_icon                          = 12,11	                                       ;иконка сталкера в костюме в полный рост
+
+immunities_sect                          = sect_ecolog_scientific_heavy_outfit_immunities
+
+; MEDIUM RESISTANCE
+burn_protection                          = 0.1033
+shock_protection                         = 0.4133
+radiation_protection                     = 0.0155
+chemical_burn_protection                 = 0.1033
+telepatic_protection                     = 0.0588
+strike_protection                        = 0.1925
+explosion_protection                     = 0.1925
+wound_protection                         = 0.1925
+
+hit_fraction_actor                       = 0.65
+bones_koeff_protection                   = actor_armor_sci_heavy
+
+has_glass			= true
+artefact_count                           = 4
+
+nightvision_sect                         = effector_nightvision_2
+
+control_inertion_factor                  = 1.5
+power_loss                               = 0.8
+character_portrait						 = ui_inGame2_mercenary3
+
+[sect_ecolog_scientific_heavy_outfit_immunities]
+burn_immunity                            = 0.01	                                       ;коэффициенты иммунитета самого костюма
+strike_immunity                          = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.03
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = 0.04
+fire_wound_immunity                      = 0.02
+
+[sect_ecolog_scientific_heavy_outfit_immunities_add]
+burn_immunity                            = -0.01	                                       ;коэффициенты иммунитета самого костюма
+strike_immunity                          = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = -0.01
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = -0.01
+fire_wound_immunity                      = -0.0025
+
+
+
+
+[ecolog_base_outfit]:outfit_base
+GroupControlSection			= spawn_group
+discovery_dependency			=
+$spawn 					= "outfit\ecolog_base_outfit"
+;$prefetch 				= 32
+class					= E_STLK
+cform					= skeleton
+visual					= dynamics\outfit\stalker_outfit
+actor_visual				= actors\stalker_ecologist\stalker_ecolog_2_2.ogf
+npc_visual = actors\stalker_ecologist\stalker_ecolog_2_2.ogf
+player_hud_section			= actor_hud_00
+
+ef_equipment_type			= 3
+
+description				= ecolog_base_outfit_description
+
+inv_name				= ecolog_base_outfit_name
+inv_name_short				= ecolog_base_outfit_name
+
+inv_weight				= 9.0
+
+inv_grid_width				= 2
+inv_grid_height				= 3
+inv_grid_x				= 6
+inv_grid_y				= 15
+upgr_icon_x				= 317
+upgr_icon_y				= 0
+upgr_icon_width				= 302
+upgr_icon_height 			= 130
+
+full_icon_name				= npc_icon_stalker_outfit
+full_scale_icon				= 14,11
+
+cost					= 70000
+
+; LOW RESISTANCE
+burn_protection 			= 0.0650
+shock_protection 			= 0.200
+radiation_protection 			= 0.0030
+chemical_burn_protection 		= 0.0325
+telepatic_protection 			= 0.0
+strike_protection 			= 0.15
+explosion_protection 			= 0.2
+wound_protection			= 0.15
+
+hit_fraction_actor			= 0.75
+bones_koeff_protection 			= actor_armor_light
+immunities_sect				= sect_stalker_outfit_immunities
+
+artefact_count				= 2
+
+control_inertion_factor			= 1.2
+power_loss 				= 0.7
+
+additional_inventory_weight		= 0
+additional_inventory_weight2		= 0
+
+upgrades				= up_gr_firstab_stalker_outfit, up_gr_seconab_stalker_outfit, up_gr_thirdab_stalker_outfit
+installed_upgrades			=
+upgrade_scheme				= upgrade_scheme_stalker_outfit
+
+
+[ecolog_ochko_outfit]:outfit_base
+GroupControlSection			= spawn_group
+discovery_dependency			=
+$spawn 					= "outfit\ecolog_ochko_outfit"
+;$prefetch 				= 32
+class					= E_STLK
+cform					= skeleton
+visual					= dynamics\outfit\stalker_outfit
+actor_visual				= actors\stalker_ecologist\stalker_ecolog_hazmat.ogf
+npc_visual = actors\stalker_ecologist\stalker_ecolog_hazmat.ogf
+player_hud_section			= actor_hud_00
+
+ef_equipment_type			= 3
+
+description				= ecolog_ochko_outfit_description
+
+inv_name				= ecolog_ochko_outfit_name
+inv_name_short				= ecolog_ochko_outfit_name
+
+inv_weight				= 9.0
+
+inv_grid_width				= 2
+inv_grid_height				= 3
+inv_grid_x				= 6
+inv_grid_y				= 15
+upgr_icon_x				= 317
+upgr_icon_y				= 0
+upgr_icon_width				= 302
+upgr_icon_height 			= 130
+
+full_icon_name				= npc_icon_stalker_outfit
+full_scale_icon				= 14,11
+
+cost					= 70000
+
+; LOW RESISTANCE
+burn_protection 			= 0.0650
+shock_protection 			= 0.200
+radiation_protection 			= 0.0030
+chemical_burn_protection 		= 0.0325
+telepatic_protection 			= 0.0
+strike_protection 			= 0.15
+explosion_protection 			= 0.2
+wound_protection			= 0.15
+
+hit_fraction_actor			= 0.75
+bones_koeff_protection 			= actor_armor_light
+immunities_sect				= sect_ecolog_ochko_outfit_immunities
+
+artefact_count				= 2
+
+control_inertion_factor			= 1.2
+power_loss 				= 0.7
+
+additional_inventory_weight		= 0
+additional_inventory_weight2		= 0
+
+[sect_ecolog_ochko_outfit_immunities]
+burn_immunity                            = 0.01	                                       ;коэффициенты иммунитета самого костюма
+strike_immunity                          = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = 0.03
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = 0.04
+fire_wound_immunity                      = 0.02
+
+[sect_ecolog_ochko_outfit_immunities_add]
+burn_immunity                            = -0.01	                                       ;коэффициенты иммунитета самого костюма
+strike_immunity                          = 0.0
+shock_immunity                           = 0.0
+wound_immunity                           = -0.01
+radiation_immunity                       = 0.0
+telepatic_immunity                       = 0.0
+chemical_burn_immunity                   = 0.0
+explosion_immunity                       = -0.01
+fire_wound_immunity                      = -0.0025
