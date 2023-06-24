@@ -276,4 +276,24 @@
 	<string id="st_ui_pda_sleep_place">
 		<text>Место сна</text>
 	</string>
+
+	<string id="ui_logs_trans_caption1">
+		<text>Сумма</text>
+	</string>
+	<string id="ui_logs_trans_caption2">
+		<text>Никнейм</text>
+	</string>
+	<string id="ui_logs_trans_caption3">
+		<text>Перевод денег</text>
+	</string>
+		<string id="ui_logs_m_chat">
+		<text>Напишите сообщение...</text>
+	</string>
+			<string id="pda_chat_all">
+		<text>Общий чат</text>
+	</string>
+				<string id="pda_anonim_chat">
+		<text>Анонимное сообщение</text>
+	</string>
+
 </string_table>
