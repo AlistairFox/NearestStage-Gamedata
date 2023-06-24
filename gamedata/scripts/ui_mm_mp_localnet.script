@@ -63,7 +63,20 @@ function localnet_page:InitControls()
 	
 	self.gs_login_message_box = CUIMessageBoxEx()
 	self:Register(self.gs_login_message_box, "gs_message_box")
+	
+	local loginload = load_auth()
+	if(loginload:loaded()) then
+	local server   = loginload:ip()
+	local nickname = loginload:name()
+	local password = loginload:pass()
+	local port 	   = loginload:port()
+	
 
+	self.lp_ip_server:SetText(server)
+	self.lp_nickname:SetText(nickname)
+	self.lp_password:SetText(password)
+	self.lp_port:SetText(port)
+	end
 	--[[
 	button = xml:InitCheck("login_page:check_remember_me", self.login_page)
 	self:Register(button, "lp_check_remember_me")
@@ -86,6 +99,8 @@ function localnet_page:OnBtnLogin()
 	local nickname = self.lp_nickname:GetText()
 	local password = self.lp_password:GetText()
 	local port 	   = self.lp_port:GetText()
+	
+	save_auth(nickname, password, server, port)
 	
 	local cmd = "start client("..server.."/port="..port.."/name="..nickname.."/pass="..password..")" 
 	
