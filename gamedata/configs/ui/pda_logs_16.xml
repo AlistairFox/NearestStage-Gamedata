@@ -42,6 +42,13 @@
 		<options_item entry="pda_chat_all" group="pda_filter_logs"/>
 	</chat_all>
 	
+			<private_msg x="400" y="660" width="14" height="17">
+		<window_name>chat_all</window_name>
+        <texture>ui_PDA_checker</texture>
+		<text x="5" font="letterica16" r="255" g="255" b="255">pda_chat_private</text>
+		<options_item entry="pda_chat_private" group="pda_filter_logs"/>
+	</private_msg>
+	
 			<anonim_chat x="590" y="680" width="14" height="17">
 		<window_name>anonim_chat</window_name>
         <texture>ui_PDA_checker</texture>
@@ -138,4 +145,9 @@
 		<window_name>btn_next_period</window_name>
 		<texture>ui_inGame2_pda_Filtr_arrow_right</texture>
 </m_butn_chat>
+
+	<private_box x="450" y="105" width="55" height="20" max_symb_count="21" stretch="1">
+		<text font="letterica18" complex_mode="1" vert_align="c" r="0" g="255" b="0"/>
+				<texture>ui_inGame2_pda_ranking_center_caption</texture>
+		</private_box>
 </w>
