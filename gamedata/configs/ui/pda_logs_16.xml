@@ -35,7 +35,14 @@
 		<text align="l" font="letterica16" r="255" g="255" b="255"/>
 	</m_chat_team>
 	
-		<chat_all x="590" y="660" width="14" height="17">
+	<radio_on x="590" y="550" width="14" height="17">
+		<window_name>radio_on</window_name>
+        <texture>ui_PDA_checker</texture>
+		<text x="5" font="letterica16" r="255" g="255" b="255">radio_active</text>
+		<options_item entry="radio_active" group="pda_filter_logs"/>
+	</radio_on>
+	
+	<chat_all x="590" y="660" width="14" height="17">
 		<window_name>chat_all</window_name>
         <texture>ui_PDA_checker</texture>
 		<text x="5" font="letterica16" r="255" g="255" b="255">pda_chat_all</text>
@@ -150,4 +157,9 @@
 		<text font="letterica18" complex_mode="1" vert_align="c" r="0" g="255" b="0"/>
 				<texture>ui_inGame2_pda_ranking_center_caption</texture>
 		</private_box>
+		
+			<freq_box x="700" y="600" width="70" height="17" max_symb_count="4" stretch="1">
+		<text font="letterica18" complex_mode="1" vert_align="c" r="0" g="255" b="0"/>
+				<texture>ui_inGame2_pda_ranking_center_caption</texture>
+		</freq_box>
 </w>
