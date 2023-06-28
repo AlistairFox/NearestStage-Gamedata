@@ -289,11 +289,15 @@
 		<string id="ui_logs_m_chat">
 		<text>Напишите сообщение...</text>
 	</string>
-			<string id="pda_chat_all">
+	<string id="pda_chat_all">
 		<text>Общий чат</text>
 	</string>
-				<string id="pda_anonim_chat">
+	<string id="pda_anonim_chat">
 		<text>Анонимное сообщение</text>
+	</string>
+	
+	<string id="pda_chat_private">
+		<text>Личное сообщение</text>
 	</string>
 
 </string_table>
