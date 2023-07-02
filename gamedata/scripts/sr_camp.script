@@ -109,7 +109,7 @@ function CCampManager:__init(object, ini)
 								min_time = 30000,
 								max_time = 40000,
 								timeout = 0,
-								transitions = {harmonica = 30, guitar = 30, story = 40},
+								transitions = {harmonica = 30, guitar = 35, story = 35},
 								precondition = sr_camp_idle_precondition
 							 },
 					harmonica = {

@@ -26,6 +26,35 @@ function cl_process_npc_sound(P)
 	end
 end
 
+function cl_process_object_sound(P)
+	local type_run = P:r_u8()
+	
+	if (type_run == 1) then 
+		local object_id = P:r_u32()
+		local played_id = P:r_u8()
+		local section = P:r_stringZ()
+		
+		local snd_theme = theme[section]
+		local obj = db.storage[object_id] and db.storage[object_id].object
+		
+		if (snd_theme ~= nil and obj ~= nil) then  
+			local snd = snd_theme.sound[played_id]	
+			if (snd ~= nil) then 
+				snd_theme.snd_obj = sound_object(snd)
+				snd_theme.snd_obj:play_at_pos(obj, obj:position(), 0, sound_object.s3d)
+			end
+		end
+	else 
+ 		local played_id = P:r_u8()
+		local section = P:r_stringZ()
+		
+		local snd_theme = theme[section]
+		if (snd_theme ~= nil and snd_theme.snd_obj) then
+			snd_theme.snd_obj:stop()
+		end
+	end
+end
+
 --function printf()
 --end
 --'--------------------------------------------------------------------------------------------------------------------
@@ -494,7 +523,7 @@ function actor_sound:play(npc, faction, point, msg)
 	self.can_play_sound = false
 
 	news_manager.send_sound(nil, faction, point, snd)
-
+	
 	return true
 end
 function actor_sound:reset(npc_id)
@@ -608,8 +637,8 @@ function object_sound:callback(npc_id)
 	self.snd_obj = nil
 	self.can_play_sound = true
 
---	printf("object_sound:callback for object !!!!!!!!")
-	get_hud():RemoveCustomStatic("cs_subtitles_object")
+	--	printf("object_sound:callback for object !!!!!!!!")
+	-- get_hud():RemoveCustomStatic("cs_subtitles_object")
 
 	local st   = db.storage[npc_id]
 	if st.active_scheme == nil then
@@ -633,10 +662,6 @@ function object_sound:is_playing ()
 	end
 end
 function object_sound:play(obj_id, faction, point, msg)
-	if IsDedicated() then
-		return false
-	end
-	
 	local obj = db.storage[obj_id] and db.storage[obj_id].object
 	if obj == nil then
 		return false
@@ -649,6 +674,7 @@ function object_sound:play(obj_id, faction, point, msg)
 		return false
 	end
 	self.played_time = nil
+	
 		--' Выбор звука, который играть.
 	self.played_id = self:select_next_sound()
 	if self.played_id == -1 then
@@ -661,18 +687,22 @@ function object_sound:play(obj_id, faction, point, msg)
 		return false
 	end
 
---	printf("object played_id = %s", self.played_id)
-	local snd = self.sound[self.played_id]
-	local f = getFS()
-	if snd and f:exist("$game_sounds$", snd.."_pda.ogg") ~= nil and obj:position():distance_to_sqr(actor:position()) >= 5 then
-		self.pda_snd_obj = sound_object(snd.."_pda")
-		self.pda_snd_obj:play_at_pos(actor, vector():set(0,0,0), 0, sound_object.s2d)
-		self.pda_snd_obj.volume = 0.8
-	end
+	local snd = self.sound[self.played_id]	
 	self.snd_obj = sound_object(snd)
 	self.snd_obj:play_at_pos(obj, obj:position(), 0, sound_object.s3d)
-	local snd_st, num_copy = string.gsub(snd, "\\", "_")
+
+	if OnServer() and not IsGameTypeSingle() then
+		local packet = mp_events.gen_event('OBJECT_SOUND')
+  		packet:w_u8(1) 					-- TYPE (START, STOP)
+		packet:w_u32(obj:id())
+		packet:w_u8(self.played_id)
+		packet:w_stringZ(self.section)
+		mp_events.send_broadcast(packet)
+	end
+ 
 --[[
+	local snd_st, num_copy = string.gsub(snd, "\\", "_")
+
 	if game.translate_string(snd_st) ~= snd_st then
 		local hud_demo = get_hud()
 --		printf("uraaaa!!!")
@@ -683,11 +713,18 @@ function object_sound:play(obj_id, faction, point, msg)
 		end
 		self.custom_static_demo:wnd():SetTextST(snd_st)
 	end
-]]
+
+	
 	self.can_play_sound = false
-
+	
+	local f = getFS()
+	if snd and f:exist("$game_sounds$", snd.."_pda.ogg") ~= nil and obj:position():distance_to_sqr(actor:position()) >= 5 then
+		self.pda_snd_obj = sound_object(snd.."_pda")
+		self.pda_snd_obj:play_at_pos(actor, vector():set(0,0,0), 0, sound_object.s2d)
+		self.pda_snd_obj.volume = 0.8
+	end
 	news_manager.send_sound(nil, faction, point, snd)
-
+]]
 	return true
 end
 function object_sound:select_next_sound()
@@ -728,9 +765,18 @@ function object_sound:select_next_sound()
 	end
 end
 function object_sound:stop()
+	if (OnServer()) then 
+		local packet = mp_events.gen_event('OBJECT_SOUND')
+  		packet:w_u8(0)				-- TYPE (START, STOP)
+		packet:w_u8(self.played_id)
+		packet:w_stringZ(self.section)
+		mp_events.send_broadcast(packet)
+	end
+ 
 	if self.snd_obj ~= nil then
 		self.snd_obj:stop()
 	end
+	
 	if self.pda_snd_obj ~= nil and self.pda_snd_obj:playing() then
 		self.pda_snd_obj:stop()
 		self.pda_snd_obj = nil
