@@ -7,7 +7,7 @@
 #define G_SSS_FORCE_FADE				1.0f	// Force shadow to start to fade at [ 0.5f = 50% ~ 1.0f = no fade ]
 
 #define G_SSDO_SCENARY_HARDNESS			1.0f	// Scenary shadow hardness. 0.0f to disable scenary shadows.
-#define G_SSDO_SCENARY_SHADOW_LENGTH	1.5f	// Scenary maximum shadow length.
+#define G_SSDO_SCENARY_SHADOW_LENGTH	3f	// Scenary maximum shadow length. 1.5
 
 #define G_SSDO_GRASS_HARDNESS			1.0f	// Grass shadow hardness.
 #define G_SSDO_GRASS_SHADOW_LENGTH		1.0f	// Grass maximum shadow length.
