@@ -9,6 +9,7 @@
 #include "common.h"
 #include "anomaly_shaders.h"
 #include "reflections.h"
+#include "reflections_ssr.h"
 #include "lmodel.h"
 
 // Screen space functions
@@ -95,7 +96,8 @@ float4 main( vf I ) : SV_Target
 	float3 Nv = normalize(mul(m_V, Nw));
 
 	// Some vars to put our reflection
-	float3 refl_ray, refl_skybox;
+	float4 refl_ray;
+	float3 refl_skybox;
 	float3 reflection;
 	float3 ssr_hit_uv = 0.0f;
 		
@@ -113,15 +115,16 @@ float4 main( vf I ) : SV_Target
 	
 	// Trace a ray
 	if (edgeFade > 0.02f)
-		ssr_hit_uv = SSFX_ssr_water_ray(Pv, wreflect, blue_noise, 0);
-
+		// ssr_hit_uv = SSFX_ssr_water_ray(Pv, wreflect, blue_noise, 0);
+		refl_ray = calc_ssr(PosTc, Pv, Nv, ssr_hit_uv);
+	
 	// Get current Skybox
 	refl_skybox = SSFX_calc_sky(vreflect) * G_SSR_WATER_SKY_REFLECTION;
 
-	if (all(ssr_hit_uv.xy))
-	{
+	// if (all(ssr_hit_uv.xy))
+	// {
 		// Get reflection pixel from scene screen
-		refl_ray = SSFX_get_image(ssr_hit_uv.xy, 0);
+		// refl_ray = SSFX_get_image(ssr_hit_uv.xy, 0);
 
 		// Adjust reflection intensity using ssr_hit_uv.y and edgeFade
 		float ray_fade = ssr_hit_uv.y * 5.0f;
@@ -132,13 +135,13 @@ float4 main( vf I ) : SV_Target
 		float refl_power = saturate(ray_fade * edgeFade * fog);
 		
 		// Fallback to Skybox
-		reflection = lerp(refl_skybox, refl_ray * G_SSR_WATER_MAP_REFLECTION, refl_power);
-	}
-	else
-	{
-		// No reflection data, we use only refl_skybox
-		reflection = refl_skybox;
-	}
+		reflection = lerp(refl_skybox, refl_ray.xyz * G_SSR_WATER_MAP_REFLECTION, refl_power * refl_ray.w);
+	// }
+	// else
+	// {
+		// // No reflection data, we use only refl_skybox
+		// reflection = refl_skybox;
+	// }
 
 #else
 	reflection = L_hemi_color.rgb;

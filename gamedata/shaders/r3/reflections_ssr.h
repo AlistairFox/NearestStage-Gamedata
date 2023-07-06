@@ -4,6 +4,8 @@
 	
 	// Отражения SSR из мода DWM
 	
+	float3 SSFX_get_image(float2 tc, uint iSample : SV_SAMPLEINDEX);
+	
 	float get_depth(float2 tc)
 	{
 	#ifndef USE_MSAA
@@ -37,13 +39,13 @@
 	}
 
 	#define SSR_STEP_INCREASE 		1.2 
-	#define SSR_STEPS 				25 		
+	#define SSR_STEPS 				30 		
 	#define SSR_START_RAY		 	1.2 	
 	#define SSR_THRESHOLD	 		3
 	#define SSR_REFINE_STEPS		5 		
 	#define SSR_MARCH_MIN_DIST 		1 		
-	#define SSR_MARCH_MAX_DIST 		500 	
-	#define SSR_VIGNETTE 			0.3 	
+	#define SSR_MARCH_MAX_DIST 		300 	
+	#define SSR_VIGNETTE 			0 	
 	
 	// Поиск пересечения с увеличивающимся шагом
 	bool calc_intersection(
@@ -69,10 +71,11 @@
 		return false;
 	}
 	
-	float4 calc_ssr(float2 tc, float3 P, float3 N)
+	float4 calc_ssr(float2 tc, float3 P, float3 N, out float3 projected)
 	{
 		// Чтобы каждый раз не проецировать позицию матрицей, будем шагать по tc*depth
 		float3 pos = float3(tc, 1) * P.z;
+		projected = float3(tc, pos.z);
 		
 		// Рассчет отраженного вектора в tc*depth
 		float3 vreflect = normalize(reflect(normalize(P), N));
@@ -96,8 +99,9 @@
 			steplen.y /= SSR_REFINE_STEPS;
 			calc_intersection(SSR_REFINE_STEPS, 1.0, pos, vreflect, pos_step, tc_step, steplen);
 			// Выводим цвет
-			ssr.xyz = s_image.Sample(smp_rtlinear, tc_step);
+			ssr.xyz = SSFX_get_image(tc_step, 0);
 			ssr.w = calc_vignette(tc_step, SSR_VIGNETTE);
+			projected = float3(tc_step, pos_step.z);
 		}
 		
 		return ssr;
