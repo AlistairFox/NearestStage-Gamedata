@@ -70,24 +70,24 @@ cl_run_fwd_0				=	1,	  0.2,	    1,   0.4,     1
 [stalker_vision_free]
 min_view_distance 			= 0.3				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance 			= 0.7				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 50				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 1
+visibility_threshold	 	= 100.0				; значение, при достижении суммой которого объект считается видимым
+always_visible_distance 	= 0.08
 time_quant					= 0.005
 decrease_value				= 0.1				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 0.5 ;0.5
-luminocity_factor			= 0.5 ;0.5				; фактор освещения (только для Актёра)
-transparency_threshold	 	= 0.25				; 0.75
+velocity_factor		     	= 0.7 ;0.5
+luminocity_factor			= 1.1 ;0.5				; фактор освещения (только для Актёра)
+transparency_threshold	 	= 1.4				; 0.75
 
 [stalker_vision_danger]
 min_view_distance   		= 0.7			; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.2				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 50				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 1
+max_view_distance	 		= 1.0				; коэффициент, который множится на eye_range, в зависимости от угла
+visibility_threshold	 	= 45				; значение, при достижении суммой которого объект считается видимым
+always_visible_distance 	= 0.08
 time_quant					= 0.001
 decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 0.5 ;0.5
-luminocity_factor			= 0.5 ;0.5 				; фактор освещения (только для Актёра)
-transparency_threshold	 	= 0.25				; 0.25
+velocity_factor		     	= 0.3 ;0.5
+luminocity_factor			= 1.1 ;0.5 				; фактор освещения (только для Актёра)
+transparency_threshold	 	= 0.8				; 0.25
 
 [stalker_sound_perceive]
 	weapon					= 3; 0.75; 10 коэффициент усиления приоритета\силы звука
@@ -395,7 +395,7 @@ sound_perceive_section			= stalker_sound_perceive
 vision_danger_section			= stalker_vision_danger
 vision_free_section				= stalker_vision_free
 eye_fov							= 145 ;110;120
-eye_range						= 150
+eye_range						= 100
 far_plane_factor				= 1.0				; фактор дальности тумана
 fog_density_factor				= 0.05				; фактор плотности тумана
 

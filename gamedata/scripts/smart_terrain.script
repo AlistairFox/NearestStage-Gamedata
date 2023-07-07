@@ -1,5 +1,5 @@
 local DEATH_IDLE_TIME = 10*60 -- ������
-local RESPAWN_IDLE = 36000   -- ������ �������� �������
+local RESPAWN_IDLE = 72000   -- ������ �������� �������
 local RESPAWN_RADIUS = 150 -- ������ ��������(���� ����� �����, �� �� ��������)
 SMART_TERRAIN_SECT = "smart_terrain"
 smart_terrains_by_name = {}

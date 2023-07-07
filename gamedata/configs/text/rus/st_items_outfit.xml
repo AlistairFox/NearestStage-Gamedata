@@ -442,6 +442,24 @@
 	<string id="drevo_description">
 		<text>Младший из трех предвестников ада! НЕ ОБОРАЧИВАЙСЯ!</text>
 	</string>
+	<string id="backpack_simple">
+		<text>Походный рюкзак.</text>
+	</string>
+	<string id="backpack_simple_descr">
+		<text>Обычный походный рюкзак, обладает средней удобностью и обеспечивает небольшую прибавку в переносимом весе(+10 кг).</text>
+	</string>
+	<string id="backpack_advanced">
+		<text>Рюкзак охотника.</text>
+	</string>
+	<string id="backpack_advanced_descr">
+		<text>Прочный и функциональный рюкзак охотника, достаточно удобен и вместителен, обеспечивает прибавку в переносимом весе(+15 кг).</text>
+	</string>
+	<string id="backpack_elite">
+		<text>Армейский рюкзак.</text>
+	</string>
+	<string id="backpack_elite_descr">
+		<text>Прочный, удобный и вместительный армейский рюкзак, обеспечивает прибавку в переносимом весе(+30 кг).</text>
+	</string>
 </string_table>
 
 	

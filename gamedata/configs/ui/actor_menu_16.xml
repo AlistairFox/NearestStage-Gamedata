@@ -86,7 +86,7 @@
 		<texture>ui_inGame2_artefakt_highlighter</texture>
 	</artefact_slot_highlight>
 
-	<backpack_slot_highlight x="473" y="472" width="76" height="98" stretch="1">
+	<backpack_slot_highlight x="745" y="550" width="76" height="98" stretch="1">
 		<texture>ui_inGame2_helmet_highlighter</texture>
 	</backpack_slot_highlight>
 
@@ -221,7 +221,7 @@
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
 		vc_horiz_align="c"/>
 
-	<dragdrop_backpack x="470" y="469" width="85" height="110"
+	<dragdrop_backpack x="743" y="540" width="85" height="110"
 		cell_width="33" cell_height="41" rows_num="2" cols_num="2"
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
 		vc_horiz_align="c" />
