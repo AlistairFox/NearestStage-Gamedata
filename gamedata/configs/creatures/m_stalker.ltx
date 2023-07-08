@@ -68,33 +68,33 @@ cl_run_fwd_0				=	1,	  0.2,	    1,   0.4,     1
 ; ЗНАЧЕНИЯ visibility_threshold ДОЛЖНЫ БЫТЬ РАВНЫ для денжера и фри,
 ; иначе возникают артефакты с потерей видимости при переходе от денжера во фри.
 [stalker_vision_free]
-min_view_distance 			= 0.3				; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance 			= 0.7				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 100.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.08
-time_quant					= 0.005
-decrease_value				= 0.1				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 0.7 ;0.5
-luminocity_factor			= 1.1 ;0.5				; фактор освещения (только для Актёра)
-transparency_threshold	 	= 1.4				; 0.75
+min_view_distance   		        = 0.25		; min range of cone based on eye_range
+max_view_distance	 		        = 1.11		; max range of cone based on eye_range
+visibility_threshold	         	= 150.0		;Threshold in which object becomes visible based on factors
+always_visible_distance 	        = 0.05		;Distance object is always considered visible (float)
+time_quant			            	= 0.001		;step increment to for sight calculations
+decrease_value				        = 0.01   	;Decrease over time to overall threshold
+velocity_factor		            	= 1.0		;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+luminocity_factor		        	= 0.75		;Low value = easier to see at night
+transparency_threshold	        	= 0.73 		;Low value = easier to see through objects
 
 [stalker_vision_danger]
-min_view_distance   		= 0.7			; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.0				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 45				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.08
-time_quant					= 0.001
-decrease_value				= 0.01				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 0.3 ;0.5
-luminocity_factor			= 1.1 ;0.5 				; фактор освещения (только для Актёра)
-transparency_threshold	 	= 0.8				; 0.25
+min_view_distance   	        	= 0.45		; min range of cone based on eye_range
+max_view_distance	 		        = 1.77		; max range of cone based on eye_range
+visibility_threshold	 	        = 75.0		;Threshold in which object becomes visible based on factors
+always_visible_distance 	        = 0.05		;Distance object is always considered visible (float)
+time_quant				            = 0.001		;step increment to for sight calculations
+decrease_value				        = 0.01		;Decrease over time to overall threshold
+velocity_factor		            	= 1.0		;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+luminocity_factor			        = 0.65		;Low value = easier to see at night
+transparency_threshold	        	= 0.6		;Low value = easier to see through objects (if greater then 1 then enemies are blind)
 
 [stalker_sound_perceive]
-	weapon					= 3; 0.75; 10 коэффициент усиления приоритета\силы звука
+	weapon					= 1; 0.75; 10 коэффициент усиления приоритета\силы звука
 	item					= 0.5; коэффициент усиления приоритета\силы звука
 	npc						= 1;1;2 коэффициент усиления приоритета\силы звука
 	anomaly					= 0.0; коэффициент усиления приоритета\силы звука
-	world					= 0.2; коэффициент усиления приоритета\силы звука
+	world					= 0.15; коэффициент усиления приоритета\силы звука
 
 [stalker_damage]
 default						= 1.0, -1, 1.0
@@ -384,20 +384,21 @@ terrain							= 255,255,255,255,0,1
 ;terrain							= stalker_terrain
 
 ;---SOUND-------------------------------------------------------------
-sound_threshold					= 0.08
-self_sound_factor				= 0.1	;1.0
-self_decrease_quant				= 250	; in milliseconds
-self_decrease_factor			= 0.95	; fading factor
+sound_threshold					= 0.4
+self_sound_factor				= 0.15	;1.0
+self_decrease_quant				= 225	; in milliseconds
+self_decrease_factor			= 0.5	; fading factor
 killer_clsids					= Z_MINCER,Z_GALANT,ZS_BFUZZ,ZS_MBALD,ZS_GALAN,ZS_MINCE
 sound_perceive_section			= stalker_sound_perceive
+max_hear_dist = 50
 
 ;---VISIBILITY--------------------------------------------------------
 vision_danger_section			= stalker_vision_danger
 vision_free_section				= stalker_vision_free
 eye_fov							= 145 ;110;120
-eye_range						= 100
+eye_range						= 110
 far_plane_factor				= 1.0				; фактор дальности тумана
-fog_density_factor				= 0.05				; фактор плотности тумана
+fog_density_factor				= 0.25				; фактор плотности тумана
 
 ;---MEMORY------------------------------------------------------------
 DynamicObjectsCount				= 32
@@ -408,7 +409,7 @@ DynamicHitCount					= 32
 ignore_monster_threshold		= 0.0	;0.6	;0.8
 max_ignore_distance				= 40.0
 panic_threshold					= 0.0
-sound_threshold					= 0.5
+sound_threshold					= 0.3
 
 ;---SOUND PLAYER------------------------------------------------------
 sound_death						= fight\death\death_

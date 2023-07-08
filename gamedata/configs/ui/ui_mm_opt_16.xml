@@ -84,7 +84,7 @@
         <cap_renderer x="12" y="3" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_renderer</text>
         </cap_renderer>
-        <list_renderer x="140" y="5" width="188" height="20" list_length="5" always_show_scroll="0">
+        <list_renderer x="140" y="5" width="188" height="20" list_length="6" always_show_scroll="0">
             <options_item entry="renderer" group="mm_opt_video" depend="restart"/>
             <list_font r="170" g="170" b="170" font="letterica16"/>
 		    <text_color>
@@ -96,12 +96,12 @@
         <cap_preset x="12" y="33" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_quality_presets</text>
         </cap_preset>
-        <list_presets x="140" y="35" width="188" height="20" list_length="5"  always_show_scroll="0">
+        <list_presets x="140" y="35" width="188" height="20" list_length="6"  always_show_scroll="0">
             <options_item entry="_preset" group="mm_opt_video_preset" depend="restart"/>
-            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <list_font r="170" g="10" b="10" font="letterica16"/>
 		    <text_color>
-	            <e r="170" g="170" b="170"/>
-	            <d r="70" g="70" b="70"/>
+	            <e r="100" g="140" b="140"/>
+	            <d r="170" g="10" b="10"/>
 		    </text_color>
         </list_presets>
 

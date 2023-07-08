@@ -94,7 +94,7 @@
 		<text>Загрузка освещения</text>
 	</string>
 	<string id="st_client_connecting_to">
-		<text>Клиент: Соединение с</text>
+		<text>Клиент: Соединение с NearestStage:</text>
 	</string>
 	<string id="st_client_spawning">
 		<text>Клиент: Создание</text>

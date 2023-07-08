@@ -363,7 +363,6 @@ function actor_binder:update(delta)
 		primary_objects_filled = true
 	end
 	pda.fill_sleep_zones()
-	gunsl_bloodscreen.Update(delta)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)

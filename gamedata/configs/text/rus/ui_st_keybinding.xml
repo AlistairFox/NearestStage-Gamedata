@@ -228,10 +228,4 @@
 	<string id="kb_quick_use_4">
 		<text>Ячейка быстрого доступа 4</text>
 	</string>
-		<string id="kb_safe_mode">
-		<text>Безопасный режим</text>
-	</string>
-		<string id="kb_animation_mode">
-		<text>Анимации</text>
-	</string>
 </string_table>
