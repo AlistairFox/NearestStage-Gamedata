@@ -30,13 +30,8 @@ Texture2D s_half_depth;
 Texture2D<float> s_occ;
 #endif // SM_5
 
-#ifdef USE_SSDO
-#include "ssdo.ps"
-
-#else
 #ifndef USE_HDAO
 #define USE_HDAO
-#endif
 #endif
 
 

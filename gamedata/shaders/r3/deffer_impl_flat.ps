@@ -26,7 +26,7 @@ void perform_tc_offset(inout p_bumped p, in Texture2D s_bumpX_new)
 			p.M1.z, p.M2.z, p.M3.z), -p.position));
 
 		// steps minmax and refines minmax
-		int4 steps = int4(6, 8, 6, 12); // 3..10, 7..16
+		int4 steps = int4(6, 10, 5, 7); // 3..10, 7..16    6,8,6,12
 
 		bool need_disp_lerp = true;
 		bool need_refine = true;
@@ -79,6 +79,9 @@ void perform_tc_offset(inout p_bumped p, in Texture2D s_bumpX_new)
 		}
 
 		p.tcdbump = displaced_tc;
+		
+		
+		//p.tcdbump += eye * PARALLAX_DEPTH * (s_bumpX_new.Sample(smp_base, p.tcdbump).ww - 0.5); - быстрый паралакс
 	}
 }
 
