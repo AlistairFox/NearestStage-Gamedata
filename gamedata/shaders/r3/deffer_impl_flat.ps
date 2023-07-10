@@ -19,6 +19,8 @@ struct surface {
 
 void perform_tc_offset(inout p_bumped p, in Texture2D s_bumpX_new)
 {
+	
+#ifdef TERRAIN_PARALLAX_FULL
 	if ((p.position.z > PARALLAX_NEAR_PLANE) && (p.position.z < PARALLAX_FAR_PLANE))
 	{
 		float3 eye = normalize(mul(float3x3(p.M1.x, p.M2.x, p.M3.x,
@@ -79,9 +81,9 @@ void perform_tc_offset(inout p_bumped p, in Texture2D s_bumpX_new)
 		}
 
 		p.tcdbump = displaced_tc;
-		
-		
-		//p.tcdbump += eye * PARALLAX_DEPTH * (s_bumpX_new.Sample(smp_base, p.tcdbump).ww - 0.5); - быстрый паралакс
+#else
+		p.tcdbump += eye * PARALLAX_DEPTH * (s_bumpX_new.Sample(smp_base, p.tcdbump).ww - 0.5); - быстрый паралакс	
+#endif
 	}
 }
 
