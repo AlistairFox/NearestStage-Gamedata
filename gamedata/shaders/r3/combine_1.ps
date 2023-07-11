@@ -26,8 +26,8 @@
 	  
  
 		   
-				  
-	  
+//раскоментировать для отладки SSAO			  
+//#define SSAO_DEBUG
 
 	//#include "ssao_blur.ps"
 					   
@@ -230,9 +230,10 @@ _out main ( _input I, uint iSample : SV_SAMPLEINDEX )
 	o.low.a = skyblend;
 	o.high.a = skyblend;
 
-// режим отладки ssao
-//		o.low.xyz = occ;
-//		o.high.xyz = 0;
+#ifdef SSAO_DEBUG
+		o.low.xyz = occ; 
+		o.high.xyz = 0;
+#endif
 	return o;
 
 #else
