@@ -81,7 +81,9 @@ void perform_tc_offset(inout p_bumped p, in Texture2D s_bumpX_new)
 		}
 
 		p.tcdbump = displaced_tc;
-#else
+#endif
+
+#ifndef TERRAIN_PARALLAX_FULL
 		p.tcdbump += eye * PARALLAX_DEPTH * (s_bumpX_new.Sample(smp_base, p.tcdbump).ww - 0.5); - быстрый паралакс	
 #endif
 	}

@@ -23,11 +23,6 @@
 	uniform	Texture2D					s_hbao_plus;
 #else
 	uniform	Texture2D					s_half_depth;
-	  
- 
-		   
-//раскоментировать для отладки SSAO			  
-//#define SSAO_DEBUG
 
 	//#include "ssao_blur.ps"
 					   
@@ -230,10 +225,10 @@ _out main ( _input I, uint iSample : SV_SAMPLEINDEX )
 	o.low.a = skyblend;
 	o.high.a = skyblend;
 
-#ifdef SSAO_DEBUG
-		o.low.xyz = occ; 
-		o.high.xyz = 0;
-#endif
+
+//		o.low.xyz = occ; 
+//		o.high.xyz = 0;
+
 	return o;
 
 #else
