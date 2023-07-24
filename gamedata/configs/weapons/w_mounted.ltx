@@ -10,7 +10,7 @@ ammo_class							= ammo_7.62x54_7h1
 
 ;-ttc---------------------------------------------------------------------------
 ;hit_power							= 0.0
-hit_impulse				= 15						= 10
+;hit_impulse						= 10
 hit_type 							= fire_wound
 
 fire_distance						= 3200
@@ -50,7 +50,7 @@ light_var_color						= 0.05
 light_var_range						= 0.5
 light_time 							= 0.3
 
-[stationary_mgun]:identity_immunities,weapon_probability,default_weapon_params,stationary_mgun_sounds
+[stationary_mgun]:weapon_probability,default_weapon_params,stationary_mgun_sounds
 GroupControlSection					= spawn_group
 class								= W_STMGUN
 $spawn								= "weapons\stationary_mgun"
@@ -66,7 +66,7 @@ ammo_class							= ammo_7.62x54_7h1
 
 ;-------------------------------------------------------------------------------
 ;hit_power							= 0.5, 0.5, 0.5, 0.5
-hit_impulse				= 15						= 10
+;hit_impulse						= 10
 fire_distance						= 3200
 bullet_speed						= 800					;начальная скорость пули
 rpm									= 600

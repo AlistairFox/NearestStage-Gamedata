@@ -6,7 +6,7 @@
 ; задержка перед взрывом 			-- сек
 ; плотность дымовой завесы			
 ;---------------------------------------------------
-[grenade_gd-05]:identity_immunities,weapon_probability,default_weapon_params,delayed_action_fuse,grenade_gd-05_sounds
+[grenade_gd-05]:weapon_probability,default_weapon_params,delayed_action_fuse,grenade_gd-05_sounds
 GroupControlSection				= spawn_group
 discovery_dependency			=
 $spawn 					= "weapons\grenades\rdg-m"
@@ -41,7 +41,7 @@ kill_msg_height				= 23
 zoom_dof					= 0.5, 1.0, 180
 reload_dof					= 0.0, 0.5, 5, 1.7
 
-cost					= 4500
+cost					= 300
 weapon_class				=
 inv_weight				= 0.63
 hud					= grenade_rdg-m_hud
@@ -64,7 +64,7 @@ blast_impulse_factor				= 0
 frags					= 0
 frags_r					= 0
 frag_hit					= 0
-frag_hit_impulse				= 15				= 0
+frag_hit_impulse				= 0
 
 hit_type_blast				= strike
 hit_type_frag				= fire_wound
@@ -101,11 +101,11 @@ item_visual				= dynamics\weapons\wpn_grenades\wpn_gd5_hud.ogf
 fire_point					= 0,0,0
 fire_bone					= wpn_body
 
-hands_position				= -0.0965,-0.163,0.139
-hands_orientation				= -4.4,1.0,-2.0
+hands_position				= -0.051000,-0.189000,-0.013000
+hands_orientation			= -0.500000,1.000000,-2.000000
 
-hands_position_16x9				= -0.0965,-0.163,0.139
-hands_orientation_16x9			= -4.4,1.0,-2.0
+hands_position_16x9			= -0.051000,-0.189000,-0.013000
+hands_orientation_16x9			= -0.500000,1.000000,-2.000000
 
 item_position 				= -0.001,0.004,0.0
 item_orientation		 		= 18.5,1.5,0.0

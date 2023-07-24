@@ -22,19 +22,14 @@ misfire_start_prob	     	= -0.0007
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.011 ;0.03
 
-;Отдача(2)-20%
+;Точность(3)20%
 ;------------
 [up_sect_firstd_ak74u]
 cost	      	     	= 650
-value					= -20
+value					= +20
 
-cam_dispersion              = -0.18		;1.2
-cam_dispersion_inc         	= -0.09		;0.6
-cam_step_angle_horz        	= -0.22			;1.5 [0.73 в остатке]
-
-zoom_cam_dispersion          = -0.05	;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.075	;0.5
-zoom_cam_step_angle_horz     = -0.2 	;1.0 [0.505 в остатке]
+fire_dispersion_base	= -0.07 ;0.7
+fire_dispersion_condition_factor    = -0.25 ;15
 
 ;Отдача(3)-30%
 ;------------
@@ -81,19 +76,14 @@ misfire_start_prob	     	= -0.0007
 ;шанс осечки при изношености больше чем misfireEndCondition
 misfire_end_prob	     	= -0.011 ;0.03
 
-;Отдача(3)-30%
+;Точность(3)30%
 ;------------
 [up_sect_secone_ak74u]
 cost		      		= 900
-value					= -30
+value					= +30
 
-cam_dispersion              = -0.27		;0.5
-cam_dispersion_inc         	= -0.12		;0.5
-cam_step_angle_horz        	= -0.32		;1.5 [0.73 в остатке]
-
-zoom_cam_dispersion          = -0.25	;0.5 [0.093 в остатке]
-zoom_cam_dispersion_inc      = -0.125	;0.5
-zoom_cam_step_angle_horz     = -0.25 	;1.0 [0.505 в остатке]
+fire_dispersion_base			= -0.09 ;0.7
+fire_dispersion_condition_factor    = -0.25 ;15
 
 ;Удобство(3)25%
 ;--------------
@@ -244,7 +234,7 @@ scheme_index            = 1, 1
 known                   = 1
 effects                 = up_gr_firstef_ak74u
 section                 = up_sect_firstd_ak74u
-property                = prop_recoil
+property                = prop_dispersion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = a & b
@@ -256,8 +246,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_zat_b1_name
-description             = st_up_zat_b1_descr
+name                    = st_up_ret_b3_name
+description             = st_up_ret_b3_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2U_3
 
 [up_firste_ak74u]
@@ -326,7 +316,7 @@ scheme_index            = 2, 1
 known                   = 1
 effects                 =
 section                 = up_sect_secone_ak74u
-property                = prop_recoil
+property                = prop_dispersion
 
 precondition_functor    = inventory_upgrades.precondition_functor_a
 precondition_parameter  = true
@@ -337,8 +327,8 @@ effect_parameter        = something_here
 prereq_functor          = inventory_upgrades.prereq_functor_a
 prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
-name                    = st_up_auto_c1_name
-description             = st_up_auto_c1_descr
+name                    = st_up_auto_c4_name
+description             = st_up_auto_c4_descr
 icon                    = ui_inGame2_upgrade_AKM_74_2U_7
 
 [up_seconf_ak74u]

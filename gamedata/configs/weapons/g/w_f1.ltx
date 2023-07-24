@@ -8,7 +8,7 @@
 ; задержка перед взрывом 		3.2 - 4.2 сек
 ; количество осколков			до 200 шт
 ;---------------------------------------------------
-[grenade_f1]:identity_immunities,weapon_probability,default_weapon_params,delayed_action_fuse,grenade_f1_sounds
+[grenade_f1]:weapon_probability,default_weapon_params,delayed_action_fuse,grenade_f1_sounds
 GroupControlSection			= spawn_group
 discovery_dependency			=
 $spawn 					= "weapons\grenades\f1"
@@ -46,7 +46,7 @@ kill_msg_height				= 23
 zoom_dof				= 0.5, 1.0, 180
 reload_dof				= 0, 0.5, 5, 1.7
 
-cost					= 5000
+cost					= 500
 weapon_class				=
 inv_weight				= 0.6
 hud					= grenade_f1_hud
@@ -68,7 +68,7 @@ blast_impulse                           = 150
 frags                                   = 15
 frags_r                                 = 15
 frag_hit                                = 0.3
-frag_hit_impulse				= 15                        = 150
+frag_hit_impulse                        = 150
 frag_ap					= 9.50
 
 hit_type_blast				= explosion
@@ -108,11 +108,11 @@ fire_bone				= wpn_body
 attach_place_idx			= 0
 item_visual				= dynamics\weapons\wpn_grenades\wpn_f1_hud.ogf
 
-hands_position				= -0.061,-0.16,0.1
-hands_orientation			= -0.5,1.0,-2.0
+hands_position				= -0.051000,-0.189000,-0.013000
+hands_orientation			= -0.500000,1.000000,-2.000000
 
-hands_position_16x9			= -0.061,-0.16,0.1
-hands_orientation_16x9			= -0.5,1.0,-2.0
+hands_position_16x9			= -0.051000,-0.189000,-0.013000
+hands_orientation_16x9			= -0.500000,1.000000,-2.000000
 
 item_position 				= -0.001,0.004,0
 item_orientation 			= 18.5,1.5,0

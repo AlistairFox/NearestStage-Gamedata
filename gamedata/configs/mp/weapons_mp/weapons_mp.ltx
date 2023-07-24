@@ -352,57 +352,6 @@
     zoom_cam_step_angle_horz         = 0.6 ;0.9 ;2.5     
 	fire_distance           = 1000 ; maximum fire distance that bullet can fly
 
-[mp_wpn_fn2000]:wpn_fn2000
-    $spawn                           = "network\weapons\assault\mp_wpn_fn2000"
-    class                   		 = W_AK74
-    PDM_disp_accel_factor            = 0.63 ;0.7 ;;1.05    
-    PDM_disp_base                    = 0.18 ;0.2     
-    PDM_disp_crouch                  = 1.0     
-    PDM_disp_crouch_no_acc           = 1.0     
-    PDM_disp_vel_factor              = 1.05    
-	use_first_bullet				 = true	;есть ли эффект первого выстрела (точного)
-	first_bullet_dispertion			 = 0.01	;дисперсия для первого выстрела
-	first_bullet_timeout			 = 1000	;время между первыми выстрелами
-	first_bullet_velocity_limit		 = 1.0	;предельная скорость актера при которой будет первый точный выстрел
-	crosshair_inertion				 = 7 ;6.0  ;инерция прицела (время за которое дисперсия поменяется на 1.0)
-    ammo_class                       = mp_ammo_5.56x45_ss190,mp_ammo_5.56x45_ap
-    bullet_speed                     = 700 ;950 
-    cam_dispersion                   = 0.09 ;0.1 ;;0.0     
-    cam_dispersion_frac              = 1.1     
-    cam_dispersion_inc               = 0.11 ;0.07 
-    cam_max_angle                    = 10 ;20     
-    cam_max_angle_horz               = 5 ;20
-    cam_relax_speed                  = 5       
-    cam_step_angle_horz              = 0.36 ;0.40   
-    fire_dispersion_base             = 0.08 ;0.09 ;0.11  ;;0.2     
-    grenade_class                    = mp_ammo_m209
-    grenade_launcher_name            = mp_wpn_addon_grenade_launcher
-    grenade_launcher_status          = 1       
-    hit_power                        = 1.33;
-    rpm                              = 860     
-	scopes_sect						 = mp_wpn_lr300_scope
-    scope_status                     = 1       
-    silencer_name                    = mp_wpn_addon_silencer
-    silencer_x              		 = 169
-	silencer_y              		 = 13
-    silencer_status                  = 2       
-    use_aim_bullet                   = true    
-    zoom_cam_dispersion              = 0.06 ;0.07 ;;0.0
-    zoom_cam_dispersion_frac         = 1.1     
-    zoom_cam_dispersion_inc          = 0.06 ;0.05
-    zoom_cam_max_angle               = 5.0    
-    zoom_cam_max_angle_horz          = 5.0    
-    zoom_cam_relax_speed             = 5     ; scope & ironsight
-    zoom_cam_step_angle_horz         = 0.18 ;0.27 ;0.3 
-	PDM_crouch                       = 1.0     
-    PDM_crouch_no_acc                = 1.0     
-    cam_return                       = 1       
-    tracers                          = on     
-    tracers_color_ID                 = 2       
-    zoom_cam_return                  = 1       
-	fire_distance           = 1000 ; maximum fire distance that bullet can fly
-    grenade_vel						 = 76
-	scope_zoom_factor       		= 20
 
 [mp_wpn_fort]:wpn_fort
     $spawn                           = "network\weapons\pistols\mp_wpn_fort"

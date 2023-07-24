@@ -3598,7 +3598,7 @@
     <supplies>
       [spawn] \n
       
-      wpn_fn2000 \n
+      wpn_lr300 \n
       ammo_5.56x45_ap = 1 \n
       wpn_usp \n
       ammo_11.43x23_hydro = 1 \n
@@ -3632,7 +3632,7 @@
     <supplies>
       [spawn] \n
       
-      wpn_fn2000 \n
+      wpn_lr300 \n
       ammo_5.56x45_ap = 1 \n
       wpn_sig220 = 1 \n
       ammo_11.43x23_hydro = 1 \n
@@ -4845,7 +4845,7 @@
     <supplies>
       [spawn] \n
       
-      wpn_fn2000 \n
+      wpn_lr300 \n
       ammo_5.56x45_ap = 1 \n
       wpn_sig220 = 1 \n
       ammo_11.43x23_hydro = 1 \n
