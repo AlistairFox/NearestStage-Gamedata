@@ -875,14 +875,14 @@ ammo_vog-25p
 ;------------------------wpn_addon;
 1p29_detector
 pso_detector
-9x39scope_detector
+pso1m21_detector
 acog_detector
 1p29
-9x39scope
+pso1m21
 ac10632
 ac11090
 acog
-c-more
+ac10632
 docter_sight
 ekp
 eot
@@ -897,7 +897,7 @@ sil_9a91
 sil_atg
 sil_gemtech
 sil_kzrzp
-sil_nato
+sil_556
 sil_pbs-4
 sil_pbs1
 sil_sr25
