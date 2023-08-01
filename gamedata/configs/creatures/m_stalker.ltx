@@ -246,7 +246,7 @@ sleep_radiation 			= 1.0
 sleep_psy_health			= 1.0
 
 ;---LIMPING STATE-----------------------------------------------------
-use_limping_state			= off
+use_limping_state			= on
 limping_threshold			= 0.5
 
 ;открытые раны
@@ -483,8 +483,8 @@ fire_queue_section = fire_queue_params
 
 
 ;---CRITICAL WOUND------------------------------------------------------------------
-critical_wound_threshold		= 0
-critical_wound_decrease_quant	= 0
+critical_wound_threshold		= 0.4
+critical_wound_decrease_quant	= 0.2
 body_parts_section_id			= critical_wound_body_parts_section
 critical_wound_weights			= 100,50,10
 
@@ -507,7 +507,7 @@ ph_collision_damage_factor	= 0.1
 ph_mass 				 		= 80
 
 ;---------------------------------------------------------------------
-ph_character_have_wounded_state = false; имеет ли персонаж состояние раненый
+ph_character_have_wounded_state = true; имеет ли персонаж состояние раненый
 ;--------------------------------------------------------------------------------------------------------------------
 
 ;--------------------------------------------------------------------------------------------------------------------
