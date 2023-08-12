@@ -177,9 +177,6 @@
 	<string id="stalker">
 		<text>Вольный сталкер</text>
 	</string>
-	<string id="survived">
-		<text>Выживший</text>
-	</string>
 	<string id="ui_logs_center_caption">
 		<text>История сообщений</text>
 	</string>

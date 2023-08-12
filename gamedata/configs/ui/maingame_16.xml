@@ -25,6 +25,7 @@
 		<text align="c" font="letterica16" color="white"/>
 	</voice_distance>
 
+    <indicator_torch_battery x="980" y="310" width="26" height="35" stretch="1"/>
     <indicator_thirst x="980" y="270" width="33" height="35"/>
     <indicator_starvation x="980" y="350" width="26" height="35" stretch="1"/>
     <indicator_helmet_broken x="980" y="390" width="26" height="35" stretch="1"/>

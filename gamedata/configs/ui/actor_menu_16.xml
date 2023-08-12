@@ -82,7 +82,7 @@
 	<quick_slot_highlight x="387" y="401" width="52" height="59" dx="64" stretch="1">
 		<texture>ui_inGame2_quick_item_highlighter</texture>
 	</quick_slot_highlight>
-	<artefact_slot_highlight x="395" y="675" width="41" height="52" dx="52" stretch="1">
+	<artefact_slot_highlight x="250" y="600" width="41" height="52" dx="52" dy="52" rows_num="2" cols_num="5" stretch="1">
 		<texture>ui_inGame2_artefakt_highlighter</texture>
 	</artefact_slot_highlight>
 
@@ -94,7 +94,7 @@
 		<texture>ui_inGame2_helmet_highlighter</texture>
 	</second_helmet_slot_highlight>
 	
-		<dosimeter_slot_highlight x="150" y="702" width="76" height="48" stretch="1">
+	<dosimeter_slot_highlight x="400" y="400" width="76" height="48" stretch="1">
 		<texture>ui_inGame2_detector_highlighter</texture>
 	</dosimeter_slot_highlight>
 
@@ -197,7 +197,7 @@
 	    </trade_weight_max>
 	</right_delimiter>
 
-	<belt_list_over x="392" y="667" width="47" height="59" dx="52" stretch="1">
+	<belt_list_over x="250" y="600" width="47" height="59" dx="52" dy="59" rows_num="2" cols_num="5" stretch="1">
 		<texture >ui_inGame2_artefact_blocker</texture>
 	</belt_list_over>
 
@@ -212,8 +212,8 @@
     	cell_width="33" cell_height="41" rows_num="10" cols_num="7"
 		unlimited="1" group_similar="0" always_show_scroll="0" condition_progress_bar="1"/>
 
-	<dragdrop_belt x="395" y="675" width="550" height="41"
-		cell_width="33" cell_height="41" rows_num="1" cols_num="10"
+	<dragdrop_belt x="250" y="600" width="550" height="400"
+		cell_width="33" cell_height="41" rows_num="2" cols_num="5"
 		cell_sp_x="19" cell_sp_y="19" a="0" always_show_scroll="0" condition_progress_bar="1"/>
 	
 	<dragdrop_outfit x="392" y="100" width="85" height="178"
@@ -226,10 +226,10 @@
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
 		vc_horiz_align="c" />
 		
-	<dragdrop_dosimeter x="450" y="469" width="85" height="55"
-		cell_width="33" cell_height="41" rows_num="1" cols_num="2"
+	<dragdrop_dosimeter x="743" y="540" width="85" height="85"
+		cell_width="33" cell_height="41" rows_num="2" cols_num="2"
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
-		vc_horiz_align="c"/>
+		vc_horiz_align="c" charge_level_progess_bar="1"/>
 
 	<dragdrop_helmet x="392" y="14" width="85" height="110"
 		cell_width="33" cell_height="41" rows_num="2" cols_num="2"
@@ -244,7 +244,7 @@
 	<dragdrop_torch x="560" y="320" width="106" height="55"
 		cell_width="33" cell_height="41" rows_num="1" cols_num="2"
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
-		vc_horiz_align="c"/>
+		vc_horiz_align="c" charge_level_progess_bar="1"/>
 		
 	<dragdrop_pda x="480" y="320" width="106" height="55"
 		cell_width="33" cell_height="41" rows_num="1" cols_num="2"
@@ -254,7 +254,7 @@
 	<dragdrop_detector x="385" y="320" width="100" height="50"
 		cell_width="33" cell_height="41" rows_num="1" cols_num="2"
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
-		vc_horiz_align="c"/>
+		vc_horiz_align="c" charge_level_progess_bar="1"/>
 
 	<dragdrop_pistol x="480" y="14" width="98" height="308"
 		cell_width="33" cell_height="41" rows_num="6" cols_num="2"
