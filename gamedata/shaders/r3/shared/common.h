@@ -5,6 +5,23 @@
 
 #ifndef SHARED_COMMON_H
 #define SHARED_COMMON_H
+//INTERNAL
+#define USABLE_BIT_1 uint(0x00002000)
+#define USABLE_BIT_2 uint(0x00004000)
+#define USABLE_BIT_3 uint(0x00008000)
+#define USABLE_BIT_4 uint(0x00010000)
+#define USABLE_BIT_5 uint(0x00020000)
+#define USABLE_BIT_6 uint(0x00040000)
+#define USABLE_BIT_7 uint(0x00080000)
+#define USABLE_BIT_8 uint(0x00100000)
+#define USABLE_BIT_9 uint(0x00200000)
+#define USABLE_BIT_10 uint(0x00400000)
+#define USABLE_BIT_11 uint(0x00800000)   // At least two of those four bit flags must be mutually exclusive (i.e. all 4 bits must not be set together)
+#define USABLE_BIT_12 uint(0x01000000)   // This is because setting 0x47800000 sets all 5 FP16 exponent bits to 1 which means infinity
+#define USABLE_BIT_13 uint(0x02000000)   // This will be translated to a +/-MAX_FLOAT in the FP16 render target (0xFBFF/0x7BFF), overwriting the 
+#define USABLE_BIT_14 uint(0x04000000)   // mantissa bits where other bit flags are stored.
+#define USABLE_BIT_15 uint(0x80000000)
+#define MUST_BE_SET uint(0x40000000)   // This flag *must* be stored in the floating-point representation of the bit flag to store
 
 //	Used by VS
 cbuffer	dynamic_transforms
@@ -40,6 +57,10 @@ cbuffer	static_globals
 	uniform float3		L_sun_color;
 	uniform float3		L_sun_dir_w;
 	uniform float4		L_hemi_color;
+	uniform float4		pp_img_corrections;
+	uniform float4		pp_img_cg;
+	uniform float3x4	m_inv_V;
+	uniform float4		rain_params; //x = raindensity, y = wetness 
 
 	uniform float3 		eye_position;
 

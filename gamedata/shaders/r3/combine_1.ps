@@ -217,17 +217,12 @@ _out main ( _input I, uint iSample : SV_SAMPLEINDEX )
         float          	tm_scale        = I.tc0.w;                // interpolated from VS
 
         _out        	o;
-		
 
 #ifndef SSFX_BEEFS_NVG
 
 	tonemap(o.low, o.high, color, tm_scale);
 	o.low.a = skyblend;
 	o.high.a = skyblend;
-
-
-//		o.low.xyz = occ; 
-//		o.high.xyz = 0;
 
 	return o;
 

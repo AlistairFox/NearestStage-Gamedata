@@ -208,6 +208,7 @@
 		<middle_color r="255" g="255" b="118"/>
 		<max_color r="107" g="207" b="119"/>
     </charge_level_progess_bar>
+
 	<!-- ============================ outfit_info ====================================   -->
 
 	<outfit_info x="0" y="0" width="212" height="180">
@@ -365,5 +366,4 @@
 		<color_less color="pda_red"  />
 		<color_more color="pda_green"/>
 	</progress_current_charge_level>
-
 </w>

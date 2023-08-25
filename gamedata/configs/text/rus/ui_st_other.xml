@@ -15,6 +15,9 @@
 	<string id="bad">
 		<text>Плохо</text>
 	</string>
+	<string id="st_play_guitar">
+		<text>Играть на гитаре</text>
+	</string>
 	<string id="enemy">
 		<text>Враг</text>
 	</string>
@@ -205,7 +208,7 @@
 		<text>был отключён защитой BattlEye:</text>
 	</string>
 	<string id="ui_st_kicked_by_server">
-		<text>Отключён. Причина - </text>
+		<text>Отключён. </text>
 	</string>
 	<string id="ui_st_leave">
 		<text>Уйти</text>

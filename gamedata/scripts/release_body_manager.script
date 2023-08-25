@@ -41,7 +41,7 @@ class "Crelease_body"
 function Crelease_body:__init()
 	self.release_objects_table = {} -- таблица "СТЕК" трупов
 	self.keep_items_table = {} -- таблица квестовых предметов
- 	self.body_max_count = 5 -- количество тел которое одновременно может находится в игре
+ 	self.body_max_count = 10 -- количество тел которое одновременно может находится в игре
 	self.current_object_id = 0 -- id только что убитого npc
 	--' Итерируемся по списку квестовых итемов.
 	local snd_ini = ini_file("misc\\death_generic.ltx")

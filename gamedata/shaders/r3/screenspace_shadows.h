@@ -26,7 +26,7 @@ float SSFX_ScreenSpaceShadows(float4 P, float2 tc, uint iSample)
 	float wpn_f = smoothstep(G_SSDO_WEAPON_LENGTH * 0.75f, G_SSDO_WEAPON_LENGTH, pLen);
 
 	//wpn_f = saturate(wpn_f + mat_terrain);
-
+	
 	// Adjust Settings for weapons and scene.
 	float ray_hardness	= lerp(10.0f * G_SSDO_WEAPON_HARDNESS, 15.0f * G_SSDO_SCENARY_HARDNESS, wpn_f);
 	float ray_detail	= clamp(pLen * 0.003f, G_SSS_DETAILS, 10);
@@ -57,10 +57,10 @@ float SSFX_ScreenSpaceShadows(float4 P, float2 tc, uint iSample)
 
 		// Sample current ray pos ( x = difference | y = sample depth | z = current ray len )
 		float3 depth_ray = SSFX_ray_intersect(sss_ray, iSample);
-
+		
 		// Check depth difference
 		float diff = depth_ray.x;
-
+		
 		// No Sky
 		diff *= depth_ray.y > SKY_EPS;
 

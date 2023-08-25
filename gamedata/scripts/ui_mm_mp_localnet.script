@@ -41,6 +41,10 @@ function localnet_page:InitControls()
 	button = xml:Init3tButton("login_page:button_cancel", self.login_page)
 	self:Register(button, "btn_cancel")
     self.btn_cancel = button
+	
+	button = xml:InitCheck("login_page:check_register_me", self.login_page)
+	self:Register(button, "lp_check_register_me")
+	self.lp_check_register_me = button
 --------------------------------------------------------------------------------
 
 
@@ -59,7 +63,6 @@ function localnet_page:InitControls()
 	xml:InitTextWnd("login_page:cap_port", self.login_page)
  	self.lp_port = xml:InitEditBox("login_page:edit_port", self.login_page)
 	self:Register(self.lp_port, "lp_edit_port")
-	
 	
 	self.gs_login_message_box = CUIMessageBoxEx()
 	self:Register(self.gs_login_message_box, "gs_message_box")
@@ -88,6 +91,7 @@ end
 function localnet_page:InitCallbacks()
 	self:AddCallback("btn_login", ui_events.BUTTON_CLICKED, self.OnBtnLogin, self)
 	self:AddCallback("btn_cancel", ui_events.BUTTON_CLICKED, self.OnBtnCancel, self)
+	self:AddCallback("lp_check_register_me", ui_events.BUTTON_CLICKED, self.OnBtnRegisterMe, self)
 	--self:AddCallback("lp_check_remember_me", ui_events.BUTTON_CLICKED, self.OnBtnRememberMe, self)
 	
 	--self:AddCallback("lp_edit_nickname", ui_events.EDIT_TEXT_COMMIT, self.OnEditLPNicknameChanged, self)
@@ -153,6 +157,10 @@ end
 
 function localnet_page:OnBtnRememberMe()
 	self.owner.l_mgr:save_remember_me_to_registry(self.lp_check_remember_me:GetCheck())
+end
+
+function localnet_page:OnBtnRegisterMe()
+	registration_switch(true)
 end
 
 function localnet_page:OnEditLPNicknameChanged()

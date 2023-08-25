@@ -972,6 +972,9 @@
 	<string id="ui_st_mp_login_net">
 		<text>Ник</text>
 	</string>
+	<string id="ui_st_mp_register_me">
+		<text>Зарегистрироваться</text>
+	</string>
 	<string id="ui_st_mp_ipserver">
 		<text>IP сервера</text>
 	</string>

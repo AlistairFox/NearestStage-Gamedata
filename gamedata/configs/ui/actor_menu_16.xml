@@ -377,7 +377,7 @@
 
 	    <health_state x="10" y="30" width="172" height="18">
 	        <hint_text delay="800">st_ui_health_sensor</hint_text>
-	        <state_progress x="0" y="0" width="171" height="16" horz="1" min="0" max="1" pos="0">
+	        <state_progress x="0" y="0" width="171" height="16" horz="1" min="0" max="0.99" pos="0">
 	    	    <progress stretch="1">
 	        		<texture r="255" g="0" b="0">ui_inGame2_inventory_health_bar</texture>
 		        </progress>

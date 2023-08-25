@@ -19,16 +19,6 @@
 // Simple subsurface scattering
 float SSS(float3 N, float3 V, float3 L)
 {
-	const float SSS_DIST = 0.125; //Scattering distortion
-	const float SSS_POW = 4; //Scattering power
-	const float SSS_SCALE = 1; //Scattering scale
-	const float SSS_AMB = 0.5; //Scattering ambient
-		
-    float3 SSS_vector = L + N * SSS_DIST;
-    float SSS_light = pow(saturate(dot(V, -SSS_vector)),SSS_POW); //DICE translucency
-    SSS_light  *= (SSS_POW+8)/(8); //blinn normalize
-	
-    SSS_light  = SSS_light * SSS_SCALE;
-    SSS_light  += saturate(dot(N,-L)) * SSS_AMB; //only apply ambient to shaded areas
-    return SSS_light;
+	float S = saturate(dot(V, -(L + N))) * G_SSS_INTENSITY;
+	return S;
 }

@@ -64,13 +64,13 @@
 	        <texture>ui_inGame2_edit_box_2</texture>
 	    </edit_port>
  
-	    <check_remember_me x="252" y="275" width="35" height="29" stretch="1">
+	    <check_register_me x="252" y="275" width="35" height="29" stretch="1">
 	        <texture>ui_inGame2_checkbox</texture>
-	        <text x="-10" font="letterica16" r="170" g="170" b="170">ui_st_mp_remember_me</text>
+	        <text x="-10" font="letterica16" r="170" g="170" b="170">ui_st_mp_register_me</text>
 			<text_color>
 				<e r="200" g="200" b="200"/>
 			</text_color>
-	    </check_remember_me>
+	    </check_register_me>
 		
 		<button_login x="119" y="331" width="108" height="26">
 			<text font="letterica16" r="200" g="200" b="200" align="c">ui_st_mp_login</text>
