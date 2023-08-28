@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+    <string id="nmp_trader_countdown_1">
+        <text>Обратный отсчёт (I): Убить бандитов и собрать пистолеты.</text>
+    </string>
+	<string id="nmp_trader_countdown_1_descr">
+        <text>Сидорович поручил атаковать бандитов и в доказательство принести 2 пистолета Beretta 92 любой сохранности.</text>
+    </string>
+	<string id="nmp_trader_countdown_1_award">
+        <text>Обратный отсчёт (I): Принести пистолеты Сидоровичу.</text>
+    </string>
+	<string id="nmp_trader_countdown_1_award_descr">
+        <text>Трофеи получены. Время отдать их Сидоровичу и получить обещанную награду.</text>
+    </string>
+</string_table>

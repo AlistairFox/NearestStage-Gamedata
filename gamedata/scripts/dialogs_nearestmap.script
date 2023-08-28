@@ -1,0 +1,43 @@
+function give_food_quest()
+   task_manager.get_task_manager():give_task("stalker_trader_lootquest")
+end
+
+function has_food()
+    if db.mp_actor:object("kolbasa") then
+        return true
+    end
+    return false
+end
+
+function transfer_kolbasa(first_speaker, second_speaker)
+    dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "kolbasa")
+end
+
+function complete_kolbasa()
+	local task_id = stalker_trader_lootquest:get_id()
+   task_manager.get_task_manager():task_complete("stalker_trader_lootquest")
+end
+
+function give_countdown_1_quest()
+	   task_manager.get_task_manager():give_task("stalker_trader_countdown")
+end
+
+function trader_countdown_novice_check()
+	if db.mp_actor:object("novice_outfit") then
+        return true
+    end
+    return false
+end
+
+function trader_countdown_check()
+	if db.mp_actor:object("wpn_beretta") then
+        return true
+    end
+    return false
+end
+
+function trader_countdown1_transfer(first_speaker, second_speaker)
+	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "wpn_beretta")
+--	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "ammo_12x70_buck", 4)
+--	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "wpn_spas12")
+end
