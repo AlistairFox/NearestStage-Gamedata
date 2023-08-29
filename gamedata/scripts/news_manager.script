@@ -87,9 +87,7 @@ function send_tip(actor, news_id, timeout, sender, showtime, sender_id)
 	if timeout == nil then timeout = 0 end
 	if showtime == nil then showtime = 5000 end
 
-	--' Играем дефолтный звук
-	xr_sound.set_sound_play(actor:id(), "pda_tips")
-
+ 	xr_sound.set_sound_play(actor:id(), "pda_tips")
 
 	local texture = "ui_iconsTotal_grouping"
 	if sender ~= nil then
@@ -166,7 +164,7 @@ function send_sound(npc, faction, point, str, str2, delay_sound)
 
 --		db.actor:give_game_news(news_caption, news_text, texture, 1000, 5000)
 --		give_game_news(LPCSTR caption, LPCSTR news, LPCSTR texture_name, int delay, int show_time)
-		db.mp_actor:give_game_news(news_caption, news_text, texture, delay_sound+1000, 5000, 1)
+		db.actor:give_game_news(news_caption, news_text, texture, delay_sound+1000, 5000, 1)
 
 		return true
 
@@ -190,25 +188,38 @@ local action_descr_by_type = {
 							 }
 
 function send_task(actor, type, task)
-	if db.mp_actor == nil then
+	
+	if db.get_actor() == nil then
 		return false
 	end
+	
 	local time_on_screen = 10000
+	
 	if type == "updated" then
 		time_on_screen = 5000
 	end
-	xr_sound.set_sound_play(db.mp_actor:id(), "pda_task")
+	
+	xr_sound.set_sound_play(db.get_actor():id(), "pda_task")
 	local news_caption = game.translate_string(action_descr_by_type[type])
 	local news_text = game.translate_string(task:get_title())
 	local icon = task:get_icon_name()
+	
+	if (news_caption == nil) then
+		news_caption = "NO CAPTION"
+	end
+	
+	if (news_text == nil) then
+		news_text = "NO TEXT"
+	end
+	
 	if(icon==nil) then
 		icon = "ui_iconsTotal_storyline"
 	end
 
-	if db.mp_actor:is_talking() then
-		db.mp_actor:give_talk_message2(news_caption, news_text..".", icon, "iconed_answer_item")
+	if db.get_actor():is_talking() then
+ 		db.get_actor():give_talk_message2(news_caption, news_text..".", icon, "iconed_answer_item")
 	else
-		db.mp_actor:give_game_news(news_caption, news_text..".", icon, 0, time_on_screen)
+ 		db.get_actor():give_game_news(news_caption, news_text..".", icon, 0, time_on_screen)
 	end
 
 end
@@ -219,15 +230,14 @@ function send_treasure(param)
 		news_caption = game.translate_string("st_found_new_treasure")
 	elseif(param==1) then
 		news_caption = game.translate_string("st_got_treasure")
-		xr_sound.set_sound_play(db.mp_actor:id(), "pda_tips")
 	elseif(param==2) then
 		news_caption = game.translate_string("st_found_old_treasure")
 	end
 
-	if db.mp_actor:is_talking() then
-		db.mp_actor:give_talk_message2(news_caption, "", "ui_inGame2_Polucheni_koordinaty_taynika", "iconed_answer_item")
+	if db.actor:is_talking() then
+		db.actor:give_talk_message2(news_caption, "", "ui_inGame2_Polucheni_koordinaty_taynika", "iconed_answer_item")
 	else
-		db.mp_actor:give_game_news(news_caption, "", "ui_inGame2_Polucheni_koordinaty_taynika", 0, 3000)
+		db.actor:give_game_news(news_caption, "", "ui_inGame2_Polucheni_koordinaty_taynika", 0, 3000)
 	end
 end
 
@@ -236,7 +246,7 @@ function get_inv_name(section)
 end
 
 function relocate_item(actor, type, item, amount)
-	if db.mp_actor == nil then return false end
+	if db.actor == nil then return false end
 	--' Играем дефолтный звук
 	if not amount then
 		amount = 1
@@ -251,10 +261,10 @@ function relocate_item(actor, type, item, amount)
 			news_caption = game.translate_string("general_in_item")
 			news_text = game.translate_string(get_inv_name(item)).." x"..amount
 		end
-		if db.mp_actor:is_talking() then
-			db.mp_actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Predmet_poluchen", "iconed_answer_item")
+		if db.actor:is_talking() then
+			db.actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Predmet_poluchen", "iconed_answer_item")
 		else
-			db.mp_actor:give_game_news(news_caption, news_text, "ui_inGame2_Predmet_poluchen", 0, 3000)
+			db.actor:give_game_news(news_caption, news_text, "ui_inGame2_Predmet_poluchen", 0, 3000)
 		end
 	elseif type == "out" then
 		if amount == 1 then
@@ -264,34 +274,38 @@ function relocate_item(actor, type, item, amount)
 			news_caption = game.translate_string("general_out_item")
 			news_text = game.translate_string(get_inv_name(item)).." x"..amount
 		end
-		if db.mp_actor:is_talking() then
-			db.mp_actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Predmet_otdan", "iconed_answer_item")
+		if db.actor:is_talking() then
+			db.actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Predmet_otdan", "iconed_answer_item")
 		else
-			db.mp_actor:give_game_news(news_caption, news_text, "ui_inGame2_Predmet_otdan", 0, 3000)
+			db.actor:give_game_news(news_caption, news_text, "ui_inGame2_Predmet_otdan", 0, 3000)
 		end
 	end
 end
 
 function relocate_money(actor, type, amount)
-	if db.mp_actor == nil then return false end
+	if db.actor == nil then return false end
 	--' Играем дефолтный звук
 	if type == "in" then
 		local news_caption = game.translate_string("general_in_money")
 		local news_text = game.translate_string(tostring(amount))
 
-		if db.mp_actor:is_talking() then
-			db.mp_actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Dengi_polucheni", "iconed_answer_item")
+		if db.actor:is_talking() then
+			db.actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Dengi_polucheni", "iconed_answer_item")
 		else
-			db.mp_actor:give_game_news(news_caption, news_text, "ui_inGame2_Dengi_polucheni", 0, 3000)
+			db.actor:give_game_news(news_caption, news_text, "ui_inGame2_Dengi_polucheni", 0, 3000)
 		end
 	elseif type == "out" then
 		local news_caption = game.translate_string("general_out_money")
 		local news_text = game.translate_string(tostring(amount))
 
-		if db.mp_actor:is_talking() then
-			db.mp_actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Dengi_otdani", "iconed_answer_item")
+		if db.actor:is_talking() then
+			db.actor:give_talk_message2(news_caption, news_text, "ui_inGame2_Dengi_otdani", "iconed_answer_item")
 		else
-			db.mp_actor:give_game_news(news_caption, news_text, "ui_inGame2_Dengi_otdani", 0, 3000)
+			db.actor:give_game_news(news_caption, news_text, "ui_inGame2_Dengi_otdani", 0, 3000)
 		end
 	end
+end
+
+function PlaySnd()
+	xr_sound.set_sound_play(db.get_actor():id(), "pda_tips")
 end

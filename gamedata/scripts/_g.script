@@ -208,13 +208,16 @@ function distance_between_safe(obj1, obj2)
 	return obj1:position():distance_to(obj2:position())
 end
 
-local aa = nil
---' �������� �� ���������v, ���� ���� ������ �� ��	�������
+local client_alife_INFO = {}
+
+ 
+--' іроверка на инфопоршнv, даже если игрока не су	ествует
 function has_alife_info(info_id)
-	if aa == nil then
+	if  (db.get_actor() ~= nil) then
+		return db.get_actor():has_info(info_id)
+	else 
 		return false
 	end
-	return aa:has_info(0, info_id)
 end
 
 
@@ -439,14 +442,6 @@ function IsStalker (object, class_id)
 end
 
 function isWeapon(object, class_id)
-	--[GWR]: ���� ������ - ������������� ��� ����������� ��������, �� �������, ��� �� - �� ������	
-	if object~=nil then
-		local ini=system_ini()
-		if (ini:line_exist(object:section(), "script_binding") and (ini:r_string(object:section(), "script_binding")=="gwr_eatable.init" or ini:r_string(object:section(), "script_binding")=="action_animators.init")) then			
-			return false
-		end
-	end
-	--[/GWR]
 	local id = class_id or get_clsid(object)
 	return weapon_classes[id] == true
 end
@@ -541,11 +536,10 @@ function npc_in_actor_frustrum(npc)
 end
 
 function start_game_callback()
-	if OnServer() then
-		aa = alife()
-	end
-
-	squad_community_by_behaviour = {
+	printf_msg("alife() start_game_callback")
+	
+	squad_community_by_behaviour = 
+	{
 		["stalker"]							= "stalker",
 		["bandit"]							= "bandit",
 		["dolg"]							= "dolg",
@@ -686,12 +680,13 @@ function on_actor_psy()
 end
 
 function give_info (info)
-	db.actor:give_info_portion(info)
+	if (db.get_actor() ~= nil) then
+		db.get_actor():give_info_portion(info)
+	end
 end
 function disable_info (info)
-	if has_alife_info(info) then
-		printf("*INFO*: disabled npc='single_player' id='%s'", info)
-		db.actor:disable_info_portion(info)
+	if has_alife_info(info) and db.get_actor() ~= nil then
+ 		db.get_actor():disable_info_portion(info)
 	end
 end
 
@@ -914,3 +909,16 @@ function get_nearest_actor(pos)
 	end
 	return nearest_actor
 end
+
+function get_nearest_actor_distance(pos, dist)
+	local nearest_actor = nil
+ 
+	for _, player in pairs(db.players) do
+		local distance = pos:distance_to_sqr(pos)
+		if distance < dist then
+			nearest_actor = player
+		end
+	end
+	return nearest_actor
+end
+ 
