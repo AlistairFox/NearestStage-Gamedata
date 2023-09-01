@@ -13,16 +13,19 @@
         <text>Нет, всё в порядке.</text>
     </string>
     <string id="nmp_stalker_trader_aboutwork_13">
-        <text>Я принёс еду.</text>
+        <text>Я порешал вопросы с бандитами.</text>
     </string>
     <string id="nmp_stalker_trader_aboutwork_131">
         <text>Держи награду!</text>
     </string>
     <string id="nmp_stalker_trader_aboutwork_14">
-        <text>Я порешал вопросы с бандитами.</text>
+        <text>Я приволок шпаллер.</text>
     </string>
     <string id="nmp_stalker_trader_aboutwork_141">
-        <text>Красота.</text>
+        <text>Красота. Держи обещанный подгон.</text>
+    </string>
+    <string id="nmp_stalker_trader_aboutwork_142">
+        <text>Большое спасибо. Держи награду - уговор дороже денег.</text>
     </string>
     <string id="nmp_stalker_trader_start_dialog_11">
         <text>Здравствуй!</text>
@@ -40,16 +43,16 @@
         <text>Мне нужна работа. Может есть что на заметке?</text>
     </string>
     <string id="nmp_stalker_trader_work_1">
-        <text>Нужно найти какую то хуйню.</text>
+        <text>Один не самый благонадёжный элемент из моей рабочей группы потерял свой ствол. Я, конечно, ожидал такое, однако сейчас этот отряд нужен мне как никогда. Принеси какой-нибудь простенький ствол, к примеру укорот, или кипарис. Будет очень кстати. Я, конечно, в долгу не останусь.</text>
+    </string>
+    <string id="nmp_stalker_trader_work_11">
+        <text>Хорошо, помогу твоему растяпе.</text>
+    </string>
+    <string id="nmp_stalker_trader_work_12">
+        <text>Извини, но такая работа меня не устраивает.</text>
     </string>
     <string id="nmp_stalker_trader_work_2">
-        <text>К сожалению ничего не могу предложить.</text>
-    </string>
-    <string id="nmp_stalker_trader_work_3">
-        <text>Нужно сходить и насрать под дверь.</text>
-    </string>
-    <string id="nmp_stalker_trader_work_4">
-        <text>Нужно найти лабу.</text>
+        <text>Извини, ничего не могу предложить.</text>
     </string>
     <string id="nmp_stalker_trader_work_5">
         <text>Я вижу ты недавно в Зоне? Я думаю мы с тобой сработаемся. Выглядишь ты так, будто с руками дружишь, в общем есть у меня к тебе поручение, можно даже сказать, спор. Бандюги совсем распоясались последнее время, и я хочу, чтобы они поняли, что так дела не делаются. Трясут даже с опытных сталкеров у самого хода на свалку. Я дам тебе ружьё и припасы, а ты порешай хоть сколько сможешь этих гадов. Справишься - оставишь себе, я тебе насыплю гонорара - не вопрос. А в доказательство принеси мне... Ну, скажем, пару беретт, или с чем там эти гады ходят.</text>
