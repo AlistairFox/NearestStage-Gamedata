@@ -21,7 +21,7 @@ end
 function give_countdown_1_quest()
 	task_manager.get_task_manager():give_task("stalker_trader_countdown")
 	task_utils.send_reward(2, 5, "ammo_12x70_buck")
-	task_utils.send_reward(2, 5, "wpn_toz34")
+	task_utils.send_reward(2, 1, "wpn_toz34")
 end
 
 function trader_countdown_novice_check()
