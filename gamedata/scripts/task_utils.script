@@ -31,8 +31,12 @@ function recive_tasks(SenderID, P)
 		local bool = P:r_u8()
 		local name = P:r_stringZ()
 		task_utils.recive_info(bool, name)
+	elseif (t == 4) then
+		task_utils.sync_goodwill()
+	elseif (t == 5) then
+		local quest = P:r_stringZ()
+		task_utils.recive_quest_save(player, quest)
 	end
-	task_utils.sync_goodwill()
 end
 
 function send_reward(type, size, item)
@@ -101,5 +105,19 @@ function sync_goodwill()
 end
 
 function cl_get_goodwill()
+	local P = mp_events.gen_event('TASKS') 
+	P:w_u8(4)
+	mp_events.send_to_server(P)
 	return goodwill
+end
+
+function recive_quest_save(player, quest)
+	mp.save_quest(player, quest)
+end
+
+function send_quest_save(quest)
+	local P = mp_events.gen_event('TASKS') 
+	P:w_u8(5)
+	P:w_stringZ(quest)
+	mp_events.send_to_server(P)
 end

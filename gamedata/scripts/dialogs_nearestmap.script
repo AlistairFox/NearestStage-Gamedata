@@ -50,12 +50,10 @@ function give_rastyapa_quest()
 end
 
 function trader_rastyapa_check()
-	if task_utils.cl_get_goodwill() > 20 then
-		if db.mp_actor:object("wpn_ak74u") then
-			return true
-		elseif db.mp_actor:object("wpn_kiparis") then
-			return true
-		end
+	if db.mp_actor:object("wpn_ak74u") then
+		return true
+	elseif db.mp_actor:object("wpn_kiparis") then
+		return true
 	end
     return false
 end
