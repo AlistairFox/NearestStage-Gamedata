@@ -300,4 +300,17 @@
 	<string id="st_dress_helmet">
 		<text>надеть шлем</text>
 	</string>
+	<string id="st_repair">
+		<text>Починить</text>
+	</string>
+	<string id="st_charge_item">
+		<text>Зарядить</text>
+	</string>
+	<string id="st_enable_detector">
+		<text>Включить детектор</text>
+	</string>
+	<string id="st_disable_detector">
+		<text>Выключить детектор</text>
+	</string>
+
 </string_table>
