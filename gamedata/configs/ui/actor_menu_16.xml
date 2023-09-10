@@ -82,7 +82,7 @@
 	<quick_slot_highlight x="387" y="401" width="52" height="59" dx="64" stretch="1">
 		<texture>ui_inGame2_quick_item_highlighter</texture>
 	</quick_slot_highlight>
-	<artefact_slot_highlight x="250" y="600" width="41" height="52" dx="52" dy="52" rows_num="2" cols_num="5" stretch="1">
+	<artefact_slot_highlight x="406" y="615" width="41" height="52" dx="52" dy="52" rows_num="2" cols_num="5" stretch="1">
 		<texture>ui_inGame2_artefakt_highlighter</texture>
 	</artefact_slot_highlight>
 
@@ -197,7 +197,7 @@
 	    </trade_weight_max>
 	</right_delimiter>
 
-	<belt_list_over x="250" y="600" width="47" height="59" dx="52" dy="59" rows_num="2" cols_num="5" stretch="1">
+	<belt_list_over x="406" y="612" width="37" height="49" dx="43" dy="52" rows_num="2" cols_num="5" stretch="1">
 		<texture >ui_inGame2_artefact_blocker</texture>
 	</belt_list_over>
 
@@ -212,9 +212,9 @@
     	cell_width="33" cell_height="41" rows_num="10" cols_num="7"
 		unlimited="1" group_similar="0" always_show_scroll="0" condition_progress_bar="1"/>
 
-	<dragdrop_belt x="250" y="600" width="550" height="400"
+	<dragdrop_belt x="406" y="615" width="550" height="400"
 		cell_width="33" cell_height="41" rows_num="2" cols_num="5"
-		cell_sp_x="19" cell_sp_y="19" a="0" always_show_scroll="0" condition_progress_bar="1"/>
+		cell_sp_x="10" cell_sp_y="10" a="0" always_show_scroll="0" condition_progress_bar="1"/>
 	
 	<dragdrop_outfit x="392" y="100" width="85" height="178"
 		cell_width="33" cell_height="41" rows_num="3" cols_num="2"
@@ -226,7 +226,7 @@
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
 		vc_horiz_align="c" />
 		
-	<dragdrop_dosimeter x="743" y="540" width="85" height="85"
+	<dragdrop_dosimeter x="743" y="637" width="85" height="85"
 		cell_width="33" cell_height="41" rows_num="2" cols_num="2"
 		custom_placement="0" a="0" virtual_cells="1" vc_vert_align="c"
 		vc_horiz_align="c" charge_level_progess_bar="1"/>
@@ -375,14 +375,18 @@
 	        </text>
 	    </hint_wnd>
 
-	    <health_state x="10" y="30" width="172" height="18">
-	        <hint_text delay="800">st_ui_health_sensor</hint_text>
-	        <state_progress x="0" y="0" width="171" height="16" horz="1" min="0" max="0.99" pos="0">
-	    	    <progress stretch="1">
-	        		<texture r="255" g="0" b="0">ui_inGame2_inventory_health_bar</texture>
-		        </progress>
-	        </state_progress>
-	    </health_state>
+		<health_state x="0" y="20" width="171" height="24">
+		<hint_text delay="800">st_ui_health_sensor</hint_text>
+		<state_caption x="0" y="1" width="18" height="24" stretch="1">
+		<text x="38" y="0" vert_align="c" font="letterica16"
+		color="ui_6">st_ui_health_sensor</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="24" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
+		</health_state>
 
 	    <bleeding_state x="189" y="7" width="36" height="45">
 	        <hint_text delay="800">st_ui_bleeding_sensor</hint_text>
@@ -410,100 +414,108 @@
 	        </icon3>
 	    </radiation_state>
 
-	    <radia_sensor x="12" y="71" width="116" height="18">
+	    <radia_sensor x="0" y="56" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_radiation_protection</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-	        	</progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_radiation_protection</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </radia_sensor>
 
-	    <acid_sensor x="12" y="99" width="116" height="18">
+	    <acid_sensor x="0" y="74" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_chemical_burn_protection</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-	        	</progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_chemical_burn_protection</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </acid_sensor>
 
-	    <shock_sensor x="12" y="127" width="116" height="18">
+	    <shock_sensor x="0" y="92" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_shock_protection</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-	        	</progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_shock_protection</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </shock_sensor>
 
-	    <fire_sensor x="12" y="155" width="116" height="18">
+	    <fire_sensor x="0" y="110" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_burn_protection</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-		        </progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_burn_protection</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </fire_sensor>
 
-	    <psi_sensor x="139" y="71" width="116" height="18">
+	    <psi_sensor x="120" y="56" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_telepatic_protection</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-	        	</progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_telepatic_protection</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </psi_sensor>
 
-	    <wound_sensor x="139" y="99" width="116" height="18">
+	    <wound_sensor x="120" y="74" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_wound_protection</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-	        	</progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_wound_protection</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </wound_sensor>
 
-	    <fire_wound_sensor x="139" y="127" width="116" height="18">
+	    <fire_wound_sensor x="120" y="92" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_fire_wound_protection</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-	        	</progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_fire_wound_protection</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </fire_wound_sensor>
 
-	    <power_sensor x="139" y="155" width="116" height="18">
+	    <power_sensor x="120" y="110" width="116" height="18">
 	        <hint_text delay="800">ui_inv_outfit_power_restore</hint_text>
-	        <icon x="0" y="0" width="14" height="18" magnitude="100" stretch="1">
-		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
-	        </icon>
-	        <state_progress x="19" y="1" width="98" height="18" horz="1" min="0" max="1" pos="0">
-		        <progress stretch="1">
-	    		    <texture r="142" g="149" b="149">ui_inGame2_inventory_progress_bar</texture>
-	        	</progress>
-	        </state_progress>
+		<state_caption x="0" y="1" width="14" height="18" stretch="1">
+		<text x="30" y="0" vert_align="c" font="letterica16"
+		color="ui_6">ui_inv_outfit_power_restore</text>
+		<texture>ui_mfs_withdrawal_restore_speed</texture>
+
+		<state_value x="17" y="1" width="32" height="18" magnitude="100">
+		<text font="letterica16" color="ui_6" vert_align="c"/>
+		</state_value>
+		</state_caption>
 	    </power_sensor>
 	</actor_state_info>
 </w>

@@ -168,6 +168,9 @@
         </cap_fps_limit>
         <track_fps_limit x="144" y="6" width="188" height="16" step="10" is_integer="1" hint="hint_fps_limit">
             <options_item entry="FPS_limit" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%d">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_fps_limit>
 
         <cap_vis_dist x="16" y="3" width="108" height="24" hint="hint_vis">
@@ -175,6 +178,9 @@
         </cap_vis_dist>
         <track_vis_dist x="144" y="6" width="188" height="16" step="0.1" hint="hint_vis">
             <options_item entry="rs_vis_distance" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%.1f">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_vis_dist>
 		
 		<cap_dyn_opt x="16" y="3" width="108" height="24" hint="hint_dyn_opt">
@@ -182,6 +188,9 @@
         </cap_dyn_opt>
         <track_dyn_opt x="144" y="6" width="188" height="16" step="1" is_integer="1" hint="hint_dyn_opt">
             <options_item entry="r__optimize_dynamic_geom" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%d">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_dyn_opt>
 		
 		<cap_stat_opt x="16" y="3" width="108" height="24" hint="hint_stat_opt">
@@ -189,6 +198,9 @@
         </cap_stat_opt>
         <track_stat_opt x="144" y="6" width="188" height="16" step="1" is_integer="1" hint="hint_stat_opt">
             <options_item entry="r__optimize_static_geom" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%d">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_stat_opt>
 
 		<cap_shad_opt x="16" y="3" width="108" height="24" hint="hint_shad_opt">
@@ -204,6 +216,9 @@
         </cap_geometry_lod>
         <track_geometry_lod x="144" y="6" width="188" height="16" step="0.1" hint="hint_geom_lod">
             <options_item entry="r__geometry_lod" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%.1f">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_geometry_lod>
 
         <cap_detail_density x="16" y="3" width="108" height="24">
@@ -216,8 +231,11 @@
         <cap_texture_lod x="16" y="3" width="108" height="24" hint="hint_texture_lod">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_texture_quality</text>
         </cap_texture_lod>
-        <track_texture_lod x="144" y="6" width="188" height="16" invert="1" step="1" is_integer="1" hint="hint_texture_lod">
+        <track_texture_lod x="144" y="6" width="188" height="16" invert="1" min="0" max="4" step="1" is_integer="1" hint="hint_texture_lod">
             <options_item entry="texture_lod" group="mm_opt_video_adv" depend="restart"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%d">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_texture_lod>
 
         <cap_aniso x="16" y="3" width="108" height="24" hint="hint_aniso">
@@ -225,6 +243,9 @@
         </cap_aniso>
         <track_aniso x="144" y="6" width="188" height="16" step="1" is_integer="1" hint="hint_aniso">
             <options_item entry="r__tf_aniso" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%d">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_aniso>
 
         <cap_ssample x="16" y="3" width="108" height="24" hint="hint_supersamples">
@@ -232,6 +253,9 @@
         </cap_ssample>
         <track_ssample x="144" y="6" width="188" height="16" step="1" is_integer="1" hint="hint_supersamples">
             <options_item entry="r__supersample" group="mm_opt_video_adv" depend="vid"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%d">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_ssample>
         <combo_ssample x="144" y="0" width="188" height="20" list_length="4" always_show_scroll="0" hint="hint_supersamples">
             <options_item entry="r3_msaa" group="mm_opt_video_adv" depend="vid"/>
@@ -308,6 +332,9 @@
         </cap_light_distance>
         <track_light_distance x="144" y="6" width="188" height="16" hint="hint_ldist">
             <options_item entry="r2_slight_fade" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%.1f">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_light_distance>
 
         <cap_npc_torch x="16" y="3" width="108" height="24">
@@ -355,6 +382,9 @@
         </cap_particles_distance>
         <track_particles_distance x="144" y="6" width="188" height="16" step="0.1">
             <options_item entry="r2_ls_squality" group="mm_opt_video_adv"/>
+			<output_wnd x="180" y="0" width="20" height="20" format="%.1f">
+				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
+			</output_wnd>
         </track_particles_distance>
 
         <cap_vsync x="16" y="3" width="108" height="24">

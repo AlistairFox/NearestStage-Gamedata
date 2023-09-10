@@ -312,5 +312,28 @@
 	<string id="st_disable_detector">
 		<text>Выключить детектор</text>
 	</string>
-
+	<string id="ui_inv_battery">
+		<text>Заряд:</text>
+	</string>
+	<string id="ui_inv_max_charge">
+		<text>Максимальный заряд:</text>
+	</string>
+	<string id="ui_inv_uncharge_speed">
+		<text>Скорость разрядки:</text>
+	</string>
+	<string id="st_battery">
+		<text>Батарейки</text>
+	</string>
+	<string id="st_battery_descr">
+		<text>Обычные простенькие батарейки, не самого лучшего качества. Хватает не надолго, но лучше чем ничего.</text>
+	</string>
+	<string id="st_repair_kit">
+		<text>Ремнабор</text>
+	</string>
+	<string id="st_repair_kit_descr">
+		<text>Набор различных, необходимых для починки большинства амунации инструментов и расходников.</text>
+	</string>
+	<string id="ui_inv_repair_kit_condition">
+		<text>коэф. ремонта:</text>
+	</string>
 </string_table>

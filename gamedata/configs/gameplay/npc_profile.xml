@@ -235,6 +235,10 @@
 		<class>sim_default_ecologist_6</class>
 		</character>
 		
+		<character id="trader_scien">
+		<class>trader_scien</class>
+		</character>
+		
 	<!-- sim profiles -->
 	<!-- sim duty -->
 	<character id="sim_default_duty_0">
