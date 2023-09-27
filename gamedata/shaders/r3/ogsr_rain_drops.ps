@@ -8,6 +8,7 @@
 // в дождь. y - Интенсивность эффекта. Чем больше - тем более "ярко выраженнее" будут капли. Регулируется консольной командой r2_rain_drops_intensity z - Скорость стекания капель.
 // Чем больше - тем быстрее. Регулируется консольной командой r2_rain_drops_speed
 uniform float4 rain_drops_params;
+uniform float3 eye_direction;
 
 float2 mod289(float2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
 float3 mod289(float3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -171,7 +172,7 @@ float4 main(v2p_aa_AA _in) : SV_Target
     float rainAmount = rain_drops_params.x;
     float2 uv = _in.Tex0;
 
-    float T = rain_drops_params.z * (timers.x + rainAmount * 2.);
+    float T = rain_drops_params.z * (timers.x * (abs(eye_direction.y) < 0.8) + rainAmount * 2.);
 
     float t = T * .2;
 
