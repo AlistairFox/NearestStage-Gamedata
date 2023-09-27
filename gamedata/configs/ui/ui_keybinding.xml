@@ -64,6 +64,7 @@
 		<command id="kb_voice_distanec"				exe="voice_distance"/>
 		<command id="kb_animation_mode"				exe="animation_mode"/>
 		<command id="kb_safe_mode"				exe="safe_mode"/>
+		<command id="kb_swipe_mask"					exe="swipe_mask"/>
 		<command id="kb_buy_menu"					exe="buy_menu"/>
 		<command id="kb_skin_menu"				exe="skin_menu"/>
 		<command id="kb_team_menu"				exe="team_menu"/>

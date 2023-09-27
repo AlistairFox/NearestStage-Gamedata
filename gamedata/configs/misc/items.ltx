@@ -12,8 +12,6 @@ inv_name			= default
 inv_name_short		= default
 inv_weight			= 0.01
 
-camera_effector = aptechka_use
-
 inv_grid_width		= 2
 inv_grid_height		= 1
 belt				= false
@@ -53,7 +51,6 @@ boost_strike_immunity		= 0.0
 boost_wound_immunity		= 0.0
 boost_explosion_immunity	= 0.0
 boost_fire_wound_immunity	= 0.0
-;use_sound			= characters_voice\multiplayer\team_1\voice_roger_3
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -68,8 +65,6 @@ inv_name			= st_bread
 inv_name_short		= st_bread
 inv_weight			= 0.4	;0.2
 belt				= true
-
-camera_effector = bint_use
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -92,7 +87,19 @@ boost_time				= 5.0
 boost_health_restore	= 0.002
 eat_satiety				= 0.6
 
-use_sound			= interface\inv_food
+anm = item_ea_bread_hud
+cam = itemuse_anm_effects\eat_kolbasa_d_use_h.anm
+
+[item_ea_bread_hud]
+hands_position			= 0.045000,0.130000,0.400000
+hands_orientation		= 0.000000,20.500000,0.000000
+hands_position_16x9			= 0.045000,0.130000,0.400000
+hands_orientation_16x9		= 0.000000,20.500000,0.000000
+snd = interface\item_usage\food_use
+item_visual             	= dynamics\weapons\wpn_eat\food\wpn_eat_hleb.ogf
+anm_ea_show					= eat_hleb_d_use_h, eat_hleb_d_use_h, 0.01
+single_handed_anim = 2
+
 
 [kolbasa]:booster
 $spawn 				= "food and drugs\kolbasa"
@@ -125,7 +132,18 @@ boost_health_restore	= 0.002
 eat_satiety				= 1
 eat_thirst		= -0.2
 
-use_sound			= interface\inv_food
+anm = item_ea_kolbasa_hud
+cam = itemuse_anm_effects\eat_kolbasa_d_use_h.anm
+
+[item_ea_kolbasa_hud]
+hands_position			= 0.045000,0.130000,0.400000
+hands_orientation		= 0.000000,20.500000,0.000000
+hands_position_16x9			= 0.045000,0.130000,0.400000
+hands_orientation_16x9		= 0.000000,20.500000,0.000000
+item_visual             	= dynamics\weapons\wpn_eat\food\wpn_eat_kolbasa.ogf
+snd = interface\item_usage\food_use
+anm_ea_show					= eat_hleb_d_use_h, eat_hleb_d_use_h, 0.8
+single_handed_anim = 2
 
 [conserva]:booster
 $spawn 				= "food and drugs\conserva"
@@ -159,7 +177,20 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-use_sound			= interface\inv_food
+anm = item_ea_conserva_hud
+cam = itemuse_anm_effects\eat_tushonka_d_use_h.anm
+
+[item_ea_conserva_hud]
+hands_position 				= 0.0, -0.143296, 0.284578
+hands_orientation		    = 0.0, 16.4738, 0.0
+hands_position_16x9			= 0.003000,-0.165296,0.185578
+hands_orientation_16x9		= 0.000000,16.473801,0.000000
+item_position				= 0,0,0
+item_orientation			= 0,0,0
+snd = interface\item_usage\conserva_use
+item_visual             	= dynamics\weapons\wpn_eat\psut\wpn_can_tushonka.ogf
+anm_ea_show					= tushka_draw
+single_handed_anim = 2
 
 [vodka]:booster
 $spawn 				= "food and drugs\vodka"
@@ -197,7 +228,16 @@ boost_radiation_restore	= 0.005
 eat_alcohol				= 0.1
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_vodka
+anm = item_ea_cmuphob_vodka_hud
+cam = itemuse_anm_effects\vodka_use.anm
+
+[item_ea_cmuphob_vodka_hud]
+hands_position              = -0.0055,-0.09, 0.27
+hands_position_16x9         = -0.0055,-0.09, 0.27
+snd = interface\item_usage\vodka_use
+item_visual             	= dynamics\weapons\wpn_eat\vodki\wpn_vodka_cmuphob_hud.ogf
+anm_ea_show					= vodka_hands_eat_invtrans, vodka_wpn_eat
+single_handed_anim = 2
 
 [jameson]:booster
 $spawn 				= "food and drugs\jameson"
@@ -235,7 +275,16 @@ boost_radiation_restore	= 0.005
 eat_alcohol				= 0.1
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_vodka
+anm = item_ea_cmuphob_vodka2_hud
+cam = itemuse_anm_effects\vodka_use.anm
+
+[item_ea_cmuphob_vodka2_hud]
+hands_position              = -0.0055,-0.09, 0.27
+hands_position_16x9         = -0.0055,-0.09, 0.27
+snd = interface\item_usage\vodka_use
+item_visual             	= dynamics\weapons\wpn_eat\vodki\wpn_vodka_cmuphob_hud.ogf
+anm_ea_show					= vodka_hands_eat_invtrans, vodka_wpn_eat
+single_handed_anim = 2
 
 [vodka_script]:vodka ; не использовать
 $spawn 				= "food and drugs\vodka_script"
@@ -1231,7 +1280,16 @@ eat_thirst		= 0.5
 
 eat_alcohol				= 0.0
 
-use_sound			= interface\inv_softdrink
+anm = item_ea_energy_drink_nonstop_hud
+cam = itemuse_anm_effects\banka_use.anm
+
+[item_ea_energy_drink_nonstop_hud]
+hands_position              = -0.0055,-0.072, 0.31
+hands_position_16x9         = -0.0055,-0.072, 0.31
+snd = interface\item_usage\drink_soda_use
+item_visual             	= dynamics\weapons\wpn_eat\banki\wpn_banka_nonstop_hud.ogf
+anm_ea_show					= banka_1_hands_eat_invtrans, banka_1_wpn_eat
+single_handed_anim = 2
 
 [bandage]:booster
 $spawn 				= "food and drugs\bandage"
@@ -1252,7 +1310,17 @@ inv_grid_y			= 18
 boost_time				= 5.0
 boost_bleeding_restore	= 0.02
 
-use_sound			= interface\inv_bandage
+
+anm = item_ea_bandage_hud
+cam = itemuse_anm_effects\bint_use.anm
+
+[item_ea_bandage_hud] 
+hands_position                           = -0.0055,-0.05, 0.35
+hands_position_16x9                      = -0.0055,-0.05, 0.35
+item_visual             	= dynamics\weapons\wpn_eat\bints\wpn_bint_basic_hud
+snd = interface\item_usage\bandage_use
+anm_ea_show				= bint_hands_eat_alt_1_invtrans, bint_wpn_eat
+single_handed_anim = 2
 
 ;antirad new
 [antirad]:booster
@@ -1278,7 +1346,17 @@ boost_radiation_restore	= 0.03
 eat_thirst		= -0.2
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_pills
+
+anm = item_ea_antirad_hud
+cam = itemuse_anm_effects\antirad_use.anm
+
+[item_ea_antirad_hud] 
+hands_position                           = -0.0055,-0.05, 0.32
+hands_position_16x9                      = -0.0055,-0.05, 0.32
+item_visual             	= dynamics\weapons\wpn_eat\injectors\wpn_injector_big_antirad_hud.ogf
+snd = interface\item_usage\antirad_use
+anm_ea_show					= antirad_hands_eat_invtrans, antirad_wpn_eat
+single_handed_anim = 2
 
 ;medikits new
 [medkit_script]:booster ;Do not use! Used in xr_wounded
@@ -1303,7 +1381,16 @@ eat_radiation		= -0.05
 wounds_heal_perc	= 0.1
 eat_portions_num	= 1
 
-use_sound			= interface\inv_medkit
+anm = medkit_script_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[medkit_script_hud]
+item_visual = dynamics\weapons\wpn_eat\fake_item.ogf 
+hands_position_16x9				= -0.00,0.000,-0.0
+hands_orientation_16x9				= -0.02,0.030000,0.000000
+snd = interface\inv_attach_addon
+anm_ea_show					= fuckanim
+single_handed_anim = 2
 
 
 [medkit]:booster
@@ -1328,7 +1415,16 @@ boost_bleeding_restore	= 0.005
 eat_thirst		= -0.2
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_medkit
+anm = item_ea_medkit_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[item_ea_medkit_hud] 
+hands_position                           = -0.0055,-0.07, 0.36
+hands_position_16x9                      = -0.0055,-0.07, 0.36
+item_visual             	= dynamics\weapons\wpn_eat\aptechki\wpn_aptechka_basic_hud
+snd = interface\item_usage\medkit_use
+anm_ea_show					= aptechka_hands_eat_invtrans, aptechka_wpn_eat
+single_handed_anim = 2
 
 [medkit_army]:booster
 $spawn 				= "food and drugs\medkit_army"
@@ -1352,7 +1448,16 @@ boost_bleeding_restore	= 0.02
 eat_thirst		= -0.2
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_medkit
+anm = item_ea_medkit_army_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[item_ea_medkit_army_hud] 
+hands_position                           = -0.0055,-0.07, 0.36
+hands_position_16x9                      = -0.0055,-0.07, 0.36
+item_visual             	= dynamics\weapons\wpn_eat\aptechki\wpn_aptechka_army_hud
+snd = interface\item_usage\medkit_use
+anm_ea_show					= aptechka_hands_eat_invtrans, aptechka_wpn_eat
+single_handed_anim = 2
 
 [medkit_scientic]:booster
 $spawn 				= "food and drugs\medkit_scientic"
@@ -1376,7 +1481,16 @@ boost_bleeding_restore	= 0.005
 eat_thirst		= -0.2
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_medkit
+anm = item_ea_medkit_scientic_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[item_ea_medkit_scientic_hud] 
+hands_position                           = -0.0055,-0.07, 0.36
+hands_position_16x9                      = -0.0055,-0.07, 0.36
+item_visual             	= dynamics\weapons\wpn_eat\aptechki\wpn_aptechka_scientific_hud
+snd = interface\item_usage\medkit_use
+anm_ea_show					= aptechka_hands_eat_invtrans, aptechka_wpn_eat
+single_handed_anim = 2
 
 ;boosters
 [drug_booster]:booster
@@ -1398,7 +1512,17 @@ boost_max_weight	= 20.0
 eat_thirst		= -0.2
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_softdrink
+cam = itemuse_anm_effects\vodka_use.anm
+anm = item_ea_booster_weight_hud
+
+[item_ea_booster_weight_hud]
+hands_position              = -0.0055,-0.09, 0.27
+hands_position_16x9         = -0.0055,-0.09, 0.27
+
+item_visual             	= dynamics\weapons\wpn_eat\drinks\wpn_drug_booster_hud.ogf
+anm_ea_show					= vodka_hands_eat_invtrans, vodka_wpn_eat
+snd = interface\item_usage\vodka_use
+single_handed_anim = 2
 
 [drug_coagulant]:booster
 $spawn 				= "food and drugs\drug_coagulant"
@@ -1420,7 +1544,16 @@ boost_time				= 20.0
 boost_bleeding_restore	= 0.03
 eat_satiety				= -0.2
 
-use_sound			= interface\inv_pills
+anm = item_ea_drug_coagulant_hud
+cam = itemuse_anm_effects\tabletki_use.anm
+
+[item_ea_drug_coagulant_hud] 
+hands_position                           = -0.0055,-0.07, 0.32
+hands_position_16x9                      = -0.0055,-0.07, 0.32
+snd = interface\item_usage\pills_use
+item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_1_0_drug_coagulant_hud
+anm_ea_show					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
+single_handed_anim = 2
 
 [drug_psy_blockade]:booster
 $spawn 				= "food and drugs\drug_psy_blockade"
@@ -1442,7 +1575,18 @@ boost_time				= 60.0
 ;boost_telepat_immunity	= 0.05
 boost_telepat_protection 	= 0.05
 
-use_sound			= interface\inv_pills
+cam = itemuse_anm_effects\tabletki_use.anm
+anm = item_ea_drug_psy_blocade_hud
+
+[drug_psy_blockade_hud]
+[item_ea_drug_psy_blocade_hud] 
+hands_position                           = -0.0055,-0.07, 0.32
+hands_position_16x9                      = -0.0055,-0.07, 0.32
+
+item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_psy_blocade_hud
+anm_ea_show					= tabletki_1_hands_eat_invtrans, tabletki_1_wpn_eat
+snd = interface\item_usage\pills_use
+single_handed_anim = 2
 
 [drug_antidot]:booster
 $spawn 				= "food and drugs\drug_antidot"
@@ -1464,7 +1608,18 @@ boost_time				= 70.0
 ;boost_chemburn_immunity	= 0.1
 boost_chemburn_protection 	= 0.1
 
-use_sound			= interface\inv_pills
+cam = itemuse_anm_effects\tabletki_use.anm
+anm = item_ea_drug_antidot_hud
+
+[item_ea_drug_antidot_hud] 
+hands_position                           = -0.0055,-0.07, 0.32
+hands_position_16x9                      = -0.0055,-0.07, 0.32
+
+item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_2_0_drug_antidot_hud
+
+anm_ea_show					= tabletki_1_hands_eat_invtrans, tabletki_2_wpn_eat
+snd = interface\item_usage\pills_use
+single_handed_anim = 2
 
 [drug_radioprotector]:booster
 $spawn 				= "food and drugs\drug_radioprotector"
@@ -1486,7 +1641,17 @@ boost_time					= 80.0
 ;boost_radiation_immunity	= 0.01
 boost_radiation_protection	= 0.01
 
-use_sound			= interface\inv_pills
+cam = itemuse_anm_effects\tabletki_use.anm
+anm = item_ea_drug_radioprotector_hud
+
+[item_ea_drug_radioprotector_hud] 
+hands_position                           = -0.0055,-0.07, 0.32
+hands_position_16x9                      = -0.0055,-0.07, 0.32
+item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_3_0_drug_radioprotector_hud
+
+anm_ea_show					= tabletki_1_hands_eat_invtrans, tabletki_3_wpn_eat
+snd = interface\item_usage\pills_use
+single_handed_anim = 2
 
 [drug_anabiotic]:booster
 $spawn 				= "food and drugs\drug_anabiotic"
@@ -1985,7 +2150,16 @@ inv_grid_x				= 0
 inv_grid_y				= 27
 cost				= 25
 charge_level			= 1.0
-use_sound			= mfs_team\item_use\inv_battery
+anm = battery_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[battery_hud]
+item_visual = dynamics\weapons\wpn_eat\fake_item.ogf  
+hands_position_16x9				= -0.00,0.000,-0.0
+hands_orientation_16x9				= -0.02,0.030000,0.000000
+snd = interface\inv_attach_addon
+anm_ea_show					= fuckanim
+single_handed_anim = 2
 
 [repair_kit]:booster
 $spawn 				= "food and drugs\kolbasa"
@@ -2001,4 +2175,14 @@ inv_grid_x			= 10
 inv_grid_y			= 25
 cost				= 750
 restore_condition		= 0.5
-use_sound			= interface\inv_attach_addon
+
+anm = repair_kit_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[repair_kit_hud]
+item_visual = dynamics\weapons\wpn_eat\fake_item.ogf 
+hands_position_16x9				= -0.00,0.000,-0.0
+hands_orientation_16x9				= -0.02,0.030000,0.000000
+snd = interface\inv_attach_addon
+anm_ea_show					= fuckanim
+single_handed_anim = 2

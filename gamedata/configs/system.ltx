@@ -269,8 +269,6 @@ inv_grid_y      = 0
 cost        = 0
 
 
-
-
 [spectator]
  $player        = on
 class                   = SPECT
@@ -316,6 +314,41 @@ lim_pitch                = -0.7, 1
 lim_yaw                  = 0, 0
 lim_zoom                 = 1, 5
 rot_speed                = 3.14, 6.28, 10
+
+[item_ea_take_hud]
+hands_position                           = 0, 0.00, -0.1
+hands_position_16x9                      = 0, 0.00, -0.1
+anm_ea_take				= take_anim_enhanced
+
+[switch_torch_anm]
+hands_position_16x9				= -0.00,-0.10,-0.005
+hands_orientation_16x9				= -0.02,0.030000,0.000000
+anm_use = torch
+
+[fuck_take]
+hands_position_16x9				= -0.00,0.000,-0.0
+hands_orientation_16x9				= -0.02,0.030000,0.000000
+anm_use = fuckanim
+
+[clear_mask_anm]
+anm_use = gasmask_swipe
+hands_position_16x9				= -0.05,-0.060,-0.0
+hands_orientation_16x9				= -0.02,0.030000,0.000000
+
+[item_ea_backpack_close_hud]
+hands_position                           = 0,0,0
+hands_position_16x9                      = 0,0,0
+
+item_visual             	= dynamics\weapons\wpn_eat\backpack\wpn_backpack_act_hud.ogf
+anm_ea_show					= close_b_backpack, close_b_backpack_itm
+
+[item_ea_backpack_open_hud] 
+hands_position                           = 0,0,0
+hands_position_16x9                      = 0,0,0
+item_visual             	= dynamics\weapons\wpn_eat\backpack\wpn_backpack_act_hud.ogf
+
+anm_ea_show					= open_b_backpack, open_b_backpack_itm
+anm_ea_idle                 = idle_b_backpack, idle_b_backpack_itm
 
 [actor_look_cam_psp]
 lim_pitch                = -0.7, 1
