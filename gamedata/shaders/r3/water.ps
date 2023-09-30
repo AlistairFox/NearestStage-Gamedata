@@ -115,16 +115,15 @@ float4 main( vf I ) : SV_Target
 	
 	// Trace a ray
 	if (edgeFade > 0.02f)
-		// ssr_hit_uv = SSFX_ssr_water_ray(Pv, wreflect, blue_noise, 0);
 		refl_ray = calc_ssr(PosTc, Pv, Nv, ssr_hit_uv);
+	
+	if(all(ssr_hit_uv.xy) && _P.z < reflections_distance.x)
+	{
 	
 	// Get current Skybox
 	refl_skybox = SSFX_calc_sky(vreflect) * G_SSR_WATER_SKY_REFLECTION;
 
-	// if (all(ssr_hit_uv.xy))
-	// {
-		// Get reflection pixel from scene screen
-		// refl_ray = SSFX_get_image(ssr_hit_uv.xy, 0);
+
 
 		// Adjust reflection intensity using ssr_hit_uv.y and edgeFade
 		float ray_fade = ssr_hit_uv.y * 5.0f;
@@ -136,12 +135,11 @@ float4 main( vf I ) : SV_Target
 		
 		// Fallback to Skybox
 		reflection = lerp(refl_skybox, refl_ray.xyz * G_SSR_WATER_MAP_REFLECTION, refl_power * refl_ray.w);
-	// }
-	// else
-	// {
-		// // No reflection data, we use only refl_skybox
-		// reflection = refl_skybox;
-	// }
+	}
+	else
+	{
+		reflection = L_hemi_color.rgb;
+	}
 
 #else
 	reflection = L_hemi_color.rgb;

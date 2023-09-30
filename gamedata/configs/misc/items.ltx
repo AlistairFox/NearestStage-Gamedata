@@ -1671,6 +1671,18 @@ eat_satiety				= -0.2
 
 use_sound			= interface\inv_pills
 
+cam = itemuse_anm_effects\tabletki_use.anm
+anm = drug_anabiotic_hud
+
+[drug_anabiotic_hud] 
+hands_position                           = -0.0055,-0.07, 0.32
+hands_position_16x9                      = -0.0055,-0.07, 0.32
+item_visual             	= dynamics\weapons\wpn_eat\tabletki\wpn_tabletki_3_0_drug_radioprotector_hud
+
+anm_ea_show					= tabletki_1_hands_eat_invtrans, tabletki_3_wpn_eat
+snd = interface\item_usage\pills_use
+single_handed_anim = 2
+
 ;boosters below are not used for now
 ;[health_restore_booster]:booster
 ;$spawn 					= "food and drugs\health_restore_booster"

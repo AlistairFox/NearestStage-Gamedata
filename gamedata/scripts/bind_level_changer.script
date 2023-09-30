@@ -6,7 +6,7 @@
 -- Standart function for object binding
 function bind(obj)
 --    local new_binder = crow_binder(obj)
-    obj:bind_object(lchanger_binder(obj))
+    --obj:bind_object(lchanger_binder(obj))
 end
 --------------------------------------------------------------------------------
 -- Class "crow_binder"

@@ -2,9 +2,9 @@
 #define  WMARK_H
 #include "common.h"
 
-#define	NORMAL_SHIFT	0.056f
-#define	MIN_SHIFT		0.024f
-#define	MAX_SHIFT		0.088f
+#define	NORMAL_SHIFT	0.05f
+#define	MIN_SHIFT		0.025f
+#define	MAX_SHIFT		0.1f
 #define RANGE			100.f
 
 uniform float3		eye_direction;

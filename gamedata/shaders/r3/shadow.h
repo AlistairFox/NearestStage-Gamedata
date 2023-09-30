@@ -18,11 +18,14 @@ Texture2D jitter0;
 Texture2D jitter1;
 Texture2D jitterMipped;
 
-
+#ifndef USE_ULTRA_SHADOWS
+	#define	KERNEL	0.6f
+#else
 	#define	KERNEL	1.0f
+#endif
 
 #define PCSS_PIXEL int(4)
-#define PCSS_STEP int(1)
+#define PCSS_STEP int(2)
 #define PCSS_PIXEL_MIN float(1.0)
 #define PCSS_SUN_WIDTH float(150.0)
 

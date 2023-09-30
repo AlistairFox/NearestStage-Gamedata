@@ -4,7 +4,7 @@
 --' Made by Distemper ----------------------------------------------------------------
 --' 11.02.08 ----------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------
-local IDLE_AFTER_DEATH = 60000
+local IDLE_AFTER_DEATH = 120000
 local function add_to_release_table(release_tbl, object_id)
 	printf("add to release_objects_table ["..object_id.."]")
 	local obj_params = {}
@@ -41,7 +41,7 @@ class "Crelease_body"
 function Crelease_body:__init()
 	self.release_objects_table = {} -- таблица "СТЕК" трупов
 	self.keep_items_table = {} -- таблица квестовых предметов
- 	self.body_max_count = 10 -- количество тел которое одновременно может находится в игре
+ 	self.body_max_count = 25 -- количество тел которое одновременно может находится в игре
 	self.current_object_id = 0 -- id только что убитого npc
 	--' Итерируемся по списку квестовых итемов.
 	local snd_ini = ini_file("misc\\death_generic.ltx")
