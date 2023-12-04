@@ -2,6 +2,7 @@
 #define LMODEL_H
 
 #include "common.h"
+#include "common_brdf.h"
 
 uniform float4 	pbr_settings; //x - roughness, y - intensity, zw - null
 
@@ -51,6 +52,15 @@ float4 compute_lighting(float3 N, float3 V, float3 L, float4 alb_gloss, float ma
 	
 	//Vanilla + pseudoPBR
 	light = pseudopbr(N, V, L, H, alb_gloss.w).xxxy;
+	
+	
+		//if(mat_id == MAT_FLORA) //Be aware of precision loss/errors
+	if(abs(mat_id-MAT_FLORA) <= MAT_FLORA_ELIPSON) //Be aware of precision loss/errors
+	{
+		//Simple subsurface scattering
+		float3 subsurface = SSS(N,V,L);
+		light.rgb += subsurface*alb_gloss;
+	}
 	return light;
 			 
 }

@@ -709,7 +709,7 @@
 		<text>Использование фонариков AI</text>
 	</string>
 	<string id="ui_mm_texture_quality">
-		<text>Качество текстур</text>
+		<text>Сжатие текстур</text>
 	</string>
 	<string id="ui_mm_tips">
 		<text>Распознавание NPC</text>
@@ -901,7 +901,7 @@
 		<text>макс. высоко</text>
 	</string>
 	<string id="renderer_r4">
-		<text>r4 - Основной Рендер (DX11)</text>
+		<text>Основной Рендер (DX11)</text>
 	</string>
 	<string id="mp_please_login">
 		<text>Пожалуйста, авторизируйтесь для входа на внешний сервер.</text>
@@ -1067,5 +1067,156 @@
 	<string id="hint_nram">
 	<text>Отключение загрузки текстур в ОЗУ.\n \nРаботает с "использование видеобуффера", на r4 включено по умолчанию.\n \n%c[0,255,0,0]Данная опция вызывает нестабильную работу, при использовании на r2/r2.5, не рекомендуется использование в данных рендерах без необходимости!!!!</text>
 	</string>
-		
+	
+	<string id="ui_st_mp_descr_text">
+	<text> Общее положение.</text>
+	</string>
+	
+	<string id="ui_st_mp_text_descr">
+	<text>Для того, чтобы зарегистрироваться, необходимо нажать галочку "зарегистрироваться"</text>
+	</string>
+	
+	<string id="ui_st_mp_text2_descr">
+	<text>После чего: выбрать желаемый набор, никнейм, пароль и порт с ip нужного сервера.</text>
+	</string>
+	
+	<string id="ui_st_mp_text3_descr">
+	<text>Никнейм не должен включать в себя различные символы "@#!^", а так же пробелы.</text>
+	</string>
+	<string id="ui_st_mp_text4_descr">
+	<text>Вместо пробела вы можете поставить "_" или "-".</text>
+	</string>
+	<string id="ui_st_mp_text5_descr">
+	<text>Пароль может включать в себя исключительно цифры и латинские символы!</text>
+	</string>
+	<string id="ui_st_mp_text6_descr">
+	<text>Максимальная длинна никнейма и пароля - 21 символ.</text>
+	</string>
+	<string id="ui_st_mp_text7_descr">
+	<text>В поле "дополнительно", желательно указать ссылку на VK/ваш ID дискорда.</text>
+	</string>
+	<string id="ui_st_mp_text8_descr">
+	<text>Это необходимо, чтобы мы могли оповестить вас об успешной регистрации.</text>
+	</string>
+	<string id="ui_st_mp_text9_descr">
+	<text>После того, как вам отобразилось сообщение о том, что вы будете</text>
+	</string>
+	<string id="ui_st_mp_text10_descr">
+	<text>зарегистрированны, необходимо через некоторое время попробовать подключиться</text>
+	</string>
+	<string id="ui_st_mp_text11_descr">
+	<text>В случае если вы указали данные в "дополнительно", мы оповестим вас!</text>
+	</string>
+	<string id="ui_st_mp_text12_descr">
+	<text>Если у вас возникли трудности с регистрацией вы всегда можете обратиться</text>
+	</string>
+	<string id="ui_st_mp_text13_descr">
+	<text>в наши ресурсы:</text>
+	</string>
+	<string id="ui_st_mp_text14_descr">
+	<text>VK: https://vk.com/neareststage</text>
+	</string>
+	<string id="ui_st_mp_text15_descr">
+	<text>Discord: https://discord.gg/DyuhyjR8UB</text>
+	</string>
+	
+	<string id="ui_st_mp_descr">
+	<text>дополнительно</text>
+	</string>
+	
+	<string id="mm_go_back">
+	<text>назад</text>
+	</string>
+	
+	<string id="mm_mp_descr">
+	<text>положение</text>
+	</string>
+	
+	<string id="ui_inv_thirst">
+	<text>Жажда</text>
+	</string>
+
+	<string id="ui_st_mp_regist">
+	<text>регистрация</text>
+	</string>
+	
+	<string id="ui_st_kit1">
+	<text>Наезд</text>
+	</string>
+	
+	<string id="ui_st_kit2">
+	<text>НКВД</text>
+	</string>
+	
+	<string id="ui_st_kit3">
+	<text>Колдырь</text>
+	</string>
+	
+	<string id="ui_st_kit4">
+	<text>Охотник</text>
+	</string>
+	
+	<string id="ui_st_mp_local_network_registr_page">
+	<text>Регистрация аккаунта</text>
+	</string>
+	
+	<string id="hint_kit1">
+	<text>Стартовый набор выдающийся при начале игры. \nВключает в себя:\n%c[0,0,200,0]ТОЗ-106\n%c[0,0,200,0]Патроны 20/70 дробь (10)\n%c[0,0,200,0]Бинт (2)\n%c[0,0,200,0]ПДА\n%c[0,0,200,0]Кожаная куртка\n%c[0,0,200,0]Нож\n%c[0,0,200,0]Фонарь</text>
+	</string>
+	
+	<string id="hint_kit2">
+	<text>Стартовый набор выдающийся при начале игры. \nВключает в себя:\n%c[0,0,200,0]ТТ-33\n%c[0,0,200,0]Патроны 7,62x25 мм П (30)\n%c[0,0,200,0]Водка\n%c[0,0,200,0]Бинт\n%c[0,0,200,0]ПДА\n%c[0,0,200,0]Кожаная куртка\n%c[0,0,200,0]Нож\n%c[0,0,200,0]Фонарь</text>
+	</string>
+	
+	<string id="hint_kit3">
+	<text>Стартовый набор выдающийся при начале игры. \nВключает в себя:\n%c[0,0,200,0]Colt 1911\n%c[0,0,200,0]Патроны .45ACP (50)\n%c[0,0,200,0]Виски "Jameson" (2)\n%c[0,0,200,0]ПДА\n%c[0,0,200,0]Кожаная куртка\n%c[0,0,200,0]Нож\n%c[0,0,200,0]Фонарь</text>
+	</string>
+	
+	<string id="hint_kit4">
+	<text>Стартовый набор выдающийся при начале игры. \nВключает в себя:\n%c[0,0,200,0]Обрез ТОЗ-34\n%c[0,0,200,0]Патроны 12/70 дробь (10)\n%c[0,0,200,0]Водка\n%c[0,0,200,0]ПДА\n%c[0,0,200,0]Кожаная куртка\n%c[0,0,200,0]Нож\n%c[0,0,200,0]Фонарь</text>
+	</string>
+	
+	<string id="ui_mm_fps_limit">
+	<text>Ограничение FPS</text>
+	</string>
+	
+	<string id="ui_mm_dyn_opt">
+	<text>Оптимизация дин. объектов</text>
+	</string>
+	
+	<string id="ui_mm_stat_opt">
+	<text>Оптимизация геометрии</text>
+	</string>
+	
+	<string id="ui_mm_hight_quality_shaders">
+	<text>Высокое качество шейдеров</text>
+	</string>
+	
+	<string id="ui_mm_use_adv_shaders">
+	<text>Улучшенные шейдеры</text>
+	</string>
+	
+	<string id="ui_mm_hbao_plus">
+	<text>HBAO+</text>
+	</string>
+	
+	<string id="ui_mm_off_shdw_lamp">
+	<text>Отключение теней от ламп</text>
+	</string>
+	
+	<string id="ui_mm_r2_use_bump">
+	<text>Использование BUMP</text>
+	</string>
+	
+	<string id="ui_mm_gbuff">
+	<text>Использование видеопамяти</text>
+	</string>
+	
+	<string id="ui_mm_wallmark_skel">
+	<text>Бладмарки на дин. объектах</text>
+	</string>
+	
+	<string id="ui_mm_actor_shad">
+	<text>Тень от игрока</text>
+	</string>
 </string_table>

@@ -336,4 +336,7 @@
 	<string id="ui_inv_repair_kit_condition">
 		<text>коэф. ремонта:</text>
 	</string>
+	<string id="st_help_player">
+		<text>Помочь игроку</text>
+	</string>
 </string_table>

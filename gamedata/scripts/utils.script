@@ -696,7 +696,6 @@ function parse_names(s)
 end
 
 function parse_spawns(str)
-	--' ���� default-�� ������, ��� �������� � ini, �� ������ ����������� ��������� ��������� �� ini
 	local t = utils.parse_names(str)
 	local n = #t
 
@@ -705,16 +704,12 @@ function parse_spawns(str)
 	while k <= n do
 		local spawn = {}
 		spawn.section = t[k]
-		--' ��������� ��� ��� �� ��������� ������
 		if t[k+1] ~= nil then
 			local p = tonumber(t[k+1])
-			--' ��������� ��� ������ ������ ������ �����������, � �� ������ ������ ������
 			if p then
-				--' �������� �����
 				spawn.prob = p
 				k = k + 2
 			else
-				--' �������� ������ 1
 				spawn.prob = 1
 				k = k + 1
 			end

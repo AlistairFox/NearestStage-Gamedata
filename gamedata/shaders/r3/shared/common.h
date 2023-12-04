@@ -67,7 +67,8 @@ cbuffer	static_globals
 
 	uniform float4 		pos_decompression_params;
 	uniform float4 		pos_decompression_params2;
-
+	uniform float4 		lowland_fog_params;
+	uniform float4 		fog_height;
 }
 
 /*

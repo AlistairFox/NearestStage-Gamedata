@@ -27,7 +27,6 @@ float4 main ( v2p_volume I  ) : SV_Target
 {
 	gbuffer_data gbd = gbuffer_load_data( GLD_P(I.tc, I.hpos, ISAMPLE) );
 
-
 	float4 _P = float4( gbd.P, 1.0);
 
 	float4 PS = mul( m_shadow,  _P );
@@ -44,7 +43,9 @@ float4 main ( v2p_volume I ) : SV_Target
 #endif
 {
 	gbuffer_data gbd = gbuffer_load_data( GLD_P(I.tc.xy/I.tc.w, I.hpos, ISAMPLE) );
-
+	
+	gbd.P += gbd.N*0.02f;
+	
 	float4 _P = float4( gbd.P, gbd.mtl );
 	float4  _N = float4( gbd.N, gbd.hemi );
 	float4 _C = float4( gbd.C, gbd.gloss );

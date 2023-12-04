@@ -29,6 +29,50 @@ Texture2D jitterMipped;
 #define PCSS_PIXEL_MIN float(1.0)
 #define PCSS_SUN_WIDTH float(150.0)
 
+float shadow_pcss2(float4 tc);
+
+namespace c_shadow
+{
+#if SUN_QUALITY >= 2
+	static const int samples = 36;
+	static  float radius = 3.5;
+
+	static const float2 offsets[samples] = { -3.0, -1.0, -3.0,  0.0, -3.0,  1.0, -2.0, -2.0, -2.0, -1.0, -2.0,  0.0,  	//     * * * 
+											 -2.0,  1.0, -2.0,  2.0, -1.0, -3.0, -1.0, -2.0, -1.0, -1.0, -1.0,  0.0,  	//   * * * * * 
+											 -1.0,  1.0, -1.0,  2.0, -1.0,  3.0,  0.0, -3.0,  0.0, -2.0,  0.0, -1.0,  	// * * * * * * * 
+											  0.0,  1.0,  0.0,  2.0,  0.0,  3.0,  1.0, -3.0,  1.0, -2.0,  1.0, -1.0,  	// * * * o * * * 
+											  1.0,  0.0,  1.0,  1.0,  1.0,  2.0,  1.0,  3.0,  2.0, -2.0,  2.0, -1.0,  	// * * * * * * * 
+											  2.0,  0.0,  2.0,  1.0,  2.0,  2.0,  3.0, -1.0,  3.0,  0.0,  3.0,  1.0 };	//   * * * * * 
+																														//     * * *
+#elif SUN_QUALITY == 1
+	static const int samples = 23;
+	static const float radius = 3;
+
+	static const float2 offsets[samples] = { -0.5, -2.5,  0.5, -2.5, -1.5, -1.5, -0.5, -1.5,	//     * * 
+										      0.5, -1.5,  1.5, -1.5, -2.5, -0.5, -1.5, -0.5,	//   * * * * 
+											  0.5, -0.5,  1.5, -0.5,  2.5, -0.5, -2.5,  0.5,	// * * *_* * *
+										     -1.5,  0.5, -0.5,  0.5,  0.5,  0.5,  1.5,  0.5,	// * * * * * *
+										      2.5,  0.5, -1.5,  1.5, -0.5,  1.5,  0.5,  1.5,	//   * * * * 
+										      1.5,  1.5, -0.5,  2.5,  0.5,  2.5  };				//     * * 
+#else
+	static const int samples = 12;
+	static const float radius = 2.5;
+
+	static const float2 offsets[samples] = {  0.0, -2.0, -1.0, -1.0,  0.0, -1.0,    //     * 
+											  1.0, -1.0, -2.0,  0.0, -1.0,  0.0,    //   * * * 
+											  1.0,  0.0,  2.0,  0.0, -1.0,  1.0,    // * * o * * 
+											  0.0,  1.0,  1.0,  1.0,  0.0,  2.0  }; //   * * * 
+																					//     * 
+#endif
+
+	static const float4 size = float2(SMAP_size, 1.0 / SMAP_size).xxyy;
+	static const float weight = samples / 5.0;
+	static const float sun_width = 150;
+	static const float bias_relative = 0.005;
+	static const float bias = -size.z * radius * bias_relative;
+}
+
+
 float modify_light( float light )
 {
    return ( light > 0.7 ? 1.0 : lerp( 0.0, 1.0, saturate( light / 0.7 ) ) ); 
@@ -45,6 +89,41 @@ float sample_hw_pcf (float4 tc,float4 shift)
 	tc.xy 	+= shift.xy * ts;
 
 	return s_smap.SampleCmpLevelZero( smp_smap, tc.xy, tc.z).x;
+}
+
+
+
+float4 sample_hw_pcf2(float2 tc, float cmp, float2 shift = 0)
+{
+	tc += shift * c_shadow::size.zw;
+	return s_smap.SampleCmpLevelZero(smp_smap, tc, cmp).x;
+}
+
+float comparator(float depth)
+{
+	return depth + c_shadow::bias; 
+}
+
+float4 fetch4(float2 tc, int x = 0, int y = 0)
+{
+#if defined(SM_4_1) || defined(SM_5) 
+	float4 g = s_smap.Gather(smp_nofilter, tc.xy, int2(x, y));
+#else
+	static float offset = 0.5 * c_shadow::size.zw;
+	
+	float2 tcx = tc + offset * int2(-1,  1);
+	float2 tcy = tc + offset * int2( 1,  1);
+	float2 tcz = tc + offset * int2( 1, -1);
+	float2 tcw = tc + offset * int2(-1, -1);
+
+	float4 g = 0;
+	g.x = s_smap.SampleLevel(smp_nofilter, tcx, 0, int2(x, y)).x;
+	g.y = s_smap.SampleLevel(smp_nofilter, tcy, 0, int2(x, y)).x;
+	g.z = s_smap.SampleLevel(smp_nofilter, tcz, 0, int2(x, y)).x;
+	g.w = s_smap.SampleLevel(smp_nofilter, tcw, 0, int2(x, y)).x;
+#endif
+
+	return g.wxzy;
 }
 
 float shadow_hw( float4 tc )
@@ -239,19 +318,19 @@ float4 test (float4 tc, float2 offset)
 	return s_smap.SampleCmpLevelZero( smp_smap, tc.xy, tc.z).x;
 }
 
-half 	shadowtest_sun 	(float4 tc, float4 tcJ)			// jittered sampling
+float 	shadowtest_sun 	(float4 tc, float4 tcJ)			// jittered sampling
 {
-	half4	r;
+	float4	r;
 	const 	float 	scale 	= (0.7/float(SMAP_size));
 
 	float2 	tc_J	= frac(tc.xy/tc.w*SMAP_size/4.0 )*0.5;
 	float4	J0		= jitter0.Sample(smp_jitter,tc_J)*scale;
 
 	const float k = 0.5/float(SMAP_size);
-	r.x 	= test 	(tc, J0.xy+half2(-k,-k)).x;
-	r.y 	= test 	(tc, J0.wz+half2( k,-k)).y;
-	r.z		= test	(tc,-J0.xy+half2(-k, k)).z;
-	r.w		= test	(tc,-J0.wz+half2( k, k)).x;
+	r.x 	= test 	(tc, J0.xy+float2(-k,-k)).x;
+	r.y 	= test 	(tc, J0.wz+float2( k,-k)).y;
+	r.z		= test	(tc,-J0.xy+float2(-k, k)).z;
+	r.w		= test	(tc,-J0.wz+float2( k, k)).x;
 
 	return	dot(r,1.0/4.0);
 }
@@ -278,16 +357,98 @@ float shadow_hw_hq( float4 tc )
 #endif //	SM_MINMAX
 }
 
+float shadow_hw_hq2( float4 tc )
+{
+#ifdef SM_MINMAX
+   bool   full_light = false; 
+   bool   cheap_path = cheap_reject( tc.xyz / tc.w, full_light );
+
+   [branch] if( cheap_path )
+   {
+      [branch] if( full_light == true )
+         return 1.0;
+      else
+         return sample_hw_pcf2( tc, (0).xxxx ); 
+   }
+   else
+   {
+      return shadow_pcss2(tc);
+   }
+#else //	SM_MINMAX
+      return shadow_pcss2(tc);
+#endif //	SM_MINMAX
+}
+
+float shadow_pcss2(float4 P)
+{
+	float2 tc = P.xy / P.w;
+	float cmp = comparator(P.z / P.w);
+
+	float r = 1; // [0..1]
+
+#if SUN_QUALITY >= 3
+	float fetch4_cmp = comparator(P.z / P.w);
+
+	int dir = floor(c_shadow::radius);
+	int tap = max(2, dir);
+	
+	float blocker_avg = 0;
+	float blocker_weight = 0;
+	
+	for(int i = -dir; i <= dir; i += tap)
+	{
+		for(int j = -dir; j <= dir; j += tap)
+		{
+			float4 d = fetch4(tc, i, j);
+			float4 s = step(d, fetch4_cmp);
+			blocker_weight += dot(s, 1.0);
+			blocker_avg += dot(d, s);
+		}
+	}
+	
+	if(blocker_weight <= 0)
+		return 1;
+	
+	blocker_avg = blocker_avg / blocker_weight;
+
+	float light_to_block = blocker_avg; // light to blocker distance
+	float block_volume = fetch4_cmp - blocker_avg; // blocker to shadow distance
+
+	r = saturate(block_volume * c_shadow::sun_width / light_to_block);
+
+	float r_min = 2.0 / c_shadow::radius;
+	float r_max = 1.0;
+	r = lerp(r_min, r_max, r);
+#endif
+
+	// hardware, D24X8 / D32F, 	non-linear
+	float weight = c_shadow::weight;
+	float s = sample_hw_pcf2(tc, cmp) * weight;
+
+	for(int i = 0; i < c_shadow::samples; ++i)
+	{
+		float2 b = c_shadow::offsets[i] * r;
+		float s_tap = sample_hw_pcf2(tc, cmp, b);
+		float weight_tap = c_shadow::radius * r * saturate(1.0 / sqrt(b.x*b.x + b.y*b.y));
+		s += s_tap * weight_tap;
+		weight += weight_tap;
+	}
+	
+	s = s / weight;
+
+	return s;
+}
+
 float shadow( float4 tc ) 
 {
 #ifdef USE_ULTRA_SHADOWS
 	#ifdef SM_MINMAX
-		return modify_light( shadow_hw_hq( tc ) ); 
+		return modify_light( shadow_hw_hq2( tc ) ); 
 	#else
-		return shadow_hw_hq( tc ); 
+		return shadow_hw_hq2( tc ); 
 	#endif
 #else
-	return shadow_pcss(tc);
+	return shadow_pcss2(tc);
 #endif
 }
 
@@ -312,7 +473,7 @@ float shadow_rain(float4 tc, float2 tcJ)			// jittered sampling
 
 //////////////////////////////////////////////////////////////////////////////////////////
 #ifdef  USE_SUNMASK	
-float3x4 m_sunmask;	// ortho-projection
+//float3x4 m_sunmask;	// ortho-projection
 float sunmask( float4 P )
 {
 	float2 		tc	= mul( m_sunmask, P );		//

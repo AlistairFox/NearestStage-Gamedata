@@ -25,10 +25,10 @@ float4 main(p_volume I, float4 pos2d : SV_Position ) : SV_Target
 	float2	tcProj = I.tc.xy / I.tc.w;
 
 	gbuffer_data gbd = gbuffer_load_data(GLD_P(tcProj, pos2d, ISAMPLE) );
-	#ifdef    GBUFFER_OPTIMIZATION
+//	#ifdef    GBUFFER_OPTIMIZATION
     //    Emulate virtual offset
     gbd.P += gbd.N*0.02f;
-#endif    //    GBUFFER_OPTIMIZATION
+//#endif    //    GBUFFER_OPTIMIZATION
 
 	float4 _P = float4(gbd.P, gbd.mtl );
 	float4 _N = float4(gbd.N, gbd.hemi );
@@ -42,7 +42,10 @@ float4 main(p_volume I, float4 pos2d : SV_Position ) : SV_Target
 	// Fix Flora ilumination ( Align normal to light )
 #ifdef SSFX_FLORAFIX
 	if(abs(m - MAT_FLORA) <= 0.05)
+  {
 		_N.rgb = -normalize(_P - Ldynamic_pos.xyz);
+		_C.w *= 0.3f;		   
+  }
 #endif
 
 	// ----- light-model

@@ -3,6 +3,7 @@
 
 #include "lmodel.h"
 #include "hmodel.h"
+#include "mip_fog.h"
 
 // Check MODs
 #include "check_screenspace.h"
@@ -204,20 +205,32 @@ _out main ( _input I, uint iSample : SV_SAMPLEINDEX )
 ////////////////////////////////////////////////////////////////////////////////
 
         // here should be distance fog
-#ifdef SSFX_FOG
-		float3 		WorldP			= mul(m_inv_V, float4(P.xyz, 1));
-		float		fog				= SSFX_HEIGHT_FOG(P.xyz, WorldP.y, color);
-#else
-		float		distance		= length		(P.xyz);
-		float		fog				= saturate		(distance*fog_params.w + fog_params.x);
-					color			= lerp			(color,fog_color,fog);
-#endif
-        float        	skyblend		= saturate		(fog*fog);
+	//	float3 		WorldP			= mul(m_inv_V, float4(P.xyz, 1));
+     //   float       distance		= length		(WorldP);
+	//	float		fog				= SSFX_HEIGHT_FOG(P.xyz, WorldP.y, color);
+     //   float       skyblend		= 0.5;
+      //          	skyblend		= saturate((fog-skyblend)/(1-skyblend));
+     //           	skyblend		= (skyblend*skyblend);
+//
+     //   float          	tm_scale        = I.tc0.w;                // interpolated from VS
+
+    //    _out        	o;
+	
+        // here should be distance fog
+        float3        	pos        		= P.xyz;
+        float         	distance		= length		(pos);
+        float         	fog				= saturate		(distance*fog_params.w + fog_params.x); //
+                      	color 			= Calc_Fog(P.xyz, color);
+                      	//color			= lerp     		(color,fog_color,fog);        			//
+        //float        	skyblend		= saturate(fog);
+        float        	skyblend		= 0.5;
+                	skyblend		= saturate((fog-skyblend)/(1-skyblend));
+                	skyblend		= (skyblend*skyblend);
 
         float          	tm_scale        = I.tc0.w;                // interpolated from VS
 
         _out        	o;
-
+		
 #ifndef SSFX_BEEFS_NVG
 
 	tonemap(o.low, o.high, color, tm_scale);

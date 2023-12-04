@@ -1426,6 +1426,72 @@ snd = interface\item_usage\medkit_use
 anm_ea_show					= aptechka_hands_eat_invtrans, aptechka_wpn_eat
 single_handed_anim = 2
 
+[chain_item]:booster
+$spawn 				= "food and drugs\chain_item"
+visual				= dynamics\devices\dev_aptechka\dev_aptechka_low.ogf
+inv_name			= st_chain_item
+inv_name_short		= st_chain_item
+description			= st_chain_item_descr
+inv_weight			= 0.1
+
+belt = true;
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 14
+cost				= 1000
+
+boost_time				= 20.0
+boost_health_restore	= 0.02
+boost_radiation_restore	= 0.0
+boost_bleeding_restore	= 0.005
+eat_thirst		= -0.2
+eat_satiety				= -0.2
+
+anm = item_ea_chain_item_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[item_ea_chain_item_hud] 
+hands_position                           = -0.0055,-0.07, 0.36
+hands_position_16x9                      = -0.0055,-0.07, 0.36
+item_visual             	= dynamics\weapons\wpn_eat\aptechki\wpn_aptechka_basic_hud
+snd = interface\item_usage\medkit_use
+anm_ea_show					= aptechka_hands_eat_invtrans, aptechka_wpn_eat
+single_handed_anim = 2
+
+[medkit_stim]:booster
+$spawn 				= "food and drugs\medkit_stim"
+visual				= dynamics\devices\dev_aptechka\dev_aptechka_low.ogf
+inv_name			= st_medkit_stim
+inv_name_short		= st_medkit_stim
+description			= st_medkit_stim_descr
+inv_weight			= 0.1
+
+belt = true;
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 14
+cost				= 1000
+
+boost_time				= 20.0
+boost_health_restore	= 0.02
+boost_radiation_restore	= 0.0
+boost_bleeding_restore	= 0.005
+eat_thirst		= -0.2
+eat_satiety				= -0.2
+
+anm = item_ea_medkit_stim_hud
+cam = itemuse_anm_effects\aptechka_use.anm
+
+[item_ea_medkit_stim_hud] 
+hands_position                           = -0.0055,-0.07, 0.36
+hands_position_16x9                      = -0.0055,-0.07, 0.36
+item_visual             	= dynamics\weapons\wpn_eat\aptechki\wpn_aptechka_basic_hud
+snd = interface\item_usage\medkit_use
+anm_ea_show					= aptechka_hands_eat_invtrans, aptechka_wpn_eat
+single_handed_anim = 2
+
 [medkit_army]:booster
 $spawn 				= "food and drugs\medkit_army"
 visual				= dynamics\devices\dev_aptechka\dev_aptechka_mid.ogf

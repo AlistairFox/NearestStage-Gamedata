@@ -106,16 +106,16 @@
 	    <texture id="storyline_task_spot_above" x="502" y="141" width="19" height="16" />
 	    <texture id="secondary_task_spot_below" x="502" y="127" width="19" height="16" />
 	    <texture id="secondary_task_spot_above" x="502" y="113" width="19" height="16" />
+		</file>
 
-	    <texture id="ui_inGame2_bleeding_inv_green" 	x="819" y="933" width="45" height="45" />
-	    <texture id="ui_inGame2_bleeding_inv_yellow" 	x="727" y="933" width="45" height="45" />
-	    <texture id="ui_inGame2_bleeding_inv_red" 		x="543" y="933" width="45" height="45" />
-	    <texture id="ui_inGame2_radiation_inv_green" 	x="865" y="933" width="45" height="45" />
-	    <texture id="ui_inGame2_radiation_inv_yellow" 	x="773" y="933" width="45" height="45" />
-	    <texture id="ui_inGame2_radiation_inv_red" 		x="589" y="933" width="45" height="45" />
-	    <texture id="ui_inGame2_circle_Thirst_green" 				x="36" y="0" width="33" height="35" />
-	    <texture id="ui_inGame2_circle_Thirst_yellow" 				x="36" y="38" width="33" height="35" />
-	    <texture id="ui_inGame2_circle_Thirst_orange" 				x="36" y="76" width="33" height="35" />
-	    <texture id="ui_inGame2_circle_Thirst_red" 					x="36" y="114" width="33" height="35" />
+    <file name="mfs_team\ui\ui_mfs_new_inGame2_icons">
+	    <texture id="ui_inGame2_circle_TorchLowBattery_green" 		x="0" y="0" width="33" height="35" />
+	    <texture id="ui_inGame2_circle_TorchLowBattery_yellow" 		x="0" y="38" width="33" height="35" />
+	    <texture id="ui_inGame2_circle_TorchLowBattery_orange" 		x="0" y="76" width="33" height="35" />
+	    <texture id="ui_inGame2_circle_TorchLowBattery_red" 		x="0" y="114" width="33" height="35" />
+	    <texture id="ui_inGame2_circle_thirst_green" 				x="36" y="0" width="33" height="35" />
+	    <texture id="ui_inGame2_circle_thirst_yellow" 				x="36" y="38" width="33" height="35" />
+	    <texture id="ui_inGame2_circle_thirst_orange" 				x="36" y="76" width="33" height="35" />
+	    <texture id="ui_inGame2_circle_thirst_red" 					x="36" y="114" width="33" height="35" />
 	</file>
 </w>

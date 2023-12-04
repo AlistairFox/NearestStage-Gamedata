@@ -1,6 +1,10 @@
 // [ SETTINGS ] [ SCREEN SPACE REFLECTIONS ]
 
+#ifdef MAX_QUALITY_SHADERS
 #define G_SSR_QUALITY					0		// Quality of the SSR. ( 0 = Very low | 1 = Low | 2 = Medium | 3 = High | 4 = Very High | 5 = Ultra )
+#else
+#define G_SSR_QUALITY					0
+#endif
 
 #define G_SSR_VERTICAL_SCREENFADE		4.0f	// Vertical fade. ( higher values = sharp gradient )
 
@@ -8,7 +12,7 @@
 #define G_SSR_MAX_INTENSITY				0.5f	// Global reflection MAX intensity.
 #define G_SSR_SKY_INTENSITY				0.5f	// Sky reflection intensity ( 1.0f = 100% ~ 0.0f = 0% )
 #define G_SSR_FLORA_INTENSITY 			0.2f	// Adjust grass and tree branches intensity
-#define G_SSR_TERRAIN_BUMP_INTENSITY	0.6f	// Terrain bump intensity ( Lower values will generate cleaner reflections )
+#define G_SSR_TERRAIN_BUMP_INTENSITY	1.0f	// Terrain bump intensity ( Lower values will generate cleaner reflections )
 
 #define G_SSR_WEAPON_INTENSITY  		1.5f	// Weapons & arms reflection intensity. ( 1.0f = 100% ~ 0.0f = 0% )
 #define G_SSR_WEAPON_MAX_INTENSITY		0.1f	// Weapons & arms MAX intensity.

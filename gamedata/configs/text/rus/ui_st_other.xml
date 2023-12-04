@@ -516,4 +516,10 @@
 	<string id="st_save_pri_a28_evacuation_heli">
 		<text>отлёт вертолётов эвакуации</text>
 	</string>
+	<string id="st_help_player">
+		<text>Нажмите "$$ACTION_USE$$" чтобы помочь или "$$ACTION_LOOT_OTHER_PLAYER$$" чтобы обыскать</text>
+	</string>
+	<string id="st_loot_player">
+		<text>Нажмите "$$ACTION_LOOT_OTHER_PLAYER$$" чтобы обыскать</text>
+	</string>
 </string_table>

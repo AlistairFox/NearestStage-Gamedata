@@ -13,7 +13,7 @@
 float3x4 m_sunmask;	// ortho-projection
 
 // #define USE_SUPER_SPECULAR
-//#define USE_SUNMASK
+#define USE_SUNMASK
 
 
 #ifdef        USE_R2_STATIC_SUN

@@ -84,7 +84,7 @@
         <cap_renderer x="12" y="3" width="108" height="24" hint="hint_renders">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_renderer</text>
         </cap_renderer>
-        <list_renderer x="140" y="5" width="188" height="20" list_length="3" always_show_scroll="0">
+        <list_renderer x="140" y="5" width="188" height="20" list_length="1" always_show_scroll="0">
             <options_item entry="renderer" group="mm_opt_video" depend="restart"/>
             <list_font r="170" g="170" b="170" font="letterica16"/>
 		    <text_color>
@@ -166,7 +166,7 @@
 		<cap_fps_limit x="16" y="3" width="108" height="24" hint="hint_fps_limit">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_fps_limit</text>
         </cap_fps_limit>
-        <track_fps_limit x="144" y="6" width="188" height="16" step="10" is_integer="1" hint="hint_fps_limit">
+        <track_fps_limit x="144" y="6" width="188" height="16" step="5" is_integer="1" hint="hint_fps_limit">
             <options_item entry="FPS_limit" group="mm_opt_video_adv"/>
 			<output_wnd x="180" y="0" width="20" height="20" format="%d">
 				<text r="255" g="255" b="255" font="letterica16" align="r" vert_align="c">0</text>
@@ -419,7 +419,7 @@
         <cap_ao x="16" y="3" width="108" height="76" hint="hint_ao">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_ssao_text</text>
         </cap_ao>
-		<radio_tab_ao_options x="144" y="0" width="108" height="101" radio="1" hint="hint_ao">
+		<radio_tab_ao_options x="144" y="0" width="108" height="56" radio="1" hint="hint_ao">
 			<options_item entry="r2_ssao_mode" group="mm_opt_video" depend="restart"/>
 			<button x="-8" y="0" width="37" height="28" id="disabled" stretch="1">
 				<text font="letterica16" vert_align="c" x="29" y="3" align="l">st_opt_off</text>
@@ -428,28 +428,7 @@
 	                <d r="70" g="70" b="70"/>
 	            </text_color>
 			</button>
-			<button x="-8" y="25" width="37" height="28" id="default" stretch="1">
-				<text font="letterica16" vert_align="c" x="29" y="3" align="l">ui_mm_ssao</text>
-	            <text_color>
-	                <e r="170" g="170" b="170"/>
-	                <d r="70" g="70" b="70"/>
-	            </text_color>
-			</button>
-			<button x="-8" y="50" width="37" height="28" id="hdao" stretch="1">
-				<text font="letterica16" vert_align="c" x="29" y="3" align="l">ui_mm_hdao</text>
-	            <text_color>
-	                <e r="170" g="170" b="170"/>
-	                <d r="70" g="70" b="70"/>
-	            </text_color>
-			</button>
-			<button x="-8" y="75" width="37" height="28" id="hbao" stretch="1">
-				<text font="letterica16" vert_align="c" x="29" y="3" align="l">ui_mm_hbao</text>
-	            <text_color>
-	                <e r="170" g="170" b="170"/>
-	                <d r="70" g="70" b="70"/>
-	            </text_color>
-			</button>
-			<button x="50" y="75" width="37" height="28" id="hbao_plus" stretch="1">
+			<button x="-8" y="25" width="37" height="28" id="hbao_plus" stretch="1">
 				<text font="letterica16" vert_align="c" x="29" y="3" align="l">ui_mm_hbao_plus</text>
 	            <text_color>
 	                <e r="170" g="170" b="170"/>
@@ -458,17 +437,7 @@
 			</button>
 		</radio_tab_ao_options>
 
-        <cap_ssao x="16" y="3" width="108" height="24"hint="hint_ao">
-            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_ssao_quality</text>
-        </cap_ssao>
-        <combo_ssao x="144" y="0" width="188" height="20" always_show_scroll="1" hint="hint_ao">
-            <options_item entry="r2_ssao" group="mm_opt_video" depend="restart"/>
-            <list_font r="170" g="170" b="170" font="letterica16"/>
-		    <text_color>
-	            <e r="170" g="170" b="170"/>
-	            <d r="70" g="70" b="70"/>
-		    </text_color>
-        </combo_ssao>
+
 
         <cap_soft_water x="16" y="3" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_soft_water</text>
@@ -509,6 +478,30 @@
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="SSR_ON" group="mm_opt_video_adv" depend="restart"/>
         </check_ssr>
+		
+		<cap_use_max_quality_shdrs x="16" y="3" width="108" height="24" hint="hint_hight_quality_shaders">
+            <text r="255" g="160" b="160" font="letterica16" align="r" vert_align="c">ui_mm_hight_quality_shaders</text>
+        </cap_use_max_quality_shdrs>
+        <check_use_max_quality_shdrs x="133" y="0" width="35" stretch="1" height="29" hint="hint_hight_quality_shaders">
+	        <texture>ui_inGame2_checkbox</texture>
+            <options_item entry="r__use_max_quality_shaders" group="mm_opt_video_adv" depend="restart"/>
+        </check_use_max_quality_shdrs>
+		
+		<cap_use_adv_shdrs x="16" y="3" width="108" height="24" hint="hint_use_adv_shdrs">
+            <text r="255" g="160" b="160" font="letterica16" align="r" vert_align="c">ui_mm_use_adv_shaders</text>
+        </cap_use_adv_shdrs>
+        <check_use_adv_shdrs x="133" y="0" width="35" stretch="1" height="29" hint="hint_use_adv_shdrs">
+	        <texture>ui_inGame2_checkbox</texture>
+            <options_item entry="r__use_advanced_shaders" group="mm_opt_video_adv" depend="restart"/>
+        </check_use_adv_shdrs>
+		
+		<cap_off_shdw_lamp x="16" y="3" width="108" height="24" hint="hint_off_shdw_lamp">
+            <text r="0" g="255" b="0" font="letterica16" align="r" vert_align="c">ui_mm_off_shdw_lamp</text>
+        </cap_off_shdw_lamp>
+        <check_off_shdw_lamp x="133" y="0" width="35" stretch="1" height="29" hint="hint_use_adv_shdrs">
+	        <texture>ui_inGame2_checkbox</texture>
+            <options_item entry="r__off_shadows_of_lamps" group="mm_opt_video_adv" depend="restart"/>
+        </check_off_shdw_lamp>
 		
 		<cap_gbuff x="16" y="3" width="108" height="24" hint="hint_gbuff">
             <text r="0" g="255" b="0" font="letterica16" align="r" vert_align="c">ui_mm_gbuff</text>
