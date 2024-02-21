@@ -9,6 +9,7 @@ struct 	v2p
 
 // Глобальные параметры шейдеров --#SM+#--
 uniform	float4		m_hud_params;	// zoom_rotate_factor, secondVP_zoom_factor, NULL, NULL
+uniform float3 		sight_color;
 
 inline bool isCollimatorActive()
 {
@@ -25,6 +26,9 @@ float4 main( v2p I ) : SV_Target
 	// out
 	if(isCollimatorActive())
 	{
+		t_base.r = sight_color.x;
+		t_base.g = sight_color.y;
+		t_base.b = sight_color.z;
 		return  float4	(t_base.r,t_base.g,t_base.b,t_base.a * I.c0.a);
 	}
 	else

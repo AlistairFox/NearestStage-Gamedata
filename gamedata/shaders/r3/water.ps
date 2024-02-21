@@ -117,7 +117,7 @@ float4 main( vf I ) : SV_Target
 	if (edgeFade > 0.02f)
 		refl_ray = calc_ssr(PosTc, Pv, Nv, ssr_hit_uv);
 	
-	if(all(ssr_hit_uv.xy) && _P.z < reflections_distance.x)
+	if(all(ssr_hit_uv.xy))
 	{
 	
 	// Get current Skybox

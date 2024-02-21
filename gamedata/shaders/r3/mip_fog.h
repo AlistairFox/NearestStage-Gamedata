@@ -26,6 +26,8 @@ float Calc_Height(float3 wpos)
 	//return 1 - saturate((wpos.y - HEIGHTFOGMIN) / (height-HEIGHTFOGMIN));
 	float heightmax = lowland_fog_params.x;
 	float heightmin = lowland_fog_params.y;
+	//float heightmax = 20;
+	//float heightmin = 5;
 	return 1 - saturate((wpos.y - heightmin) / (heightmax-heightmin));
 }
 
@@ -112,7 +114,12 @@ float3 Calc_Fog(float3 pos, float3 color)
 	float3 MipFog = Calc_MipFog(sky, fogrough);
 	float3 SunFog = Calc_SunFog(pos, fogrough);
 	
+	float3 SunColor = SRGBToLinear(Ldynamic_color.rgb);
+	SunColor *= 0.3f;
+	
 	float3 FogColor = MipFog + SunFog;
+	if(SunColor.x > 0)
+		FogColor *= SunColor;
 	
 	//fog blend
 	float3 FogBlend = FinalFog; 

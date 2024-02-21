@@ -902,9 +902,10 @@ function get_nearest_actor(pos)
 	local nearest_actor = nil
 	local min_distance = 100000
 	for _, player in pairs(db.players) do
-		local distance = pos:distance_to_sqr(pos)
+		local distance = pos:distance_to_sqr(player:position())
 		if distance < min_distance then
 			nearest_actor = player
+			min_distance = distance
 		end
 	end
 	return nearest_actor

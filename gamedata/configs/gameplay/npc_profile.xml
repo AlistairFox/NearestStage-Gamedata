@@ -24,6 +24,9 @@
 		<class>mp_default_stalker</class>
 	</character>
 	
+	<character id="stalkers_bar">
+		<class>stalkers_bar</class>
+	</character>
 	
 	
 	<!-- escape -->

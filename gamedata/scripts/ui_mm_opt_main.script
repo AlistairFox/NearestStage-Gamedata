@@ -113,7 +113,7 @@ end
 
 function options_dialog:UpdateDependControls()
 	self.scroll_v:Clear()
-	local _current_id = self.combo_renderer:CurrentID()
+	local _current_id = 5
 
 	for i,j in pairs(self.m_preconditions) do
 		if(j.func(_current_id)) then
@@ -146,7 +146,6 @@ function options_dialog:InitCallBacks()
 	self:AddCallback("btn_simply_graphic",	ui_events.BUTTON_CLICKED,	self.OnSimplyGraphic,		self)
 	self:AddCallback("btn_keyb_default",	ui_events.BUTTON_CLICKED,	self.OnBtnKeybDefault,		self)
 	self:AddCallback("btn_check_updates",	ui_events.BUTTON_CLICKED,	self.OnBtnCheckUpdates,		self)
-	self:AddCallback("combo_renderer",		ui_events.LIST_ITEM_SELECT,	self.UpdateDependControls,	self)
 	self:AddCallback("btn_cancel_download",	ui_events.BUTTON_CLICKED,	self.OnBtn_CancelDownload,	self)
 	self:AddCallback("tab_ao_opt",			ui_events.TAB_CHANGED,		self.OnAOOptionChange,		self)
 
@@ -251,13 +250,6 @@ end
 
 function options_dialog:OnAOOptionChange()
 	local ao_opt_id = self.tab_ao_opt:GetActiveId()
-	local render_id = self.combo_renderer:CurrentID()
-	--if(render_id>=4) and (ao_opt_id=="hdao") then
-		--self.combo_ssao:enable_id(4)
-	--else
-		--self.combo_ssao:disable_id(4)
-	--end
-	--self.combo_ssao:SetCurrentOptValue()
 end
 
 function options_dialog:OnBtnAdvGraphic()

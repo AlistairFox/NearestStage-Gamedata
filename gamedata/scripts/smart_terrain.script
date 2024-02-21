@@ -1,5 +1,5 @@
 local DEATH_IDLE_TIME = 10*60 -- ������
-local RESPAWN_IDLE = 72000   -- ������ �������� �������
+local RESPAWN_IDLE = 72000 -- 72000   -- ������ �������� �������
 local RESPAWN_RADIUS = 150 -- ������ ��������(���� ����� �����, �� �� ��������)
 SMART_TERRAIN_SECT = "smart_terrain"
 smart_terrains_by_name = {}
@@ -1406,15 +1406,21 @@ function se_smart_terrain:try_respawn()
 
 		local squad_count = smart_terrain_squad_count(self.board.smarts[self.id].squads)
 		if self.max_population <= squad_count then printf("%s cannot respawn due to squad_count %s of %s", self:name(), self.max_population, squad_count) return end
-
-		if IsGameTypeSingle() then
-			local dist_to_actor = alife():mp_actor().position:distance_to_sqr(self.position) --alife():actor().position:distance_to_sqr(self.position)
-			if dist_to_actor < RESPAWN_RADIUS^2 then
-				printf("%s cannot respawn due to distance", self:name())
-				return
+		
+		local can_respawn = true
+		local pos = self.position
+		for _, player in pairs(db.players) do
+			local distance = pos:distance_to_sqr(player:position())
+			if distance < RESPAWN_RADIUS^2 then
+				can_respawn = false
+				print_msg("cant respawn")
+				print_msg(distance)
+				break
 			end
 		end
 
-		self:call_respawn()
+		if can_respawn then
+			self:call_respawn()
+		end
 	end
 end

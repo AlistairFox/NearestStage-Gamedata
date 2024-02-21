@@ -1,10 +1,1 @@
 [logic]
-active = sr_idle@wait
-
-[sr_idle@wait]
-on_actor_inside = {=actor_has_item_mp(pautina_module)} sr_idle@run %=run_tutorial(tutorial_pautina1)%
-
-[sr_idle@run]
-on_info = {+tutorial_pautina1} %-tutorial_pautina1 =run_tutorial(tutorial_pautina1)%
-on_actor_outside = {+tutorial_pautina1} sr_idle@wait, sr_idle@wait %=stop_tutorial%
-on_info2 = {!has_active_tutorial -sleep_active} sr_idle@wait

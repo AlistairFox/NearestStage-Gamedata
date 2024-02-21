@@ -43,7 +43,7 @@
 		</text>
 	</hint_wnd>
 
-	<tab x="456" y="57" width="338" height="27">
+	<tab x="346" y="57" width="548" height="27">
 		<button x="1" y="0" width="137" height="27" id="eptTasks" hint="pda_btn_quests_hint" frame_mode="0">
 			<text align="c" vert_align="c" x="0" y="0" width="157" height="27" font="letterica16">pda_btn_quests</text>
             <texture>ui_inGame2_pda_button</texture>
@@ -54,6 +54,7 @@
 				<h r="170" g="170" b="170"/>
 			</text_color>
 		</button>
+		
 		<button x="118" y="0" width="137" height="27" id="eptRanking" hint="pda_btn_ranking_hint" frame_mode="0">
 			<text align="c" vert_align="c" x="0" y="0" font="letterica16">pda_btn_ranking</text>
             <texture>ui_inGame2_pda_button</texture>
@@ -75,5 +76,18 @@
 				<h r="170" g="170" b="170"/>
 			</text_color>
 		</button>
+		
+		<button x="354" y="0" width="137" height="27" id="eptChat" hint="pda_btn_chat_hint" frame_mode="0">
+			<text align="c" vert_align="c" x="0" y="0" font="letterica16">pda_btn_mp_chat</text>
+			<texture>ui_inGame2_pda_button</texture>
+			<text_color>
+				<t r="255" g="255" b="255"/>
+				<d r="255" g="255" b="255"/>
+				<e r="200" g="200" b="200"/>
+				<h r="170" g="170" b="170"/>
+			</text_color>
+		</button>
+		
+ 
 	</tab>
 </w>

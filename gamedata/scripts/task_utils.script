@@ -12,10 +12,9 @@ function recive_tasks_cl(P)
 end
 
 function recive_tasks(SenderID, P)
-	server_msg("recive_tasks")
 	local t = P:r_u8() 
 	local player = level.get_object_by_client(SenderID):id()
-
+	server_msg("recive_tasks: "..tostring(t))
 	if (t == 1) then
 		server_msg("t == 1")
 		local type = P:r_u8()
@@ -36,6 +35,9 @@ function recive_tasks(SenderID, P)
 	elseif (t == 5) then
 		local quest = P:r_stringZ()
 		task_utils.recive_quest_save(player, quest)
+	elseif (t == 6) then
+		local team = P:r_u8()
+		mp.change_team(SenderID, team)
 	end
 end
 
@@ -93,6 +95,13 @@ function send_info(bool, name)
 		P:w_u8(3)
 		P:w_u8(bool)
 		P:w_stringZ(name)
+		mp_events.send_to_server(P)
+end
+
+function send_info_changeteam_duty()
+		local P = mp_events.gen_event('TASKS') 
+		P:w_u8(6)
+		P:w_u8(2)
 		mp_events.send_to_server(P)
 end
 

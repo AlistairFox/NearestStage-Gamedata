@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
+    <string id="nmp_stalker_barmen_about_character_0">
+        <text>Расскажи о себе.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_character_1">
+        <text>Ну ты потешный. А что рассказывать то? Как все тут. Свалил сюда с большой земли, там делать мне нечего. Повесили на меня висяк местные "органы правопорядка" ёпта. Так и сидел.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_character_11">
+        <text>Ясно. А барменом как стал?</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_character_111">
+        <text>Ну а кем мне? Податься к братве? Или куда? Я тут держу нейтралитет, очень многих парней знаю давно уже. Поэтому вес имею. А с вами, новичками, тут особо не заскучаешь. Забавные вы ребята.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_character_1111">
+        <text>Ну понятно...</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_0">
+        <text>А как вы на этом болоте выживаете-то?</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_1">
+        <text>Как-как, берем, да выживаем. Места здешние, конечно, не курорт, но в целом жить можно. Народ здесь разношерстный, но преимущественно спокойный, даше чуточку душевный, но сброда тоже хватает.\nБандюг полно, да нечисти всякой, но к нам, слава богу не лезут. Урожайно тут, но пахота не из простых.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_11">
+        <text>И много тут бандитов?</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_111">
+        <text>Честно говоря... дохера! Хочешь - сходи посчитай.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_1111">
+        <text>А где считать то, блять?</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_11111">
+        <text>А я смотрю ты непонятливый. Ну бери карандаш - записывай.\nРыбатский хутор - пиздуй на запад.\nМеханизаторский двор - пиздуй на север.\nДа вообще в целом, иди куда глаза глядят, все равно надкнешься, а мне мозги не еби.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_1111111">
+        <text>Спасибо, записал.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_11111111">
+        <text>Ну ты это, заходи если что.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_1112">
+        <text>Понятно...</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_11121">
+        <text>Да хули тебе понятно то блять!</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_marsh_11122">
+        <text>Угу.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_place_0">
+        <text>Что это за место?</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_place_1">
+        <text>Это местная харчевня. Заведение, куда мужики вроде тебя приходят отдохнуть, выпить и развеяться.\nЗаведение у нас сугубо культурное, вытворишь что-нибудь  - в лучшем случае отправишься за дверь, в худшем  - останешься навсегда у нас над потолком. Видал, там наверхну не один такой лежит.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_place_11">
+        <text>Мрачновато у вас тут...</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_place_111">
+        <text>А что ты хотел? У нас тут земля такая. Но ты не паникуй, если мужик нормальный, то напоим и накормим - не бесплатно, конечно. Ночлег не предлагаем - не обессудь, заведение наше круглосуточное.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_place_1111">
+        <text>Понятно...</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_place_12">
+        <text>Ладно, не начинай - я понял.</text>
+    </string>
+    <string id="nmp_stalker_barmen_about_place_121">
+        <text>Ну ну...</text>
+    </string>
+    <string id="nmp_stalker_barmen_fraction_changer_0">
+        <text>Я хочу попасть в группировку.</text>
+    </string>
+    <string id="nmp_stalker_barmen_fraction_changer_1">
+        <text>Отлично, в какую?</text>
+    </string>
+    <string id="nmp_stalker_barmen_fraction_changer_11">
+        <text>Хочу в Долг.</text>
+    </string>
+    <string id="nmp_stalker_barmen_fraction_changer_start_0">
+        <text>Что можешь предложить?</text>
+    </string>
+    <string id="nmp_stalker_barmen_fraction_changer_start_1">
+        <text>Да в целом много что можно. Но всё за твой счёт. Ещё если хочешь, можно тебя в какую-нибудь бригаду пристроить по блату. Ну всякие "Долги" там, "Свободы" и прочие.</text>
+    </string>
+    <string id="nmp_stalker_barmen_sovets_0">
+        <text>Можешь дать совет новичку?</text>
+    </string>
+    <string id="nmp_stalker_barmen_sovets_1">
+        <text>Мозги не делай людям - заметишь как твоя жизнь преобразится.</text>
+    </string>
+    <string id="nmp_stalker_barmen_sovets_11">
+        <text>Понятно...</text>
+    </string>
+    <string id="nmp_stalker_barmen_sovets_111">
+        <text>Ты заебал уже.</text>
+    </string>
+    <string id="nmp_stalker_barmen_sovets_2">
+        <text>Внимания к себе особо не привлекай, шмот и бабки всегда держи при себе.</text>
+    </string>
+    <string id="nmp_stalker_barmen_sovets_3">
+        <text>Не ввязывайся в стычки без необходимости. Если можешь тихонько свалить - сваливай.</text>
+    </string>
+    <string id="nmp_stalker_barmen_start_11">
+        <text>Ну привет!</text>
+    </string>
+    <string id="nmp_stalker_barmen_start_12">
+        <text>Приветствую путник!</text>
+    </string>
+    <string id="nmp_stalker_barmen_start_13">
+        <text>Здорова, бродяга!</text>
+    </string>
     <string id="nmp_stalker_trader_aboutwork_0">
         <text>Я хотел бы поговорить о работе.</text>
     </string>

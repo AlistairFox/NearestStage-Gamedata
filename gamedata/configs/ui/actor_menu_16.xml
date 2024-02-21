@@ -170,6 +170,16 @@
 		<text align="l" font="letterica16" color="ui_7"/>
 	</partner_weight>
 
+	<actor_inv_capacity_caption x="750" y="753" width="68" height="16">
+		<text align="r" font="letterica16" color="ui_3">ui_inv_inventory_capacity</text>
+	</actor_inv_capacity_caption>
+	<actor_inv_fullness x="807" y="753" width="68" height="16">
+		<text align="c" font="letterica16"/>
+	</actor_inv_fullness>
+	<actor_inv_capacity x="842" y="753" width="68" height="16">
+		<text align="l" font="letterica16" color="ui_3"/>
+	</actor_inv_capacity>
+
 	<!-- partner  ---------------------------------------------------------------- -->
 	<left_delimiter x="102" y="226" width="273" height="163" stretch="1">
 		<texture>ui_inGame2_center_trade_devider</texture>

@@ -339,4 +339,13 @@
 	<string id="st_help_player">
 		<text>Помочь игроку</text>
 	</string>
+	<string id="ui_inv_inventory_capacity">
+		<text>Вместимость</text>
+	</string>
+	<string id="st_liters">
+		<text>Предметов</text>
+	</string>
+	<string id="st_backpack_full">
+		<text>Рюкзак заполнен!</text>
+	</string>
 </string_table>

@@ -75,5 +75,6 @@ Texture2D	s_tonemap;	// actually MidleGray / exp(Lw + eps)
 Texture2D s_blur_2;
 Texture2D s_blur_4;
 Texture2D s_blur_8;
+Texture2D s_lut_atlas; //shaders\\lut_atlas
 
 #endif	//	#ifndef	common_samplers_h_included
